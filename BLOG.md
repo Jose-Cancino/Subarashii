@@ -1,12 +1,12 @@
 # Subarashii
-# Probando el GitHub de escritorio
+# Hola soy José Cancino doy inicio a mi participacion en este proyecto owo
 # Hola soy Joaquin Pabst doy inicio a mi participacion en este proyecto nya :3
 # Hola soy Javiera Layana doy inicio a mi participación en este proyecto uwu 
 #
 # Subarashii | Notas del parche 1.1 | (7-11-2020)
 # ~ LAS NOTAS FUERON ESCRITAS POR TODOS LOS MIEMBROS DEL PROYECTO ~
 # Tipo de aplicación: APP móvil 
-# Problemática o necesidada abordada: Con nuestra APP queremos solucionar el problema de no saber que ver y el de la organización.
+# Problemática o necesidad abordada: Con nuestra APP queremos solucionar el problema de no saber que ver y el de la organización.
 # El no saber que ver lo solucionaremos mediante recomendaciones y la organización mediante listas.
 # Público objetivo: Cualquier persona interesada en el mundo del anime
 # ¿Cómo se alimentará de información? ¿Cuál de las siguientes utilizarán y para qué?:
