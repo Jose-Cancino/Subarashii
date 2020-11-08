@@ -1,6 +1,7 @@
 # Subarashii
 # Probando el GitHub de escritorio
 # Hola soy Joaquin Pabst doy inicio a mi participacion en este proyecto nya :3
+# Hola soy Javiera Layana doy inicio a mi participación en este proyecto uwu 
 #
 # Subarashii | Notas del parche 1.1 | (7-11-2020)
 # ~ LAS NOTAS FUERON ESCRITAS POR TODOS LOS MIEMBROS DEL PROYECTO ~
