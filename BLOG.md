@@ -24,3 +24,7 @@
 # usuario y que este mismo pueda decidir en base a que se le recomiende ("En base a mi top 10", "Aleatorias", "En base a mis litas"),
 # estas recomendaciones podran ser actualizadas constantemente por el usuario mediante un boton de nuestra APP.
 # ~ Fin de las notas ~
+#
+# Avisos | (15-11-2020) 
+# Se sube el primer desafío
+# ~ Fin de los avisos ~
