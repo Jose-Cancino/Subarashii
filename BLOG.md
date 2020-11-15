@@ -5,7 +5,7 @@
 #
 # Subarashii | Notas del parche 1.1 | (7-11-2020)
 # ~ LAS NOTAS FUERON ESCRITAS POR TODOS LOS MIEMBROS DEL PROYECTO ~
-# Tipo de aplicación: APP móvil 
+# Tipo de aplicación: APP móvil. 
 # Problemática o necesidad abordada: Con nuestra APP queremos solucionar el problema de no saber que ver y el de la organización.
 # El no saber que ver lo solucionaremos mediante recomendaciones y la organización mediante listas.
 # Público objetivo: Cualquier persona interesada en el mundo del anime
