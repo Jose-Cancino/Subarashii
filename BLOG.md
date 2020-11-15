@@ -25,6 +25,10 @@
 # estas recomendaciones podran ser actualizadas constantemente por el usuario mediante un boton de nuestra APP.
 # ~ Fin de las notas ~
 #
+# Avisos | (14-11-2020)
+# Completa la instalacion de React-Native. :3
+# ~ Fin de los avisos ~
+#
 # Avisos | (15-11-2020) 
-# Se sube el primer desafío
+# Se sube el primer desafío.
 # ~ Fin de los avisos ~
