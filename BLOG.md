@@ -32,3 +32,15 @@
 # Avisos | (15-11-2020) 
 # Se sube el primer desafío.
 # ~ Fin de los avisos ~
+#
+# Subarashii | Notas del parche 1.2 | (21-11-2020)
+# ~ LAS NOTAS FUERON ESCRITAS POR TODOS LOS MIEMBROS DEL PROYECTO ~
+# Confirmamos la utilizacion de React Native.
+# Las 5 funcionalidades de la APP serán:
+# Recomendaciones (♥)
+# Listas
+# Búsqueda
+# Página personalizada para cada anime (Con su info, imagen, etc)
+# Sección de vistos - Por ver - Viendo
+# ~ Fin de las notas ~
+# 
