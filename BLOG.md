@@ -35,7 +35,7 @@
 #
 # Subarashii | Notas del parche 1.2 | (21-11-2020)
 # ~ LAS NOTAS FUERON ESCRITAS POR TODOS LOS MIEMBROS DEL PROYECTO ~
-# Confirmamos la utilizacion de React Native.
+# Confirmamos la utilización de React Native.
 # Las 5 funcionalidades de la APP serán:
 # Recomendaciones (♥)
 # Listas
@@ -44,3 +44,6 @@
 # Sección de vistos - Por ver - Viendo
 # ~ Fin de las notas ~
 # 
+# Avisos | (21-11-2020) 
+# Se sube la planificación.
+# ~ Fin de los avisos ~
