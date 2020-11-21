@@ -1,6 +1,6 @@
 import { StatusBar } from 'expo-status-bar';
 import React, {useState, Component} from 'react';
-import { StyleSheet, Text, View, TextInput, Button, Alert, TouchableOpacity } from 'react-native';
+import { StyleSheet, Text, View, TextInput, Button, Alert, TouchableOpacity, SafeAreaView } from 'react-native';
 
 export default function App() {
   const [usuario, setUsuario] = React.useState("Usuario");
@@ -19,7 +19,7 @@ export default function App() {
 
   }
   return (
-    <View style={styles.container}>
+    <SafeAreaView style={styles.container}>
       <Text style={styles.texto}>Iniciar Sesión</Text>
       <TextInput 
         style={styles.input}
@@ -28,6 +28,7 @@ export default function App() {
         />
       <TextInput 
         style={styles.input}
+        secureTextEntry={true}
         placeholder = "Contraseña"
         onChangeText = {(val) => setContraseña(val)}
         />
@@ -37,7 +38,7 @@ export default function App() {
       <Text style={styles.texto}> {mensaje} </Text>
 
       <StatusBar style="auto" />
-    </View>
+    </SafeAreaView>
   );
 }
 
