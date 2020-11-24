@@ -3,17 +3,19 @@ import React, { useState, Component } from 'react';
 import { createBottomTabNavigator } from '@react-navigation/bottom-tabs';
 import { NavigationContainer } from '@react-navigation/native';
 
-import { StyleSheet,
+import { 
+   StyleSheet,
    Button,
-    Text,
-     View,
-     Image,
-     TextInput,
-      FlatList,
-       ActivityIndicator,
-        SafeAreaView,
-         TouchableOpacity,
-           } from 'react-native';
+   Text,
+   View,
+   Image,
+   TextInput,
+   FlatList,
+   ActivityIndicator,
+   SafeAreaView,
+   TouchableOpacity,
+   } from 'react-native';
+
 import Recomendacion from "./Recomendacion"
 import Lista from "./Listas"
 
