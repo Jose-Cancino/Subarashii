@@ -20,8 +20,7 @@ import { StyleSheet,
 
 
 const Busqueda = ({navigation}) => {
-  const [idAnime, setIdAnime] = useState("")
-
+  
   const [datos, setDatos] = useState("")
   const animeAPI = `https://kitsu.io/api/edge/anime?filter[text]=${datos}`;
   
@@ -48,15 +47,7 @@ const Item = ({ id, title, imagen, desc, canonico}) => (
   <View style={styles.item}>
     <Text style={styles.title}>{title}    #{id}</Text>
     <TouchableOpacity   onPress={() => navigation.navigate("Anime", {
-    title: `${title}`,
-    imagen: `${imagen}`,
-    desc: `${desc}`,
-    canonico: `${canonico}`,
-
-
-
-                                                                     
-
+    id: `${id}`
 
     
     })}>
