@@ -7,7 +7,8 @@ import {
   SafeAreaView,
   ActivityIndicator,
   Image,
-  Button
+  Button,
+  ScrollView
  } from 'react-native';
 
 
@@ -39,6 +40,7 @@ const pagAnime = ({navigation, route}) => {
    
   return (
     <SafeAreaView style={styles.container}>
+      <ScrollView style ={styles.scrollView}>
       {isLoading ? (
       <ActivityIndicator/> 
       ):( 
@@ -53,9 +55,13 @@ const pagAnime = ({navigation, route}) => {
         
       </Text>  
 
-      <Text>
-        {rating}
+      <Text style={styles.title}>
+        Rating: {rating}
 
+      </Text>
+      <Text>
+
+        
       </Text>
       <Button
       title = "Añadir"
@@ -66,6 +72,7 @@ const pagAnime = ({navigation, route}) => {
 
       </View>
       )}
+      </ScrollView>
     </SafeAreaView>
   );
 }
@@ -91,6 +98,10 @@ const styles = StyleSheet.create({
     height: 40,
     lineHeight: 35,
     textAlign: "center",        
+  },
+  scrollView: {
+    backgroundColor: 'pink',
+    marginHorizontal: 20,
   },
 });
 
