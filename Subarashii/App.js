@@ -6,7 +6,7 @@ import { NavigationContainer } from '@react-navigation/native';
 
 import Recomendacion from "./Recomendacion"
 import Lista from "./Listas"
-import Busqueda from "./Busqueda"
+import BusquedaAnime from "./Busqueda"
 
 
 
@@ -17,9 +17,9 @@ const Tab = createBottomTabNavigator();
 
 export default function App() {
   return (
-    <NavigationContainer>
+    <NavigationContainer >
     <Tab.Navigator> 
-      <Tab.Screen name="Lupita" component={Busqueda} />
+      <Tab.Screen name="Lupita" component={BusquedaAnime} />
       <Tab.Screen name="Home" component={Recomendacion} />
       <Tab.Screen name="lista" component={Lista} />
     </Tab.Navigator>
