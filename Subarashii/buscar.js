@@ -12,24 +12,14 @@ import { StyleSheet,
    StatusBar 
 } from 'react-native';
 
-
-
-
-
-
-
-
 const Busqueda = ({navigation}) => {
   
   const [datos, setDatos] = useState("")
   const animeAPI = `https://kitsu.io/api/edge/anime?filter[text]=${datos}`;
-  
 
   const [isLoading, setLoading] = useState(true)
   const [lista, setLista] = useState([])
 
-  
-  
   const Buscar = () => {
       fetch(animeAPI)
         .then((response) => response.json())
@@ -38,8 +28,8 @@ const Busqueda = ({navigation}) => {
         })
         .catch((error) => alert(error))
         .finally(() => setLoading(false));
-
     };
+
 var titulo = "hola"
 
 const Item = ({ id, title, imagen, desc, canonico}) => (
@@ -48,11 +38,9 @@ const Item = ({ id, title, imagen, desc, canonico}) => (
     <Text style={styles.title}>{title}    #{id}</Text>
     <TouchableOpacity   onPress={() => navigation.navigate("Anime", {
     id: `${id}`
-
-    
     })}>
-      <Image 
 
+      <Image 
       source = {{uri: imagen}}
       style={{
         width:210,
@@ -64,12 +52,8 @@ const Item = ({ id, title, imagen, desc, canonico}) => (
       }}
       />
     </TouchableOpacity>
-
-
-    
   </View>
 );
-
 
   const renderItem = ({item}) => (
       <Item 
@@ -78,7 +62,6 @@ const Item = ({ id, title, imagen, desc, canonico}) => (
        canonico={item.attributes.canonicalTitle}
        imagen={item.attributes.posterImage.small} 
        desc={item.attributes.synopsis}
-
        />
   );
 
@@ -94,8 +77,6 @@ const Item = ({ id, title, imagen, desc, canonico}) => (
       title = "buscar"
       onPress = {() => Buscar()  }
       ></Button>
-
-
     
       {isLoading ? ( 
         <ActivityIndicator/> 
@@ -103,15 +84,12 @@ const Item = ({ id, title, imagen, desc, canonico}) => (
         <FlatList
           data = {lista} 
           keyExtractor = {({ data }, index) => data}
-          renderItem = {renderItem}
-                 
+          renderItem = {renderItem}    
         /> 
       )}
     </SafeAreaView>
   );
-  
 };
-
 
 const styles = StyleSheet.create({
   container: {
