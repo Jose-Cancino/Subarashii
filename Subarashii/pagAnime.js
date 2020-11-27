@@ -1,4 +1,3 @@
-import { StatusBar } from 'expo-status-bar';
 import React, {useState, useEffect} from 'react';
 import { 
   StyleSheet,
@@ -11,10 +10,6 @@ import {
   ScrollView
  } from 'react-native';
 
-
-
-
-
 const pagAnime = ({navigation, route}) => {
   const [isLoading, setLoading] = useState(true);
   const [foto, setFoto] = useState("")
@@ -23,7 +18,6 @@ const pagAnime = ({navigation, route}) => {
   const animeURL = `https://kitsu.io/api/edge/anime/${route.params.id}`
   const [rating, setRating] = useState("")
   
-
   useEffect (() => {
     fetch(animeURL)
     .then((response) => response.json())
