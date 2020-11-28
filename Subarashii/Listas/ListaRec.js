@@ -1,47 +1,80 @@
-import React, {useState, Component} from 'react';
-import { StyleSheet, Text, View, SafeAreaView, Image, Button, TextInput, FlatList, TouchableNativeFeedback, TouchableOpacity} from 'react-native';
+import { StatusBar } from 'expo-status-bar';
+import React, { useState, useEffect } from 'react';
+import { 
+  StyleSheet, 
+  Text, 
+  View, 
+  TouchableNativeFeedback,
+  TouchableOpacity,
+  ScrollView
+} from 'react-native';
 
-const ListaRec = () => {
-    const [anime, setAnime] = useState([
-        {name: "Kobayashi-san Chi no Maid Dragon"},
-        {name: "Fullmetal Alchemist: Brotherhood"},
-        {name: "Hunter x Hunter (2011)"},
-        {name: "Death Note"},
-        {name: "JoJo's Bizarre Adventure (2012)"},
-        {name: "Tengen Toppa Gurren Lagann"},
-        {name: "Shingeki no Kyojin"},
-        {name: "Kono Subarashii Sekai ni Shukufuku wo!"},
-        {name: "Code Geass: Hangyaku no Lelouch"},
-        {name: "Toradora!"},
-    ]);
- 
-    return (
-     <View style={styles.container}>
-         <FlatList
-             keyExtractor={( item ) => item.id}
-             data={anime}
-             renderItem={({ item }) => (
-             <TouchableNativeFeedback>
-             <Text style={styles.lista}>{item.name}</Text>
-             </TouchableNativeFeedback>
-             )}
-         />
-     </View>
-    )}
- 
- const styles = StyleSheet.create({
-    container: {
-        flex: 1,
-        backgroundColor: '#fff',
-        alignItems: 'center',
-        justifyContent: 'center',
-    },
-    lista:{
-        marginHorizontal: 20,
-        marginTop: 24,
-        padding: 30,
-        backgroundColor: "grey",
-        fontSize: 24,
-    },
+
+const ListaRec = ({navigation}) => {
+
+  const [anime, setAnime] = useState([
+    {name: "12243"},
+    {name: "3936"},
+    {name: "6448"},
+    {name: "1376"},
+    {name: "7158"},
+    {name: "1801"},
+    {name: "7442"},
+    {name: "41440"},
+    {name: "1415"},
+    {name: "3532"},
+  ]);
+
+
+    const Bloques = anime.map(anime => {
+      const [nombre, setNombre] = useState("")
+      const [id, setId] = useState("")
+
+        fetch(`https://kitsu.io/api/edge/anime/${anime.name}`)
+        .then((response) => response.json())
+        .then((json) => {
+          setNombre(json.data.attributes.canonicalTitle);
+          setId(json.data.id)
+        })
+        .catch((error) => {
+          console.error(error);
+        });
+
+      return ( 
+        <View >
+          <TouchableOpacity onPress = {() => navigation.navigate("Anime", {id: `${id}`})}>
+            <Text style={styles.lista}>{nombre}</Text>
+          </TouchableOpacity>
+        </View>
+        
+        
+        );
+      });
+
+  return (
+    <ScrollView style ={styles.scrollView}>
+
+        <View >
+        {Bloques}
+        </View>
+
+    </ScrollView>
+  );
+}
+
+const styles = StyleSheet.create({
+  container: {
+    flex: 1,
+    backgroundColor: '#fff',
+    alignItems: 'center',
+    justifyContent: 'center',
+  },
+  lista:{
+    marginHorizontal: 20,
+    marginTop: 24,
+    padding: 30,
+    backgroundColor: "pink",
+    fontSize: 24,
+  },
 });
 export default ListaRec;
