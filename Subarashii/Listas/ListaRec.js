@@ -11,7 +11,6 @@ import {
 
 
 const ListaRec = ({navigation}) => {
-
   const [anime, setAnime] = useState([
     {name: "12243"},
     {name: "3936"},
@@ -26,10 +25,10 @@ const ListaRec = ({navigation}) => {
     {name: "3919"},
     {name: "7711"},
     {name: "4604"},
-    //{name: "41995"},
     {name: "5981"},
     {name: "10028"},
     {name: "11614"},
+    //{name: "41995"},
     //{name: "7821"},
     //{name: "831"},
     //{name: "7712"},
@@ -39,7 +38,6 @@ const ListaRec = ({navigation}) => {
     //{name: "7023"},
     //{name: "6028"}
   ]);
-
 
     const Bloques = anime.map(anime => {
       const [nombre, setNombre] = useState("")
