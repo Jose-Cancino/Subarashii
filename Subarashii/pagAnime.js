@@ -8,7 +8,9 @@ import {
   Image,
   Button,
   ScrollView,
-  FlatList
+  FlatList,
+  Linking,
+  TouchableOpacity,
  } from 'react-native';
 
 const pagAnime = ({navigation, route}) => {
@@ -20,6 +22,7 @@ const pagAnime = ({navigation, route}) => {
   const categoriaUrl = `https://kitsu.io/api/edge/anime/${route.params.id}/categories`
   const [rating, setRating] = useState("")
   const [lista, setLista] = useState([])
+  const [video, setVideo] = useState("")
 
   
   useEffect (() => {
@@ -30,6 +33,7 @@ const pagAnime = ({navigation, route}) => {
       setTitle(json.data.attributes.canonicalTitle);
       setSynopsis(json.data.attributes.synopsis);
       setRating(json.data.attributes.averageRating);
+      setVideo(json.data.attributes.youtubeVideoId);
     })
     fetch(categoriaUrl)
     .then((response) => response.json())
@@ -82,11 +86,14 @@ const pagAnime = ({navigation, route}) => {
           keyExtractor = {({ data }, index) => data}
           renderItem = {renderItem}    
         /> 
+      <TouchableOpacity onPress = {() => Linking.openURL(`https://www.youtube.com/watch?v=${video}`)}>
+        <Text style={styles.yutu}>
+          Ver Trailer
+        </Text>
+      </TouchableOpacity>
       <Button
       title = "Añadir"
-      
-      
-      
+      onPress={() => navigation.navigate("Listas")} 
       ></Button>
 
       </View>
@@ -128,6 +135,14 @@ const styles = StyleSheet.create({
   scrollView: {
     backgroundColor: 'pink',
     marginHorizontal: 20,
+  },
+  yutu: {
+    color: "blue",
+    fontSize:20,  
+    height: 40,
+    lineHeight: 35,
+    textAlign: "center", 
+    textDecorationLine: "underline"       
   },
 });
 
