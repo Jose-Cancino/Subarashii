@@ -3,7 +3,6 @@ import { StyleSheet, Text, View, SafeAreaView, Image, Button, TextInput, FlatLis
 import "react-native-gesture-handler";
 import { NavigationContainer, StackActions } from '@react-navigation/native';
 import { createStackNavigator } from "@react-navigation/stack";
-import ListaRec from './Listas/ListaRec';
 import Lista1, {ListaN1} from "./Listas/Lista1"
 import Lista2 from "./Listas/Lista2"
 import Lista3 from "./Listas/Lista3"
