@@ -1,32 +1,47 @@
 import { StatusBar } from 'expo-status-bar';
 import React from 'react';
-import { StyleSheet, Text, View } from 'react-native';
-import { createBottomTabNavigator } from '@react-navigation/bottom-tabs';
-import { NavigationContainer } from '@react-navigation/native';
+import { StyleSheet, Text, View, TouchableOpacity } from 'react-native';
+import { createStackNavigator } from "@react-navigation/stack";
 
+import ListaRec from './Listas/ListaRec';
+import pagAnime from "./pagAnime"
 import Lista from "./Listas"
 import Busqueda from "./Busqueda"
 
-const Recomendacion = () => {
+const RecomendacionTab = ({navigation}) => {
     return(
       <View>
-      <Text>
-      Esta noche oscura te tortura la locura
-  Procura estar a mi altura aunque es baja tu estatura
-  Tartamudas ante el miedo que genero en el momento
-  Que aparezco entre las sombras y en tu mente me conecto
-  Ven victima mía... siente mi presencia
-  No luche por tu vida y se parte de mi esencia
-  Con decencia me escabullo y aparece detrás de ti
-  Huye todo lo que puedas porque yo siempre te escucho
-  ¿Tú eres Jeff the killer? tu vida pende de un hilo mientras te cortas la cara yo te agarro y te aniquilo as requerido ser traumado para ser un asesino cuando yo toda mi vida miles de almas eh obtenido
-  Soy slenderman y puedo cambiar de forma
-  Te conformas si te digo que tu cara es espantosa.
-  Levo la maldad y la expando a tu alrededor
-  No requiero fuego y cúter para causarte terror
-      </Text>
+            <TouchableOpacity style={styles.listas}>
+                <Text onPress={() => navigation.navigate("Lista Recomendada")}>
+                    Lista Recomendada </Text>
+            </TouchableOpacity>
       </View>
     );
   }
+  const Stack = createStackNavigator();
+  function Recomendacion() {
+    return (
+        <Stack.Navigator initialRouteName = "Listas">
+            <Stack.Screen name = "Recomendaciones" component = {RecomendacionTab} />
+            <Stack.Screen name = "Lista Recomendada" component = {ListaRec} />
+            <Stack.Screen name= "Anime" component = {pagAnime} />
+        </Stack.Navigator>
+    )
+}
+const styles = StyleSheet.create({
+  container: {
+    flex: 1,
+    backgroundColor: '#fff',
+    alignItems: 'center',
+    justifyContent: 'center',
+  },
+  listas: {
+    alignItems: "center",
+    backgroundColor: "#DDDDDD",
+    padding: 10,
+    marginBottom: 15,
+  }
+
+});
 
 export default Recomendacion;
