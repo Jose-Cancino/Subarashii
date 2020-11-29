@@ -16,13 +16,10 @@ import Lista9 from "./Listas/Lista9"
 import Lista10 from "./Listas/Lista10"
 import pagAnime from "./pagAnime"
 
+
 const Lista = ({navigation}) => {
     return (
         <SafeAreaView style={styles.container}>
-            <TouchableOpacity style={styles.listas}>
-                <Text onPress={() => navigation.navigate("Lista Recomendada")}>
-                    Lista Recomendada </Text>
-            </TouchableOpacity>
 
             <TouchableOpacity style={styles.listas}>
                 <Text onPress={() => navigation.navigate("Lista 1")}>
@@ -82,7 +79,6 @@ function NListas() {
     return (
         <Stack.Navigator initialRouteName = "Listas">
             <Stack.Screen name = "Listas" component = {Lista} />
-            <Stack.Screen name = "Lista Recomendada" component = {ListaRec} />
             <Stack.Screen name = "Lista 1" component = {Lista1} options = {{ title: ListaN1 }} />
             <Stack.Screen name = "Lista 2" component = {Lista2} />
             <Stack.Screen name = "Lista 3" component = {Lista3} />
