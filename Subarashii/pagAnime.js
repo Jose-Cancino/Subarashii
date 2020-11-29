@@ -7,7 +7,8 @@ import {
   ActivityIndicator,
   Image,
   Button,
-  ScrollView
+  ScrollView,
+  FlatList
  } from 'react-native';
 
 const pagAnime = ({navigation, route}) => {
@@ -16,7 +17,10 @@ const pagAnime = ({navigation, route}) => {
   const [title, setTitle] = useState("")
   const [synopsis, setSynopsis] = useState("")
   const animeURL = `https://kitsu.io/api/edge/anime/${route.params.id}`
+  const categoriaUrl = `https://kitsu.io/api/edge/anime/${route.params.id}/categories`
   const [rating, setRating] = useState("")
+  const [lista, setLista] = useState([])
+
   
   useEffect (() => {
     fetch(animeURL)
@@ -26,11 +30,28 @@ const pagAnime = ({navigation, route}) => {
       setTitle(json.data.attributes.canonicalTitle);
       setSynopsis(json.data.attributes.synopsis);
       setRating(json.data.attributes.averageRating);
-
+    })
+    fetch(categoriaUrl)
+    .then((response) => response.json())
+    .then((json) => {
+      setLista(json.data)
     })
     .catch((error) => alert(error))
     .finally(setLoading(false));  
   },[]);
+  
+  const Item = ({ categoria }) => (
+  
+    <View style={styles.item}>
+      <Text>{categoria}</Text>
+    </View>
+  );
+
+  const renderItem = ({item}) => (
+    <Item 
+     categoria = {item.attributes.title} 
+     />
+  );
    
   return (
     <SafeAreaView style={styles.container}>
@@ -53,10 +74,14 @@ const pagAnime = ({navigation, route}) => {
         Rating: {rating}
 
       </Text>
-      <Text>
-
-        
+      <Text style={styles.subtitle}>
+        Categorias:
       </Text>
+      <FlatList
+          data = {lista} 
+          keyExtractor = {({ data }, index) => data}
+          renderItem = {renderItem}    
+        /> 
       <Button
       title = "Añadir"
       
@@ -88,7 +113,14 @@ const styles = StyleSheet.create({
     margin:8
   },
   title: {
-    fontSize:20,  
+    fontSize:20,
+    backgroundColor: '#fff',  
+    height: 40,
+    lineHeight: 35,
+        
+  },
+  subtitle: {
+    fontSize:20, 
     height: 40,
     lineHeight: 35,
     textAlign: "center",        
