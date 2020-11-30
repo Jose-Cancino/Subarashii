@@ -37,8 +37,6 @@ const listarec = [
             <Text style={styles.lista}>{nombre}</Text>
           </TouchableOpacity>
         </View>
-        
-        
         );
       });
 
