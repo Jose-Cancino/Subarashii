@@ -12,40 +12,16 @@ import {
 
 const ListaRec = ({navigation}) => {
 
-  const [anime, setAnime] = useState([
-    {name: "12243"},
-    {name: "3936"},
-    {name: "6448"},
-    {name: "1376"},
-    {name: "7158"},
-    {name: "1801"},
-    {name: "7442"},
-    {name: "41440"},
-    {name: "1415"},
-    {name: "5853"},
-    {name: "3919"},
-    {name: "7711"},
-    {name: "4604"},
-    //{name: "41995"},
-    {name: "5981"},
-    {name: "10028"},
-    {name: "11614"},
-    //{name: "7821"},
-    //{name: "831"},
-    //{name: "7712"},
-    //{name: "4240"},
-    //{name: "7160"},
-    //{name: "8133"},
-    //{name: "7023"},
-    //{name: "6028"}
-  ]);
+const listarec = [
+  "12243", "3936", "6448", "1376", "7158", "1801", "7442", "41440", "1415", "5853", "3919", "7711", "4604", "5981", "10028",
+  "11614", "41995", "7821", "831", "7712", "4240", "7160", "8133", "7023", "6028",
+]
 
-
-    const Bloques = anime.map(anime => {
+    const Bloques = listarec.map(listarec => {
       const [nombre, setNombre] = useState("")
       const [id, setId] = useState("")
 
-        fetch(`https://kitsu.io/api/edge/anime/${anime.name}`)
+        fetch(`https://kitsu.io/api/edge/anime/${listarec}`)
         .then((response) => response.json())
         .then((json) => {
           setNombre(json.data.attributes.canonicalTitle);
