@@ -1,3 +1,4 @@
+import { MaterialBottomTabView } from '@react-navigation/material-bottom-tabs';
 import React, { useState, Component, useEffect } from 'react';
 import { StyleSheet,
    Button,
@@ -71,12 +72,12 @@ const Item = ({ id, title, imagen, desc, canonico}) => (
         style = {styles.input}
         onChangeText = {text => setDatos(text)}
         value = {datos}
-        placeholder = "Buscar..."
+        placeholder = "   Nombre anime..."
       ></TextInput>
-      <Button
-      title = "buscar"
-      onPress = {() => Buscar()  }
-      ></Button>
+    <TouchableOpacity  onPress={() => Buscar()}style={styles.boton}>
+        <Text style={styles.boton}>
+        BUSCAR </Text>
+    </TouchableOpacity>
     
       {isLoading ? ( 
         <ActivityIndicator/> 
@@ -104,10 +105,18 @@ const styles = StyleSheet.create({
     borderWidth: 1,
   },
   item: {
-    backgroundColor: '#f9c2ff',
+    backgroundColor: '#cbc2ff',
     padding: 20,
     marginVertical: 8,
     marginHorizontal: 16,
+  },  
+  boton: {
+    color: 'white',
+    backgroundColor: '#694fad',
+    padding: 3,
+    marginVertical: 10,
+    marginHorizontal: 50,
+    alignItems: 'center',
   },  
 });
 export default Busqueda;
