@@ -11,7 +11,7 @@ const BusquedaAnime= () => {
   return (
       
         <Stack.Navigator initialRoutName = "Buscar">
-          <Stack.Screen name= "Buscar" component = {Busqueda} />
+          <Stack.Screen name= "Buscar" component = {Busqueda} options = {{title: "Buscador"}}/>
           <Stack.Screen name= "Anime" component = {pagAnime} />
         </Stack.Navigator>  
   );
