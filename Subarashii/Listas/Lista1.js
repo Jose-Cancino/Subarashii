@@ -77,7 +77,7 @@ const styles = StyleSheet.create({
         alignItems: "center",
         backgroundColor: "#DDDDDD",
         padding: 10,
-        marginBottom: 15,
+        marginBottom: 25,
     },
     titulo: {
         marginTop:"auto"
