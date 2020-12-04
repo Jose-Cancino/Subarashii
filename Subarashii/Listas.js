@@ -1,7 +1,6 @@
 import React, {useState, Component} from 'react';
-import { StyleSheet, Text, View, SafeAreaView, Image, Button, TextInput, FlatList, TouchableNativeFeedback, TouchableOpacity} from 'react-native';
+import { StyleSheet, Text, View, SafeAreaView, Image, Button, TextInput, FlatList, TouchableNativeFeedback, TouchableOpacity } from 'react-native';
 import "react-native-gesture-handler";
-import { NavigationContainer, StackActions } from '@react-navigation/native';
 import { createStackNavigator } from "@react-navigation/stack";
 import Lista1, {ListaN1} from "./Listas/Lista1"
 import Lista2 from "./Listas/Lista2"
@@ -15,60 +14,30 @@ import Lista9 from "./Listas/Lista9"
 import Lista10 from "./Listas/Lista10"
 import pagAnime from "./pagAnime"
 
-
-const Lista = ({navigation}) => {
+const Lista = ({route, navigation}) => {
+    const [listado, setListado] = useState([
+        {name: "Lista 1", key: "1",},
+        {name: "Lista 2", key: "2",},
+        {name: "Lista 3", key: "3",},
+        {name: "Lista 4", key: "4",},
+        {name: "Lista 5", key: "5",},
+        {name: "Lista 6", key: "6",},
+        {name: "Lista 7", key: "7",},
+        {name: "Lista 8", key: "8",},
+        {name: "Lista 9", key: "9",},
+        {name: "Lista 10", key: "10",}
+    ])
+    
     return (
         <SafeAreaView style={styles.container}>
-
-            <TouchableOpacity style={styles.listas}>
-                <Text onPress={() => navigation.navigate("Lista 1")}>
-                    Lista 1 </Text>
+            <FlatList
+                data = {listado}
+                renderItem = {({ item }) => (
+            <TouchableOpacity onPress={() => navigation.navigate(item.name)}>
+                <Text style={styles.listas}> {item.name} </Text>
             </TouchableOpacity>
-
-            <TouchableOpacity style={styles.listas}>
-                <Text onPress={() => navigation.navigate("Lista 2")}>
-                    Lista 2 </Text>
-            </TouchableOpacity>
-
-            <TouchableOpacity style={styles.listas}>
-                <Text onPress={() => navigation.navigate("Lista 3")}>
-                    Lista 3 </Text>
-            </TouchableOpacity>
-
-            <TouchableOpacity style={styles.listas}>
-                <Text onPress={() => navigation.navigate("Lista 4")}>
-                    Lista 4 </Text>
-            </TouchableOpacity>
-
-            <TouchableOpacity style={styles.listas}>
-                <Text onPress={() => navigation.navigate("Lista 5")}>
-                    Lista 5 </Text>
-            </TouchableOpacity>
-
-            <TouchableOpacity style={styles.listas}>
-                <Text onPress={() => navigation.navigate("Lista 6")}>
-                    Lista 6 </Text>
-            </TouchableOpacity>
-
-            <TouchableOpacity style={styles.listas}>
-                <Text onPress={() => navigation.navigate("Lista 7")}>
-                    Lista 7 </Text>
-            </TouchableOpacity>
-
-            <TouchableOpacity style={styles.listas}>
-                <Text onPress={() => navigation.navigate("Lista 8")}>
-                    Lista 8 </Text>
-            </TouchableOpacity>
-
-            <TouchableOpacity style={styles.listas}>
-                <Text onPress={() => navigation.navigate("Lista 9")}>
-                    Lista 9 </Text>
-            </TouchableOpacity>
-
-            <TouchableOpacity style={styles.listas}>
-                <Text onPress={() => navigation.navigate("Lista 10")}>
-                    Lista 10 </Text>
-            </TouchableOpacity>
+                )}
+            />
         </SafeAreaView>
     )
 }
@@ -78,7 +47,7 @@ function NListas() {
     return (
         <Stack.Navigator initialRouteName = "Listas">
             <Stack.Screen name = "Listas" component = {Lista} />
-            <Stack.Screen name = "Lista 1" component = {Lista1} options = {{ title: ListaN1 }} />
+            <Stack.Screen name = "Lista 1" component = {Lista1} />
             <Stack.Screen name = "Lista 2" component = {Lista2} />
             <Stack.Screen name = "Lista 3" component = {Lista3} />
             <Stack.Screen name = "Lista 4" component = {Lista4} />
@@ -103,8 +72,11 @@ const styles = StyleSheet.create({
   listas: {
     alignItems: "center",
     backgroundColor: "#DDDDDD",
-    padding: 10,
+    padding: 30,
     marginBottom: 15,
+    marginTop: 24,
+    backgroundColor: "pink",
+    fontSize: 20
   }
 
 });
