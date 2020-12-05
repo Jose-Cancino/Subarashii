@@ -9,58 +9,36 @@ import {
   } from 'react-native';
 
 
-
-
-
+ 
 const Lista10 = ({navigation}) => {
-    const [anime, setAnime] = useState([
-        {name: "12243"},
-        {name: "3936"},
-        {name: "6448"},
-        {name: "1376"},
-        {name: "7158"},
-        {name: "1801"},
-        {name: "7442"},
-        {name: "41440"},
-        {name: "1415"},
-        {name: "5853"},
-        {name: "3919"},
-        {name: "7711"},
-        {name: "4604"},
-        {name: "5981"},
-        {name: "10028"},
-        {name: "11614"},
-        //{name: "41995"},
-        //{name: "7821"},
-        //{name: "831"},
-        //{name: "7712"},
-        //{name: "4240"},
-        //{name: "7160"},
-        //{name: "8133"},
-        //{name: "7023"},
-        //{name: "6028"}
-      ]);
-    
-    
+  const [lista10, setLista10] = useState([
+    {name: "12243"},
+    {name: "3936"},
+    {name: "6448"},
+    {name: "1376"},
+    {name: "7158"}
+  ]);
+ 
 
-
-    const Bloques = anime.map(anime => {
+    const Bloques = lista10.map(lista10 => {
       const [nombre, setNombre] = useState("")
-      const [id, setId] = useState("")
+      const [Lista, setLista] = useState([])
   
-          fetch(`https://kitsu.io/api/edge/anime/${anime.name}`)
-          .then((response) => response.json())
-          .then((json) => {
-            setNombre(json.data.attributes.canonicalTitle);
-            setId(json.data.id)
+        fetch(`https://kitsu.io/api/edge/anime/${anime.name}/categories`)
+        .then((response) => response.json())
+        .then((json) => {
+        setLista(json.data)
           })
           .catch((error) => {
             console.error(error);
           });
+        
+
+        
   
         return ( 
           <View >
-            <TouchableOpacity onPress = {() => navigation.navigate("Anime", {id: `${id}`})}>
+            <TouchableOpacity>
               <Text style={styles.lista}>{nombre}</Text>
             </TouchableOpacity>
           </View>
