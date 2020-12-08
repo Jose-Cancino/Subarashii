@@ -12,19 +12,20 @@ import {
  
 const Lista10 = ({navigation}) => {
   const [lista10, setLista10] = useState([
-    {name: "12243"},
-    {name: "3936"},
-    {name: "6448"},
-    {name: "1376"},
-    {name: "7158"}
+    "12243",
+    "3936",
+    "6448",
+    "1376",
+    "7158"
   ]);
  
 
     const Bloques = lista10.map(lista10 => {
       const [nombre, setNombre] = useState("")
       const [Lista, setLista] = useState([])
+      const [categorias, setCategorias] = useState({})
   
-        fetch(`https://kitsu.io/api/edge/anime/${anime.name}/categories`)
+        fetch(`https://kitsu.io/api/edge/anime/${lista10}/categories`)
         .then((response) => response.json())
         .then((json) => {
         setLista(json.data)
@@ -33,13 +34,26 @@ const Lista10 = ({navigation}) => {
             console.error(error);
           });
         
+        Lista.forEach(function(Lista, index){
+          //console.log(`${index} : ${Lista.id}`)
+          if(categorias[Lista.id] === undefined){
+          setCategorias(categorias.push({key:`${Lista.id}`, value: 1}))
+          } else {
+          setCategorias({...categorias , Lista.id : categorias[Lista.id] + 1})
+          }
+        });
+        const [contador, setContador] = useState(0)
+        const [main, setMain] = useState("")
+        categorias.forEach(function(Lista, index){
+          if(categorias){
 
-        
-  
+          }
+        });
+
         return ( 
           <View >
             <TouchableOpacity>
-              <Text style={styles.lista}>{nombre}</Text>
+              <Text style={styles.lista}>{}</Text>
             </TouchableOpacity>
           </View>
           
