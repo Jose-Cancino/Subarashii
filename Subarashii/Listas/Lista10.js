@@ -3,71 +3,56 @@ import {
     StyleSheet, 
     Text, 
     View, 
-    TouchableNativeFeedback,
-    TouchableOpacity,
-    ScrollView
+    ScrollView,
+    TouchableOpacity
   } from 'react-native';
 
 
  
 const Lista10 = ({navigation}) => {
-  const [lista10, setLista10] = useState([
-    "12243",
-    "3936",
-    "6448",
-    "1376",
-    "7158"
-  ]);
- 
-
-    const Bloques = lista10.map(lista10 => {
-      const [nombre, setNombre] = useState("")
-      const [Lista, setLista] = useState([])
-      const [categorias, setCategorias] = useState({})
-  
+  const lisTa10 = [
+    "12243", "3936"
+  ];
+  const lista10_listo = []
+  const [resultados, setResultados] = useState ("")
+  const categori = []
+    const Bloques = lisTa10.map(lista10 => {
         fetch(`https://kitsu.io/api/edge/anime/${lista10}/categories`)
         .then((response) => response.json())
         .then((json) => {
-        setLista(json.data)
-          })
-          .catch((error) => {
-            console.error(error);
-          });
+        categori.push(json.data[0].attributes.title);
+        categori.push(json.data[1].attributes.title);
+        categori.push(json.data[2].attributes.title);
+        categori.push(json.data[3].attributes.title); 
+
         
-        Lista.forEach(function(Lista, index){
-          //console.log(`${index} : ${Lista.id}`)
-          if(categorias[Lista.id] === undefined){
-          setCategorias(categorias.push({key:`${Lista.id}`, value: 1}))
-          } else {
-          setCategorias({...categorias , Lista.id : categorias[Lista.id] + 1})
+        lista10_listo.push(lista10);
+        if(lista10_listo.length == lisTa10.length){
+          setResultados(mode(categori))
+          console.log(resultados)
           }
-        });
-        const [contador, setContador] = useState(0)
-        const [main, setMain] = useState("")
-        categorias.forEach(function(Lista, index){
-          if(categorias){
+        })
+          .catch((error) => {
+            console.error(error)
+          })
+      });
 
-          }
-        });
-
-        return ( 
-          <View >
-            <TouchableOpacity>
-              <Text style={styles.lista}>{}</Text>
-            </TouchableOpacity>
-          </View>
-          
-          
-          );
-        });
+    function mode (arr){
+      return arr.sort((a,b) =>
+        arr.filter(v => v===a).length
+        - arr.filter(v => v===b).length
+      ).pop();
+    }
 
     return(
     <ScrollView style ={styles.scrollView}>
-
         <View >
-        {Bloques}
+            <TouchableOpacity  >
+              <Text style={styles.boton}>
+              {resultados}</Text>
+            </TouchableOpacity>
+          
         </View>
-
     </ScrollView>
     );
 }
@@ -85,5 +70,13 @@ const styles = StyleSheet.create({
       backgroundColor: "pink",
       fontSize: 24,
     },
+    boton: {
+      color: 'white',
+      backgroundColor: '#694fad',
+      padding: 3,
+      marginVertical: 10,
+      marginHorizontal: 50,
+      alignItems: 'center',
+    },  
   });
 export default Lista10;
