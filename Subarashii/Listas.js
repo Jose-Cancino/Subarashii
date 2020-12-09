@@ -13,8 +13,10 @@ import Lista8 from "./Listas/Lista8"
 import Lista9 from "./Listas/Lista9"
 import Lista10 from "./Listas/Lista10"
 import pagAnime from "./pagAnime"
+import { ListItem } from "react-native-elements"
 
-const Lista = ({route, navigation}) => {
+const Listas = ({route, navigation}) => {
+    const { id } = route.params;
     const [listado, setListado] = useState([
         {name: "Lista 1", key: "1",},
         {name: "Lista 2", key: "2",},
@@ -27,17 +29,20 @@ const Lista = ({route, navigation}) => {
         {name: "Lista 9", key: "9",},
         {name: "Lista 10", key: "10",}
     ])
-    
     return (
-        <SafeAreaView style={styles.container}>
-            <FlatList
-                data = {listado}
-                renderItem = {({ item }) => (
-            <TouchableOpacity onPress={() => navigation.navigate(item.name)}>
-                <Text style={styles.listas}> {item.name} </Text>
-            </TouchableOpacity>
-                )}
-            />
+        <SafeAreaView>
+            { 
+                listado.map((l, i) => (
+                <TouchableOpacity onPress = {() => navigation.navigate(l.name, {id: id})}>
+                    <ListItem key = {i} bottomDivider>
+                        <ListItem.Content>
+                            <ListItem.Title>{l.name}</ListItem.Title>
+                            <ListItem.Subtitle>{l.subtitle}</ListItem.Subtitle>
+                        </ListItem.Content>
+                  </ListItem> 
+                </TouchableOpacity>     
+                ))
+            }
         </SafeAreaView>
     )
 }
@@ -46,7 +51,7 @@ const Stack = createStackNavigator();
 function NListas() {
     return (
         <Stack.Navigator initialRouteName = "Listas">
-            <Stack.Screen name = "Listas" component = {Lista} />
+            <Stack.Screen name = "Listas" component = {Listas} />
             <Stack.Screen name = "Lista 1" component = {Lista1} />
             <Stack.Screen name = "Lista 2" component = {Lista2} />
             <Stack.Screen name = "Lista 3" component = {Lista3} />
