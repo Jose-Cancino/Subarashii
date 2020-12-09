@@ -47,3 +47,17 @@
 # Avisos | (21-11-2020) 
 # Se sube la planificación.
 # ~ Fin de los avisos ~
+#
+# Avisos: 'Informe de situación' | (09-12-2020)
+# Logramos avanzar en la app y sus funcionalidades a pesar de las dificultades que hemos tenido con React Native 
+# Utilización de la API 
+# Creación de barra de navegación, listas, buscador 
+# Se logra extraer en base a una lista de ID la categoría que más se repite 
+# Desde la pagina de busqueda de anime se logra agregar botón añadir
+# Botón añadir se conecta con la ventana de listas mediante el ID 
+# Trabajamos con React Native Elements 
+# Trabajando en solucionar lo lento que carga la API de manera elegante, quizás con un activity indicator 
+# En sección recomendados, creación de una lista por parte de creadores
+# Se ha logrado la página personalizada para cada anime 
+# se adjunta link de avance: https://www.youtube.com/watch?v=IXULlyv_iz8 
+# ~ Fin de los avisos ~
