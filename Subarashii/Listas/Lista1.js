@@ -2,7 +2,8 @@ import React, {useState, Component, useEffect} from 'react';
 import { StyleSheet, Text, View, TextInput, Button, Alert, TouchableOpacity, SafeAreaView, ScrollView } from 'react-native';
 import AsyncStorage from "@react-native-community/async-storage";
 
-export default function Lista1(){
+export default function Lista1({navigation, route}){
+    const {id} = route.params
     const [ListaN1, setListaN1] = useState("Lista 1");
 
     const save = async() => {
@@ -13,7 +14,7 @@ export default function Lista1(){
         }
     };
 
-    const load = async () =>{
+    const load = async () => {
         try{
             let ListaN1 = await AsyncStorage.getItem("Lista 1");
             if (ListaN1 !== null) {
@@ -37,15 +38,21 @@ export default function Lista1(){
         setListaN1("");
     };
     };
+    
 
     return(
     <SafeAreaView style={styles.container}>
     <Text style = {styles.titulo}> {ListaN1} </Text>
+    <Text style = {styles.titulo}> {id} </Text>
     <TextInput 
         style={styles.input}
         placeholder = "Inserte Nombre Lista"
         onChangeText = {(text) => setListaN1(text)}>
     </TextInput>
+    <TouchableOpacity style={styles.listas}>
+        <Text onPress={() => añadir()}>
+        Añadir </Text>
+    </TouchableOpacity>
     <TouchableOpacity style={styles.listas}>
         <Text onPress={() => save()}>
         Guardar Nombre </Text>
