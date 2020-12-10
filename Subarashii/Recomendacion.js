@@ -9,24 +9,42 @@ import pagAnime from "./pagAnime"
 import Lista from "./Listas"
 import Busqueda from "./Busqueda"
 
-import ListaRec1 from "./ListasRec/ListasRec1"
+import generarVistos from "./generarVistos"
 import express from "./express"
-import AnimeUff from './AnimesUff';
+import Vistos from "./Vistos"
+
+
+import categorias from "./categorias"
+
+import Contenido from "./TodasCategorias/Contenido"
+import Dinamica from "./TodasCategorias/Dinamica"
+import Elementos from "./TodasCategorias/Elementos"
+import Escenario from "./TodasCategorias/Escenario"
+import Publico from "./TodasCategorias/Publico"
+import Tematica from "./TodasCategorias/Tematica"
+
 
 const RecomendacionTab = ({navigation}) => {
   return(
     <ScrollView style ={styles.scrollView}>
-    <TouchableOpacity style={styles.listas}>
-        <Text onPress={() => navigation.navigate("Lista Recomendada")}>
-        Lista Recomendada Programadores</Text>
-            </TouchableOpacity>
-            <TouchableOpacity style={styles.listas}>
-                <Text onPress={() => navigation.navigate("Lista Recomendada 1")}>
-                    Lista Recomendada 1</Text>
-            </TouchableOpacity>
+            <Button style={styles.listas}
+                onPress={() => navigation.navigate("Lista Recomendada")}
+                title = "Lista Recomendada Programadores"
+            ></Button>
+            <Text>Danos tres animes y te daremos lo que buscas</Text>
             <Button style={styles.listas}
                 onPress={() => navigation.navigate("express")}
                 title = "Recomendadacion express"
+                >
+            </Button>
+            <Button style={styles.listas}
+                onPress={() => navigation.navigate("Vistos")}
+                title = "Vistos"
+                >
+            </Button>
+            <Button style={styles.listas}
+                onPress={() => navigation.navigate("Categorias")}
+                title = "Categorias"
                 >
             </Button>
       </ScrollView>
@@ -36,14 +54,27 @@ const RecomendacionTab = ({navigation}) => {
   function Recomendacion (){
   return (
     <Stack.Navigator initialRouteName = "Listas">
-        <Stack.Screen name = "Recomendaciones" component = {RecomendacionTab} />
-        <Stack.Screen name = "Lista Recomendada 1" component = {ListaRec1} />
+        <Stack.Screen name = "Home" component = {RecomendacionTab} />
         <Stack.Screen name = "Lista Recomendada" component = {ListaRec} />
         <Stack.Screen name = "express" component = {express} />
+        <Stack.Screen name = "Vistos" component = {Vistos} />
 
-
-        <Stack.Screen name = "Animes ufff" component = {AnimeUff} />
+        <Stack.Screen name = "generarVistos" component = {generarVistos} />        
+        
         <Stack.Screen name= "Anime" component = {pagAnime} />
+
+
+
+        <Stack.Screen name= "Categorias" component = {categorias} />
+
+        <Stack.Screen name= "Contenido" component = {Contenido} />
+        <Stack.Screen name= "Dinamica" component = {Dinamica} />
+        <Stack.Screen name= "Elementos" component = {Elementos} />
+        <Stack.Screen name= "Escenario" component = {Escenario} />
+        <Stack.Screen name= "Publico" component = {Publico} />
+        <Stack.Screen name= "Tematica" component = {Tematica} />
+
+
       </Stack.Navigator>
     )
   }
