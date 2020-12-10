@@ -51,7 +51,7 @@ const express = ({navigation}) => {
 
     const Buscar = (pop) => {
         
-        fetch(`https://kitsu.io/api/edge/anime?filter[categories]=${pop}&sort=-averageRating`)
+        fetch(`https://kitsu.io/api/edge/anime?page[limit]=20&page[offset]=0&filter[categories]=${pop}&sort=-averageRating`)
           .then((response) => response.json())
           .then((json) => {
             setLista(json.data);
