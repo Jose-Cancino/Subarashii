@@ -36,7 +36,9 @@ var titulo = "hola"
 const Item = ({ id, title, imagen, desc, canonico}) => (
   
   <View style={styles.item}>
-    <Text style={styles.title}>{title}    #{id}</Text>
+    <Text style={styles.title}>
+      {title} 
+      </Text>
     <TouchableOpacity   onPress={() => navigation.navigate("Anime", {
     id: `${id}`
     })}>
@@ -46,10 +48,11 @@ const Item = ({ id, title, imagen, desc, canonico}) => (
       style={{
         width:210,
         height:300,
-        borderWidth:2,
-        borderColor:'#d35647',
+        borderWidth:4,
+        borderColor:'#694fad',
         resizeMode:'contain',
-        margin:8
+        margin:6,
+        marginHorizontal: 60,
       }}
       />
     </TouchableOpacity>
@@ -106,8 +109,8 @@ const styles = StyleSheet.create({
   },
   item: {
     backgroundColor: '#cbc2ff',
-    padding: 20,
-    marginVertical: 8,
+    padding: 15,
+    marginVertical: 10,
     marginHorizontal: 16,
   },  
   boton: {
@@ -117,6 +120,13 @@ const styles = StyleSheet.create({
     marginVertical: 10,
     marginHorizontal: 50,
     alignItems: 'center',
+  },  
+  title: {
+    marginVertical: 5,
+    alignItems: 'center',
+    textAlign: 'center',
+    fontSize:13,
+    fontWeight: 'bold',
   },  
 });
 export default Busqueda;

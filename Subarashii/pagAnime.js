@@ -23,6 +23,7 @@ const pagAnime = ({navigation, route}) => {
   const [rating, setRating] = useState("")
   const [lista, setLista] = useState([])
   const [video, setVideo] = useState('')
+  const [id, setId] = useState("")
 
   
   useEffect (() => {
@@ -34,6 +35,7 @@ const pagAnime = ({navigation, route}) => {
       setSynopsis(json.data.attributes.synopsis);
       setRating(json.data.attributes.averageRating);
       setVideo(json.data.attributes.youtubeVideoId);
+      setId(json.data.id)
     })
     fetch(categoriaUrl)
     .then((response) => response.json())
@@ -91,7 +93,7 @@ const pagAnime = ({navigation, route}) => {
           Ver Trailer
         </Text>
     </TouchableOpacity>
-    <TouchableOpacity onPress={() => navigation.navigate("Listas")}>
+    <TouchableOpacity onPress={() => navigation.navigate("Listas", {screen: "Listas", params: {id}})}>
       <Text style = {styles.añadir}>
         Añadir
       </Text>
