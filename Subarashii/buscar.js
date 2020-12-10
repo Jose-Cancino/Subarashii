@@ -37,7 +37,7 @@ const Item = ({ id, title, imagen, desc, canonico}) => (
   
   <View style={styles.item}>
     <Text style={styles.title}>
-      {title} 
+      {title}       #{id}
       </Text>
     <TouchableOpacity   onPress={() => navigation.navigate("Anime", {
     id: `${id}`
