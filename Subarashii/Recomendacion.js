@@ -25,8 +25,8 @@ const RecomendacionTab = ({navigation}) => {
                     Lista Recomendada 1</Text>
             </TouchableOpacity>
             <TouchableOpacity style={styles.listas}>
-                <Text onPress={() => navigation.navigate("Lista Recomendada 1")}>
-                    Lista Recomendada 1</Text>
+                <Text onPress={() => navigation.navigate("express")}>
+                    Recomendadacion express</Text>
             </TouchableOpacity>
       </ScrollView>
     );
@@ -41,9 +41,9 @@ const RecomendacionTab = ({navigation}) => {
         <Stack.Screen name = "express" component = {express} />
 
 
-            <Stack.Screen name = "Animes ufff" component = {AnimeUff} />
-            <Stack.Screen name= "Anime" component = {pagAnime} />
-            </Stack.Navigator>
+        <Stack.Screen name = "Animes ufff" component = {AnimeUff} />
+        <Stack.Screen name= "Anime" component = {pagAnime} />
+      </Stack.Navigator>
     )
   }
   const styles = StyleSheet.create({
