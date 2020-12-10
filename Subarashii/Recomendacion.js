@@ -1,6 +1,6 @@
 import { StatusBar } from 'expo-status-bar';
 import React from 'react';
-import { StyleSheet, Text, View, TouchableOpacity, ScrollView } from 'react-native';
+import { StyleSheet, Text, View, TouchableOpacity, ScrollView, Button } from 'react-native';
 
 import { createStackNavigator } from "@react-navigation/stack";
 
@@ -24,10 +24,11 @@ const RecomendacionTab = ({navigation}) => {
                 <Text onPress={() => navigation.navigate("Lista Recomendada 1")}>
                     Lista Recomendada 1</Text>
             </TouchableOpacity>
-            <TouchableOpacity style={styles.listas}>
-                <Text onPress={() => navigation.navigate("express")}>
-                    Recomendadacion express</Text>
-            </TouchableOpacity>
+            <Button style={styles.listas}
+                onPress={() => navigation.navigate("express")}
+                title = "Recomendadacion express"
+                >
+            </Button>
       </ScrollView>
     );
   }
