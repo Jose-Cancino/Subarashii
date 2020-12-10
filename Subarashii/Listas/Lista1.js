@@ -4,7 +4,12 @@ import AsyncStorage from "@react-native-community/async-storage";
 
 export default function Lista1({navigation, route}){
     const {id} = route.params
+    const [lista, setLista] = useState([])
     const [ListaN1, setListaN1] = useState("Lista 1");
+
+    function añadir () {
+        setLista([ ... lista, {id} ])
+    }
 
     const save = async() => {
         try {
@@ -39,7 +44,7 @@ export default function Lista1({navigation, route}){
     };
     };
     
-
+console.log(lista)
     return(
     <SafeAreaView style={styles.container}>
     <Text style = {styles.titulo}> {ListaN1} </Text>
