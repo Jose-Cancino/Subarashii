@@ -13,7 +13,7 @@ import { StyleSheet,
     StatusBar 
  } from 'react-native';
 
-const express = ({navigates}) => {
+const express = ({navigation}) => {
     const [isLoading, setLoading] = useState(true)
     const [anime1, setAnime1] = useState("")
     const [anime2, setAnime2] = useState("")
