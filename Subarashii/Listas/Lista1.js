@@ -1,15 +1,41 @@
 import React, {useState, Component, useEffect} from 'react';
-import { StyleSheet, Text, View, TextInput, Button, Alert, TouchableOpacity, SafeAreaView, ScrollView } from 'react-native';
+import { StyleSheet, Text, View, TextInput, Button, Alert, TouchableOpacity, SafeAreaView, ScrollView, TextPropTypes } from 'react-native';
 import AsyncStorage from "@react-native-community/async-storage";
 
 export default function Lista1({navigation, route}){
     const {id} = route.params
-    const [lista, setLista] = useState([])
+    const lista = []
     const [ListaN1, setListaN1] = useState("Lista 1");
+    let flag = true
 
-    function añadir () {
-        setLista([ ... lista, {id} ])
+    const añadir = () => {
+        if (lista.includes(id) === flag){
+        } else {
+            lista.push(id)
+            console.log(lista)
+        }
     }
+
+    const storeData = async (lista) => {
+        console.log("Guardando")
+        try {
+        const jsonLista = JSON.stringify(lista)
+        await AsyncStorage.setItem('@lista', jsonLista)
+        } catch (e) {
+            console.log("Error G")
+        }
+    }
+
+    const getData = async () => {
+        console.log("Cargando")
+        try {
+        const jsonLista = await AsyncStorage.getItem('@lista')
+        return jsonLista != null ? JSON.parse(jsonLista) : null;
+        } catch(e) {
+        console.log("Error C")
+        }
+    }
+  
 
     const save = async() => {
         try {
@@ -32,6 +58,7 @@ export default function Lista1({navigation, route}){
 
     useEffect(() => {
         load();
+        getData(lista);
     },[]);
 
     const remove = async () => {
@@ -44,7 +71,6 @@ export default function Lista1({navigation, route}){
     };
     };
     
-console.log(lista)
     return(
     <SafeAreaView style={styles.container}>
     <Text style = {styles.titulo}> {ListaN1} </Text>
@@ -59,8 +85,8 @@ console.log(lista)
         Añadir </Text>
     </TouchableOpacity>
     <TouchableOpacity style={styles.listas}>
-        <Text onPress={() => save()}>
-        Guardar Nombre </Text>
+        <Text onPress={() => storeData()}>
+        Guardar ID </Text>
     </TouchableOpacity>
     <TouchableOpacity style={styles.listas}>
         <Text onPress={() => remove()}>
