@@ -17,10 +17,8 @@ import { StyleSheet,
     return(
         <View>
             <Button style={styles.listas}
-                onPress={() => navigation.navigate("Contenido",{
-                    categoria: violence
-                    })}
-                title = "Contenido"
+                onPress={() => navigation.navigate("listaCategoria", {categoria: "violence"} )}
+                title = "Violencia"
             ></Button>
         </View>
     )
