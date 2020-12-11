@@ -9,7 +9,7 @@ import { StyleSheet,
     return(
         <View>
             <Button style={styles.listas}
-                onPress={() => navigation.navigate("Violence")}
+                onPress={() => navigation.navigate("listaCategoria", {categoria: "violence"} )}
                 title = "Violence"
             ></Button>
         </View>
