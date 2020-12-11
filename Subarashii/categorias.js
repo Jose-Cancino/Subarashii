@@ -21,10 +21,6 @@ const categorias = ({navigation}) => {
                 title = "Contenido"
             ></Button>
             <Button style={styles.listas}
-                onPress={() => navigation.navigate("Dinamica")}
-                title = "Dinamica"
-            ></Button>
-            <Button style={styles.listas}
                 onPress={() => navigation.navigate("Elementos")}
                 title = "Elementos"
             ></Button>
