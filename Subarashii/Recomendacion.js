@@ -17,8 +17,14 @@ import listaCategoria from "./listaCategoria"
 
 import categorias from "./categorias"
 
+
+
 import Contenido from "./TodasCategorias/Contenido"
-import Dinamica from "./TodasCategorias/Dinamica"
+
+
+
+
+
 import Elementos from "./TodasCategorias/Elementos"
 import Escenario from "./TodasCategorias/Escenario"
 import Publico from "./TodasCategorias/Publico"
@@ -57,7 +63,7 @@ const RecomendacionTab = ({navigation}) => {
   const Stack = createStackNavigator();
   function Recomendacion (){
   return (
-    <Stack.Navigator initialRouteName = "Listas">
+    <Stack.Navigator >
         <Stack.Screen name = "Home" component = {RecomendacionTab} />
         <Stack.Screen name = "Lista Recomendada" component = {ListaRec} />
         <Stack.Screen name = "express" component = {express} />
@@ -71,14 +77,19 @@ const RecomendacionTab = ({navigation}) => {
         <Stack.Screen name= "listaCategoria" component = {listaCategoria} />
         <Stack.Screen name= "Categorias" component = {categorias} />
 
+
+
         <Stack.Screen name= "Contenido" component = {Contenido} />
-        <Stack.Screen name= "Dinamica" component = {Dinamica} />
+   
+
+
+
         <Stack.Screen name= "Elementos" component = {Elementos} />
         <Stack.Screen name= "Escenario" component = {Escenario} />
         <Stack.Screen name= "Publico" component = {Publico} />
         <Stack.Screen name= "Tematica" component = {Tematica} />
 
-        <Stack.Screen name= "Violence" component = {Violence} />
+
 
 
 
