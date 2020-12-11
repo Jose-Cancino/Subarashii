@@ -10,7 +10,7 @@ import { StyleSheet,
         <View>
             <Button style={styles.listas}
                 onPress={() => navigation.navigate("Violence")}
-                title = "Contenido"
+                title = "Violence"
             ></Button>
         </View>
     )
