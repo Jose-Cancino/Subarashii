@@ -13,21 +13,19 @@ import { StyleSheet,
 } from 'react-native';
 
 const listaCategoria = ({navigation, route}) => {
-  
 
-    const animeAPI = `https://kitsu.io/api/edge/anime?filter[text]=${route.params.categoria}`;
-  
     const [isLoading, setLoading] = useState(true)
     const [lista, setLista] = useState([])
   
-
-        fetch(animeAPI)
+    buscar = () => {
+        fetch(`https://kitsu.io/api/edge/anime?page[limit]=20&page[offset]=0&filter[categories]=${route.params.categoria}&sort=-averageRating`)
           .then((response) => response.json())
           .then((json) => {
             setLista(json.data);
           })
           .catch((error) => alert(error))
           .finally(() => setLoading(false));
+        };
   
 
   
@@ -68,7 +66,11 @@ const listaCategoria = ({navigation, route}) => {
     );
   
     return (
-      <SafeAreaView>     
+      <SafeAreaView>
+            <Button style={styles.listas}
+                onPress={() => buscar()}
+                title = {route.params.categoria}
+            ></Button>     
         {isLoading ? ( 
           <ActivityIndicator/> 
         ) : ( 
@@ -115,6 +117,12 @@ const listaCategoria = ({navigation, route}) => {
       fontSize:13,
       fontWeight: 'bold',
     },  
+    listas: {
+      alignItems: "center",
+      backgroundColor: "#DDDDDD",
+      padding: 10,
+      marginBottom: 15,
+    },
   });
 
   export default listaCategoria;
