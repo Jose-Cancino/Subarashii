@@ -13,6 +13,7 @@ import generarVistos from "./generarVistos"
 import express from "./express"
 import Vistos from "./Vistos"
 
+import listaCategoria from "./listaCategoria"
 
 import categorias from "./categorias"
 
@@ -22,6 +23,9 @@ import Elementos from "./TodasCategorias/Elementos"
 import Escenario from "./TodasCategorias/Escenario"
 import Publico from "./TodasCategorias/Publico"
 import Tematica from "./TodasCategorias/Tematica"
+
+
+import Violence from "./contenido/violence"
 
 
 const RecomendacionTab = ({navigation}) => {
@@ -64,7 +68,7 @@ const RecomendacionTab = ({navigation}) => {
         <Stack.Screen name= "Anime" component = {pagAnime} />
 
 
-
+        <Stack.Screen name= "listaCategoria" component = {listaCategoria} />
         <Stack.Screen name= "Categorias" component = {categorias} />
 
         <Stack.Screen name= "Contenido" component = {Contenido} />
@@ -73,6 +77,9 @@ const RecomendacionTab = ({navigation}) => {
         <Stack.Screen name= "Escenario" component = {Escenario} />
         <Stack.Screen name= "Publico" component = {Publico} />
         <Stack.Screen name= "Tematica" component = {Tematica} />
+
+        <Stack.Screen name= "Violence" component = {Violence} />
+
 
 
       </Stack.Navigator>
