@@ -13,6 +13,7 @@ import Lista8 from "./Listas/Lista8"
 import Lista9 from "./Listas/Lista9"
 import Lista10 from "./Listas/Lista10"
 import pagAnime from "./pagAnime"
+import RecPerso from "./ListasRec/RecPerso"
 import { ListItem } from "react-native-elements"
 
 const Listas = ({route, navigation}) => {
@@ -63,6 +64,7 @@ function NListas() {
             <Stack.Screen name = "Lista 9" component = {Lista9} />
             <Stack.Screen name = "Lista 10" component = {Lista10} />
             <Stack.Screen name= "Anime" component = {pagAnime} />
+            <Stack.Screen name= "RecPerso" component = {RecPerso} options = {{title: "Recomendación Personalizada"}}/>
         </Stack.Navigator>
     )
 }
