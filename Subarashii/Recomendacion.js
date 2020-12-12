@@ -6,12 +6,10 @@ import { createStackNavigator } from "@react-navigation/stack";
 
 import ListaRec from './Listas/ListaRec';
 import pagAnime from "./pagAnime"
-import Lista from "./Listas"
-import Busqueda from "./Busqueda"
+
 
 import generarVistos from "./generarVistos"
 import express from "./express"
-import Vistos from "./Vistos"
 
 import listaCategoria from "./listaCategoria"
 
@@ -22,16 +20,12 @@ import categorias from "./categorias"
 import Contenido from "./TodasCategorias/Contenido"
 
 
-
-
-
 import Elementos from "./TodasCategorias/Elementos"
 import Escenario from "./TodasCategorias/Escenario"
 import Publico from "./TodasCategorias/Publico"
 import Tematica from "./TodasCategorias/Tematica"
 
 
-import Violence from "./contenido/violence"
 
 
 const RecomendacionTab = ({navigation}) => {
@@ -45,11 +39,6 @@ const RecomendacionTab = ({navigation}) => {
             <Button style={styles.listas}
                 onPress={() => navigation.navigate("express")}
                 title = "Recomendadacion express"
-                >
-            </Button>
-            <Button style={styles.listas}
-                onPress={() => navigation.navigate("Vistos")}
-                title = "Vistos"
                 >
             </Button>
             <Button style={styles.listas}
@@ -67,7 +56,7 @@ const RecomendacionTab = ({navigation}) => {
         <Stack.Screen name = "Home" component = {RecomendacionTab} />
         <Stack.Screen name = "Lista Recomendada" component = {ListaRec} />
         <Stack.Screen name = "express" component = {express} />
-        <Stack.Screen name = "Vistos" component = {Vistos} />
+
 
         <Stack.Screen name = "generarVistos" component = {generarVistos} />        
         
