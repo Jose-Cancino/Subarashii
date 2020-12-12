@@ -94,11 +94,33 @@ import { StyleSheet,
                 title = "Romance"
             ></Button>  
             <Button style={styles.listas}
-                onPress={() => navigation.navigate("listaCategoria", {categoria: "Romance"})}
-                title = "Romance"
+                onPress={() => navigation.navigate("listaCategoria", {categoria: "Science fiction"})}
+                title = "Science fiction"
             ></Button>  
-
-
+            <Button style={styles.listas}
+                onPress={() => navigation.navigate("listaCategoria", {categoria: "Super power"})}
+                title = "Super Poderes"
+            ></Button> 
+            <Button style={styles.listas}
+                onPress={() => navigation.navigate("listaCategoria", {categoria: "Supernatural"})}
+                title = "Supernatural"
+            ></Button> 
+            <Button style={styles.listas}
+                onPress={() => navigation.navigate("listaCategoria", {categoria: "Thriller"})}
+                title = "Suspenso"
+            ></Button> 
+            <Button style={styles.listas}
+                onPress={() => navigation.navigate("listaCategoria", {categoria: "Vampire"})}
+                title = "Vampiros"
+            ></Button> 
+            <Button style={styles.listas}
+                onPress={() => navigation.navigate("listaCategoria", {categoria: "Virtual Reality"})}
+                title = "Virtual Reality"
+            ></Button>
+            <Button style={styles.listas}
+                onPress={() => navigation.navigate("listaCategoria", {categoria: "Zombie"})}
+                title = "Zombies"
+            ></Button>
         </View>
         </ScrollView>
     )
