@@ -16,10 +16,47 @@ import { StyleSheet,
  const Publico = ({navigation}) => {
     return(
 
-        <Text>hola</Text>
-
+        <ScrollView style ={styles.scrollView}>
+        <View>
+            <Button style={styles.listas}
+                onPress={() => navigation.navigate("listaCategoria", {categoria: "Josei"})}
+                title = "Josei"
+            ></Button>
+            <Button style={styles.listas}
+                onPress={() => navigation.navigate("listaCategoria", {categoria: "Kids"})}
+                title = "Children"
+            ></Button>
+            <Button style={styles.listas}
+                onPress={() => navigation.navigate("listaCategoria", {categoria: "Seinen"})}
+                title = "Seinen"
+            ></Button>
+            <Button style={styles.listas}
+                onPress={() => navigation.navigate("listaCategoria", {categoria: "Shoujo"})}
+                title = "Shoujo"
+            ></Button>
+            <Button style={styles.listas}
+                onPress={() => navigation.navigate("listaCategoria", {categoria: "Shounen"})}
+                title = "Shounen"
+            ></Button>
+        </View>
+        </ScrollView>
     )
 
 
  }
+ const styles = StyleSheet.create({
+    container: {
+      flex: 1,
+      backgroundColor: '#fff',
+      alignItems: 'center',
+      justifyContent: 'center',
+    },
+    listas: {
+      alignItems: "center",
+      backgroundColor: "#DDDDDD",
+      padding: 10,
+      marginBottom: 15,
+    }
+  
+  });
  export default Publico;
