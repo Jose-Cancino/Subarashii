@@ -26,7 +26,7 @@ const express = ({navigation}) => {
 
     const tridente = [anime1, anime2, anime3]
 
-
+    
     function generar (){
         tridente.map(lista10 => {
         fetch(`https://kitsu.io/api/edge/anime/${lista10}/categories`)
