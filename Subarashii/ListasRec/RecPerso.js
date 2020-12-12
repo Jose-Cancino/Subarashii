@@ -1,6 +1,6 @@
 import React, { useState } from "react";
 import { StyleSheet, Text, View, ScrollView, TouchableOpacity, ActivityIndicator, FlatList, Image,} from 'react-native';
-import {lista2} from "../Listas/Lista2.js"
+
 
 const RecPerso = ({navigation, route}) => {
 const listaxd = route.params
