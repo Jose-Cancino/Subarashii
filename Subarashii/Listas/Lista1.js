@@ -4,38 +4,50 @@ import AsyncStorage from "@react-native-community/async-storage";
 
 export default function Lista1({navigation, route}){
     const {id} = route.params
-    const listaP1 = []
+    const [listaP1, setListaP1] = useState() 
     const [ListaN1, setListaN1] = useState("Lista 1");
     let flag = true
-
+    
     const añadir = () => {
-        if (listaP1.includes(id) === flag){
-        } else {
-            listaP1.push(id)
-            console.log(listaP1)
-        }
+        if (typeof listaP1 !== "undefined"){
+        var nueva = listaP1.concat(id +",")
+        setListaP1(nueva)
+    } else {
+        setListaP1(id +",")
     }
+}
 
-    const storeData = async (listaP1) => {
+    const storeData = async () => {
         try {
             console.log("Guardando")
-        const jsonListaP1 = JSON.stringify(listaP1)
-        await AsyncStorage.setItem('@listaP1', jsonListaP1)
-        } catch (e) {
-            console.log("Error G")
-        }
+            await AsyncStorage.setItem("@Lista1", listaP1);
+        } catch (err) {
+            alert(err);
+        } 
     }
 
     const getData = async () => {
-        try {
+        try{
             console.log("Cargando")
-        const jsonListaP1 = await AsyncStorage.getItem('@listaP1')
-        return jsonListaP1 != null ? JSON.parse(jsonListaP1) : null;
-        } catch(e) {
-            console.log("Error C")
+            let listaP1 = await AsyncStorage.getItem("@Lista1");
+            if (listaP1 !== null) {
+                setListaP1(listaP1);
+            }
+        } catch (err) {
+            alert(err)
         }
     }
-  
+    
+    const removeData = async () => {
+        try {
+            console.log("Purgado")
+            await AsyncStorage.removeItem("@Lista1")
+    } catch (err) {
+        alert(err)
+    } finally {
+        setListaP1("");
+    };
+    };
 
     const save = async() => {
         try {
@@ -56,11 +68,6 @@ export default function Lista1({navigation, route}){
         }
     };
 
-    useEffect(() => {
-        load();
-        getData(listaP1);
-    },[]);
-
     const remove = async () => {
         try {
             await AsyncStorage.removeItem("Lista 1")
@@ -71,10 +78,15 @@ export default function Lista1({navigation, route}){
     };
     };
     
+    useEffect(() => {
+        load();
+        getData();
+    },[]);
+
     return(
     <SafeAreaView style={styles.container}>
     <Text style = {styles.titulo}> {ListaN1} </Text>
-    <Text style = {styles.titulo}> {id} </Text>
+    <Text style = {styles.titulo}> {listaP1} </Text>
     <TextInput 
         style={styles.input}
         placeholder = "Inserte Nombre Lista"
@@ -86,11 +98,15 @@ export default function Lista1({navigation, route}){
     </TouchableOpacity>
     <TouchableOpacity style={styles.listas}>
         <Text onPress={() => storeData()}>
-        Guardar ID </Text>
+        Guardar Anime </Text>
     </TouchableOpacity>
     <TouchableOpacity style={styles.listas}>
-        <Text onPress={() => remove()}>
-        Eliminar Nombre </Text>
+        <Text onPress={() => removeData()}>
+        Purgar Lista </Text>
+    </TouchableOpacity>
+    <TouchableOpacity style={styles.listas}>
+        <Text onPress={() => navigation.navigate("Ver Lista", {lista: listaP1})}>
+        Ver Lista </Text>
     </TouchableOpacity>
     </SafeAreaView>
     )}
