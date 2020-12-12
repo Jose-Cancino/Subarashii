@@ -4,35 +4,35 @@ import AsyncStorage from "@react-native-community/async-storage";
 
 export default function Lista1({navigation, route}){
     const {id} = route.params
-    const lista = []
+    const listaP1 = []
     const [ListaN1, setListaN1] = useState("Lista 1");
     let flag = true
 
     const añadir = () => {
-        if (lista.includes(id) === flag){
+        if (listaP1.includes(id) === flag){
         } else {
-            lista.push(id)
-            console.log(lista)
+            listaP1.push(id)
+            console.log(listaP1)
         }
     }
 
-    const storeData = async (lista) => {
-        console.log("Guardando")
+    const storeData = async (listaP1) => {
         try {
-        const jsonLista = JSON.stringify(lista)
-        await AsyncStorage.setItem('@lista', jsonLista)
+            console.log("Guardando")
+        const jsonListaP1 = JSON.stringify(listaP1)
+        await AsyncStorage.setItem('@listaP1', jsonListaP1)
         } catch (e) {
             console.log("Error G")
         }
     }
 
     const getData = async () => {
-        console.log("Cargando")
         try {
-        const jsonLista = await AsyncStorage.getItem('@lista')
-        return jsonLista != null ? JSON.parse(jsonLista) : null;
+            console.log("Cargando")
+        const jsonListaP1 = await AsyncStorage.getItem('@listaP1')
+        return jsonListaP1 != null ? JSON.parse(jsonListaP1) : null;
         } catch(e) {
-        console.log("Error C")
+            console.log("Error C")
         }
     }
   
@@ -58,7 +58,7 @@ export default function Lista1({navigation, route}){
 
     useEffect(() => {
         load();
-        getData(lista);
+        getData(listaP1);
     },[]);
 
     const remove = async () => {
