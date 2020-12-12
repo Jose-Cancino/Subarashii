@@ -24,6 +24,7 @@ import Elementos from "./TodasCategorias/Elementos"
 import Escenario from "./TodasCategorias/Escenario"
 import Publico from "./TodasCategorias/Publico"
 import Tematica from "./TodasCategorias/Tematica"
+import AnimeRelacionado from "./AnimeRelacionado"
 
 
 
@@ -46,6 +47,11 @@ const RecomendacionTab = ({navigation}) => {
                 title = "Categorias"
                 >
             </Button>
+            <Button style={styles.listas}
+                onPress={() => navigation.navigate("AnimeRelacionado")}
+                title = "Recomendacion por Anime"
+                >
+            </Button>
       </ScrollView>
     );
   }
@@ -65,7 +71,7 @@ const RecomendacionTab = ({navigation}) => {
 
         <Stack.Screen name= "listaCategoria" component = {listaCategoria} />
         <Stack.Screen name= "Categorias" component = {categorias} />
-
+        <Stack.Screen name= "AnimeRelacionado" component = {AnimeRelacionado} />
 
 
         <Stack.Screen name= "Contenido" component = {Contenido} />
