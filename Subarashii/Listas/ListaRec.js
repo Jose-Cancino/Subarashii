@@ -62,7 +62,8 @@ const styles = StyleSheet.create({
     marginHorizontal: 20,
     marginTop: 24,
     padding: 30,
-    backgroundColor: "pink",
+    borderRadius: 10,
+    backgroundColor: "white",
     fontSize: 24,
   },
 });
