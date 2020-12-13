@@ -1,6 +1,7 @@
 import React, {useState, Component, useEffect} from 'react';
-import { StyleSheet, Text, View, TextInput, Button, Alert, TouchableOpacity, SafeAreaView, ScrollView, TextPropTypes } from 'react-native';
+import { StyleSheet, Text, View, TextInput, Alert, TouchableOpacity, SafeAreaView, ScrollView, TextPropTypes } from 'react-native';
 import AsyncStorage from "@react-native-community/async-storage";
+import { Button } from "react-native-elements"
 
 const ListaPerso = ({navigation, route}) => {
     const lista = route.params
@@ -32,7 +33,16 @@ const ListaPerso = ({navigation, route}) => {
     
       return (
         <ScrollView style ={styles.scrollView}>
-            <Button onPress={() => navigation.navigate("RecPerso", {listarec})} title = "Recomendacion">
+            <Button onPress={() => navigation.navigate("RecPerso", {listarec})} 
+            title = "Recomendacion"
+            type = "outline"
+              buttonStyle = {{
+              backgroundColor:"white",
+              marginHorizontal: 20,
+              borderColor: "white",
+              borderRadius: 10,
+              marginTop: 10,
+              }}>
             </Button>
             <View >
             {Bloques}
@@ -53,8 +63,9 @@ const ListaPerso = ({navigation, route}) => {
         marginHorizontal: 20,
         marginTop: 24,
         padding: 30,
-        backgroundColor: "pink",
+        backgroundColor: "white",
         fontSize: 24,
+        borderRadius:10,
       },
     });
     export default ListaPerso;
