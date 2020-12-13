@@ -1,16 +1,23 @@
 import React, { useState } from 'react';
 import { StyleSheet,
-    Button,
     View,
 
  } from 'react-native';
-
+ import { Button } from "react-native-elements"
  const Contenido = ({navigation}) => {
     return(
         <View>
-            <Button style={styles.listas}
+            <Button 
                 onPress={() => navigation.navigate("listaCategoria", {categoria: "violence"} )}
                 title = "Violence"
+                type = "outline"
+                buttonStyle = {{
+                    backgroundColor:"white",
+                    marginHorizontal: 20,
+                    borderColor: "white",
+                    borderRadius: 10,
+                    marginVertical: 15,
+                  }}
             ></Button>
         </View>
     )
