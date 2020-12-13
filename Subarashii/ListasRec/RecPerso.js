@@ -5,6 +5,7 @@ import { StyleSheet, Text, View, ScrollView, TouchableOpacity, ActivityIndicator
 const RecPerso = ({navigation, route}) => {
 const listaxd = route.params
 const lista2 = Object.values(listaxd)[0]
+console.log(lista2)
 const [isLoading, setLoading] = useState(true)
 const lista_listo = []
 const [resultados, setResultados] = useState ("")
@@ -62,9 +63,10 @@ const [lista, setLista] = useState([])
             width:210,
             height:300,
             borderWidth:2,
-            borderColor:'#d35647',
+            borderColor:'#694fad',
             resizeMode:'contain',
-            margin:8
+            margin:8,
+            alignSelf:"center"
           }}
           />
         </TouchableOpacity>
@@ -108,20 +110,22 @@ const styles = StyleSheet.create({
     alignItems: 'center',
     justifyContent: 'center',
   },
-  lista:{
-    marginHorizontal: 20,
-    marginTop: 24,
-    padding: 30,
-    backgroundColor: "pink",
-    fontSize: 24,
-  },
+
   boton: {
-    color: 'white',
-    backgroundColor: '#694fad',
-    padding: 3,
+    color: 'black',
+    backgroundColor: 'white',
+    padding: 10,
     marginVertical: 10,
     marginHorizontal: 50,
     alignItems: 'center',
+    borderRadius: 5,
+    textAlign: "center"
   },  
+  title: {
+    alignSelf:"center"
+  },
+  item:{
+    marginVertical: 10,
+  }
 });
 export default RecPerso;  
