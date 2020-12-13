@@ -74,9 +74,10 @@ const express = ({navigation}) => {
               width:210,
               height:300,
               borderWidth:2,
-              borderColor:'#d35647',
+              borderColor:'#191970',
               resizeMode:'contain',
-              margin:8
+              margin:8,
+              alignSelf: "center"
             }}
             />
           </TouchableOpacity>
@@ -102,29 +103,30 @@ return(
     <ScrollView style ={styles.scrollView}>
      
     <View style={styles.item}>
-        <Text>Agrega 3 ID para generar</Text>
+        <Text style={styles.frasesita}>Agrega 3 IDs para obtener recomendación.</Text>
       <TextInput
         style = {styles.input}
         onChangeText = {text => setAnime1(text)}
         value = {anime1}
-        placeholder = "ID"
+        placeholder = "   Ingresa un ID"
       ></TextInput>
       <TextInput
         style = {styles.input}
         onChangeText = {text => setAnime2(text)}
         value = {anime2}
-        placeholder = "ID"
+        placeholder = "   Ingresa otro ID"
       ></TextInput>
       <TextInput
         style = {styles.input}
         onChangeText = {text => setAnime3(text)}
         value = {anime3}
-        placeholder = "ID"
+        placeholder = "   Ingresa un último ID"
       ></TextInput>
       <TouchableOpacity  onPress={() => generar()}style={styles.boton}>
         <Text style={styles.boton}>
         RECOMENDAR </Text>
       </TouchableOpacity>
+      <Text style={styles.frasesita}> Cuando veas la recomendación, presiona el botón. </Text>
       <TouchableOpacity  onPress={() => Buscar(resultados)}style={styles.boton}>
         <Text style={styles.boton}>
         {resultados} </Text>
@@ -156,24 +158,34 @@ const styles = StyleSheet.create({
     },
     input: {
       height: 40,
-      borderColor: 'gray',
-      borderWidth: 1 
+      borderColor: 'grey',
+      borderWidth: 1, 
+      backgroundColor: "white"
   
     },
     boton: {
-        color: 'white',
-        backgroundColor: '#694fad',
+        color: 'black',
+        backgroundColor: 'white',
         padding: 3,
         marginVertical: 10,
         marginHorizontal: 50,
         alignItems: 'center',
+        borderRadius: 10,
     },
     item: {
-        backgroundColor: '#cbc2ff',
         padding: 15,
         marginVertical: 10,
         marginHorizontal: 16,
-      },    
+      },
+    frasesita: {
+      color: "black", 
+      textAlign: "center", 
+      marginBottom: 10,
+      fontSize: 15
+    },    
+    title:{
+      alignSelf:"center",
+    }
   });
 
 export default express;
