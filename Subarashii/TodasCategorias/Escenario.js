@@ -1,6 +1,5 @@
 import React, { useState } from 'react';
 import { StyleSheet,
-    Button,
     Text,
     View,
     Image,
@@ -12,58 +11,154 @@ import { StyleSheet,
     TouchableOpacity,
     StatusBar 
  } from 'react-native';
-
+ import { Button } from "react-native-elements"
  const Escenario = ({navigation}) => {
     return(
 
         <ScrollView style ={styles.scrollView}>
         <View>
-            <Button style={styles.listas}
+            <Button
                 onPress={() => navigation.navigate("listaCategoria", {categoria: "Countryside"})}
+                type = "outline"
+                buttonStyle = {{
+                    backgroundColor:"white",
+                    marginHorizontal: 20,
+                    borderColor: "white",
+                    borderRadius: 10,
+                    marginVertical: 9,
+                  }}
                 title = "Rural"
             ></Button>
-            <Button style={styles.listas}
+            <Button
                 onPress={() => navigation.navigate("listaCategoria", {categoria: "Desert"})}
+                type = "outline"
+                buttonStyle = {{
+                    backgroundColor:"white",
+                    marginHorizontal: 20,
+                    borderColor: "white",
+                    borderRadius: 10,
+                    marginVertical: 9,
+                  }}
                 title = "Desierto"
             ></Button>
-            <Button style={styles.listas}
+            <Button
                 onPress={() => navigation.navigate("listaCategoria", {categoria: "Planet Earth"})}
+                type = "outline"
+                buttonStyle = {{
+                    backgroundColor:"white",
+                    marginHorizontal: 20,
+                    borderColor: "white",
+                    borderRadius: 10,
+                    marginVertical: 9,
+                  }}
                 title = "Planeta Tierra"
             ></Button>
-            <Button style={styles.listas}
+            <Button
                 onPress={() => navigation.navigate("listaCategoria", {categoria: "Fantasy world"})}
+                type = "outline"
+                buttonStyle = {{
+                    backgroundColor:"white",
+                    marginHorizontal: 20,
+                    borderColor: "white",
+                    borderRadius: 10,
+                    marginVertical: 9,
+                  }}
                 title = "Mundo Fantastico"
             ></Button>
-            <Button style={styles.listas}
+            <Button
                 onPress={() => navigation.navigate("listaCategoria", {categoria: "Future"})}
+                type = "outline"
+                buttonStyle = {{
+                    backgroundColor:"white",
+                    marginHorizontal: 20,
+                    borderColor: "white",
+                    borderRadius: 10,
+                    marginVertical: 9,
+                  }}
                 title = "Futuro"
             ></Button>
-            <Button style={styles.listas}
+            <Button
                 onPress={() => navigation.navigate("listaCategoria", {categoria: "Isekai"})}
+                type = "outline"
+                buttonStyle = {{
+                    backgroundColor:"white",
+                    marginHorizontal: 20,
+                    borderColor: "white",
+                    borderRadius: 10,
+                    marginVertical: 9,
+                  }}
                 title = "Isekai"
             ></Button>
-            <Button style={styles.listas}
+            <Button
                 onPress={() => navigation.navigate("listaCategoria", {categoria: "Island"})}
+                type = "outline"
+                buttonStyle = {{
+                    backgroundColor:"white",
+                    marginHorizontal: 20,
+                    borderColor: "white",
+                    borderRadius: 10,
+                    marginVertical: 9,
+                  }}
                 title = "Isla"
             ></Button>
-            <Button style={styles.listas}
+            <Button
                 onPress={() => navigation.navigate("listaCategoria", {categoria: "Parallel Universe"})}
+                type = "outline"
+                buttonStyle = {{
+                    backgroundColor:"white",
+                    marginHorizontal: 20,
+                    borderColor: "white",
+                    borderRadius: 10,
+                    marginVertical: 9,
+                  }}
                 title = "Universo Paralelo"
             ></Button>
-            <Button style={styles.listas}
+            <Button
                 onPress={() => navigation.navigate("listaCategoria", {categoria: "Past"})}
+                type = "outline"
+                buttonStyle = {{
+                    backgroundColor:"white",
+                    marginHorizontal: 20,
+                    borderColor: "white",
+                    borderRadius: 10,
+                    marginVertical: 9,
+                  }}
                 title = "Pasado"
             ></Button>
-            <Button style={styles.listas}
+            <Button
                 onPress={() => navigation.navigate("listaCategoria", {categoria: "Present"})}
+                type = "outline"
+                buttonStyle = {{
+                    backgroundColor:"white",
+                    marginHorizontal: 20,
+                    borderColor: "white",
+                    borderRadius: 10,
+                    marginVertical: 9,
+                  }}
                 title = "Presente"
             ></Button>
-            <Button style={styles.listas}
+            <Button
                 onPress={() => navigation.navigate("listaCategoria", {categoria: "Space"})}
+                type = "outline"
+                buttonStyle = {{
+                    backgroundColor:"white",
+                    marginHorizontal: 20,
+                    borderColor: "white",
+                    borderRadius: 10,
+                    marginVertical: 9,
+                  }}
                 title = "Espacio"
             ></Button>
-            <Button style={styles.listas}
+            <Button
                 onPress={() => navigation.navigate("listaCategoria", {categoria: "Summer"})}
+                type = "outline"
+                buttonStyle = {{
+                    backgroundColor:"white",
+                    marginHorizontal: 20,
+                    borderColor: "white",
+                    borderRadius: 10,
+                    marginVertical: 9,
+                  }}
                 title = "Verano"
             ></Button>
         </View>
