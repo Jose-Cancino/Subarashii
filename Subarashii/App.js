@@ -1,25 +1,33 @@
 import React from 'react';
 import { StyleSheet, Text, View } from 'react-native';
 import { createBottomTabNavigator } from '@react-navigation/bottom-tabs';
-import { NavigationContainer } from '@react-navigation/native';
 import { createMaterialBottomTabNavigator } from '@react-navigation/material-bottom-tabs';
 import MaterialCommunityIcons from 'react-native-vector-icons/MaterialCommunityIcons';
-
+import AsyncStorage from "@react-native-community/async-storage";
 
 import Recomendacion from "./Recomendacion"
 import Lista from "./Listas"
 import BusquedaAnime from "./Busqueda"
+import { NavigationContainer, DefaultTheme } from '@react-navigation/native';
 
 const Tab = createMaterialBottomTabNavigator();
 
+const MyTheme = {
+  ...DefaultTheme,
+  colors: {
+    ...DefaultTheme.colors,
+    primary: 'rgb(255, 45, 85)',
+    background: '#DAEEFF',
+  },
+};
 export default function App() {
   return (
-    <NavigationContainer >
+    <NavigationContainer theme={MyTheme}>
     <Tab.Navigator 
       initialRouteName = "Home"
       activeColor = "white"
       shifting = {true}
-      barStyle = {{backgroundColor:'#694fad'}}
+      barStyle = {{backgroundColor:'#191970'}}
     > 
       <Tab.Screen 
         name="Buscar" component={BusquedaAnime} 
