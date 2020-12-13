@@ -1,6 +1,5 @@
 import React, { useState } from 'react';
 import { StyleSheet,
-    Button,
     Text,
     View,
     Image,
@@ -12,7 +11,7 @@ import { StyleSheet,
     TouchableOpacity,
     StatusBar 
  } from 'react-native';
-
+ import { Button } from "react-native-elements"
 const AnimeRelacionado = ({navigation}) => {
     const [isLoading, setLoading] = useState(true)
     const [anime1, setAnime1] = useState("")
@@ -74,20 +73,15 @@ const AnimeRelacionado = ({navigation}) => {
               width:210,
               height:300,
               borderWidth:2,
-              borderColor:'#d35647',
+              borderColor:'#191970',
               resizeMode:'contain',
-              margin:8
+              margin:8,
+              alignSelf:"center",
             }}
             />
           </TouchableOpacity>
         </View>
       );
-        function mode (arr){
-        return arr.sort((a,b) =>
-          arr.filter(v => v===a).length
-          - arr.filter(v => v===b).length
-        ).pop();
-      }
 
     const renderItem = ({item}) => (
         <Item 
@@ -102,16 +96,23 @@ return(
     <ScrollView style ={styles.scrollView}>
      
     <View style={styles.item}>
-        <Text>Agrega un ID</Text>
+        <Text style={styles.frasesita}>Agrega un ID</Text>
       <TextInput
         style = {styles.input}
         onChangeText = {text => setAnime1(text)}
         value = {anime1}
-        placeholder = "ID"
+        placeholder = "   Ingresa un ID"
       ></TextInput>
       <Button  
         onPress={() => generar()}style={styles.boton}
-        style={styles.boton}
+        type = "outline"
+        buttonStyle = {{
+          backgroundColor:"white",
+            marginHorizontal: 20,
+            borderColor: "white",
+            borderRadius: 10,
+            marginVertical: 15,
+        }}
         title = "RECOMENDAR"
         ></Button>
       <TouchableOpacity  onPress={() => Buscar(resultados)}style={styles.boton}>
@@ -145,24 +146,35 @@ const styles = StyleSheet.create({
     },
     input: {
       height: 40,
-      borderColor: 'gray',
-      borderWidth: 1 
+      borderColor: 'grey',
+      borderWidth: 1, 
+      backgroundColor: "white"
   
     },
     boton: {
-        color: 'white',
-        backgroundColor: '#694fad',
-        padding: 3,
-        marginVertical: 10,
-        marginHorizontal: 50,
-        alignItems: 'center',
+      backgroundColor:"white",
+      marginHorizontal: 20,
+      borderColor: "white",
+      borderRadius: 10,
+      marginVertical: 15,
+      color:"black",
+      alignItems:"center"
     },
     item: {
-        backgroundColor: '#cbc2ff',
+        backgroundColor: '#DAEEFF',
         padding: 15,
-        marginVertical: 10,
+        marginVertical: 15,
         marginHorizontal: 16,
-      },    
+      },
+    frasesita:{
+      color: "black", 
+      textAlign: "center", 
+      marginBottom: 10,
+      fontSize: 20
+    },  
+    title: {
+      alignSelf:"center"
+    } 
   });
 
 export default AnimeRelacionado;
