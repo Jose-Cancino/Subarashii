@@ -1,6 +1,5 @@
 import React, { useState, Component, useEffect } from 'react';
 import { StyleSheet,
-   Button,
    Text,
    View,
    Image,
@@ -11,7 +10,7 @@ import { StyleSheet,
    TouchableOpacity,
    StatusBar 
 } from 'react-native';
-
+import { Button } from "react-native-elements"
 const listaCategoria = ({navigation, route}) => {
 
     const [isLoading, setLoading] = useState(true)
@@ -45,7 +44,7 @@ const listaCategoria = ({navigation, route}) => {
           width:210,
           height:300,
           borderWidth:4,
-          borderColor:'#694fad',
+          borderColor:'#191970',
           resizeMode:'contain',
           margin:6,
           marginHorizontal: 60,
@@ -58,7 +57,7 @@ const listaCategoria = ({navigation, route}) => {
     const renderItem = ({item}) => (
         <Item 
          id={item.id} 
-         title={item.attributes.slug} 
+         title={item.attributes.canonicalTitle} 
          canonico={item.attributes.canonicalTitle}
          imagen={item.attributes.posterImage.small} 
          desc={item.attributes.synopsis}
@@ -67,7 +66,15 @@ const listaCategoria = ({navigation, route}) => {
   
     return (
       <SafeAreaView>
-            <Button style={styles.listas}
+            <Button
+                type = "outline"
+                buttonStyle = {{
+                  backgroundColor:"white",
+                  borderColor: "white",
+                  borderRadius: 10,
+                  alignItems: "center",
+                  marginVertical: 10,
+             }}
                 onPress={() => buscar()}
                 title = {route.params.categoria}
             ></Button>     
@@ -97,7 +104,6 @@ const listaCategoria = ({navigation, route}) => {
       borderWidth: 1,
     },
     item: {
-      backgroundColor: '#cbc2ff',
       padding: 15,
       marginVertical: 10,
       marginHorizontal: 16,
