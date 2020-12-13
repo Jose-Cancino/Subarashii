@@ -1,6 +1,5 @@
 import React, { useState } from 'react';
 import { StyleSheet,
-    Button,
     Text,
     View,
     Image,
@@ -12,85 +11,237 @@ import { StyleSheet,
     TouchableOpacity,
     StatusBar 
  } from 'react-native';
-
+ import { Button } from "react-native-elements"
  const Tematica = ({navigation}) => {
     return(
         <ScrollView style ={styles.scrollView}>
         <View>
-            <Button style={styles.listas}
+            <Button
                 onPress={() => navigation.navigate("listaCategoria", {categoria: "Anti War"})}
+                type = "outline"
+                buttonStyle = {{
+                    backgroundColor:"white",
+                    marginHorizontal: 20,
+                    borderColor: "white",
+                    borderRadius: 10,
+                    marginVertical: 10,
+                  }}
                 title = "Anti War"
             ></Button>
-            <Button style={styles.listas}
+            <Button
                 onPress={() => navigation.navigate("listaCategoria", {categoria: "Coming Of Age"})}
+                type = "outline"
+                buttonStyle = {{
+                    backgroundColor:"white",
+                    marginHorizontal: 20,
+                    borderColor: "white",
+                    borderRadius: 10,
+                    marginVertical: 10,
+                  }}
                 title = "Adolescencia"
             ></Button>
-            <Button style={styles.listas}
+            <Button
                 onPress={() => navigation.navigate("listaCategoria", {categoria: "Conspiracy"})}
+                type = "outline"
+                buttonStyle = {{
+                    backgroundColor:"white",
+                    marginHorizontal: 20,
+                    borderColor: "white",
+                    borderRadius: 10,
+                    marginVertical: 10,
+                  }}
                 title = "Conspiracion"
             ></Button> 
-            <Button style={styles.listas}
+            <Button
                 onPress={() => navigation.navigate("listaCategoria", {categoria: "Cooking"})}
+                type = "outline"
+                buttonStyle = {{
+                    backgroundColor:"white",
+                    marginHorizontal: 20,
+                    borderColor: "white",
+                    borderRadius: 10,
+                    marginVertical: 10,
+                  }}
                 title = "Cocina"
             ></Button>   
-            <Button style={styles.listas}
+            <Button
                 onPress={() => navigation.navigate("listaCategoria", {categoria: "Crime"})}
+                type = "outline"
+                buttonStyle = {{
+                    backgroundColor:"white",
+                    marginHorizontal: 20,
+                    borderColor: "white",
+                    borderRadius: 10,
+                    marginVertical: 10,
+                  }}
                 title = "Crimen"
             ></Button>   
-            <Button style={styles.listas}
+            <Button
                 onPress={() => navigation.navigate("listaCategoria", {categoria: "Disaster"})}
+                type = "outline"
+                buttonStyle = {{
+                    backgroundColor:"white",
+                    marginHorizontal: 20,
+                    borderColor: "white",
+                    borderRadius: 10,
+                    marginVertical: 10,
+                  }}
                 title = "Desastre"
             ></Button>       
-            <Button style={styles.listas}
+            <Button
                 onPress={() => navigation.navigate("listaCategoria", {categoria: "Family"})}
+                type = "outline"
+                buttonStyle = {{
+                    backgroundColor:"white",
+                    marginHorizontal: 20,
+                    borderColor: "white",
+                    borderRadius: 10,
+                    marginVertical: 10,
+                  }}
                 title = "Familia"
             ></Button>  
-            <Button style={styles.listas}
+            <Button
                 onPress={() => navigation.navigate("listaCategoria", {categoria: "Friendship"})}
+                type = "outline"
+                buttonStyle = {{
+                    backgroundColor:"white",
+                    marginHorizontal: 20,
+                    borderColor: "white",
+                    borderRadius: 10,
+                    marginVertical: 10,
+                  }}
                 title = "Amistad"
             ></Button> 
-            <Button style={styles.listas}
+            <Button
                 onPress={() => navigation.navigate("listaCategoria", {categoria: "Military"})}
+                type = "outline"
+                buttonStyle = {{
+                    backgroundColor:"white",
+                    marginHorizontal: 20,
+                    borderColor: "white",
+                    borderRadius: 10,
+                    marginVertical: 10,
+                  }}
                 title = "Militar"
             ></Button> 
-            <Button style={styles.listas}
+            <Button
                 onPress={() => navigation.navigate("listaCategoria", {categoria: "Parental Abandonment"})}
+                type = "outline"
+                buttonStyle = {{
+                    backgroundColor:"white",
+                    marginHorizontal: 20,
+                    borderColor: "white",
+                    borderRadius: 10,
+                    marginVertical: 10,
+                  }}
                 title = "Abandono parental"
             ></Button>
-            <Button style={styles.listas}
+            <Button
                 onPress={() => navigation.navigate("listaCategoria", {categoria: "Politics"})}
+                type = "outline"
+                buttonStyle = {{
+                    backgroundColor:"white",
+                    marginHorizontal: 20,
+                    borderColor: "white",
+                    borderRadius: 10,
+                    marginVertical: 10,
+                  }}
                 title = "Politica"
             ></Button>
-            <Button style={styles.listas}
+            <Button
                 onPress={() => navigation.navigate("listaCategoria", {categoria: "Religion"})}
+                type = "outline"
+                buttonStyle = {{
+                    backgroundColor:"white",
+                    marginHorizontal: 20,
+                    borderColor: "white",
+                    borderRadius: 10,
+                    marginVertical: 10,
+                  }}
                 title = "Religion"
             ></Button>
-            <Button style={styles.listas}
+            <Button
                 onPress={() => navigation.navigate("listaCategoria", {categoria: "Revenge"})}
+                type = "outline"
+                buttonStyle = {{
+                    backgroundColor:"white",
+                    marginHorizontal: 20,
+                    borderColor: "white",
+                    borderRadius: 10,
+                    marginVertical: 10,
+                  }}
                 title = "Venganza"
             ></Button>
-            <Button style={styles.listas}
+            <Button
                 onPress={() => navigation.navigate("listaCategoria", {categoria: "Rotten World"})}
+                type = "outline"
+                buttonStyle = {{
+                    backgroundColor:"white",
+                    marginHorizontal: 20,
+                    borderColor: "white",
+                    borderRadius: 10,
+                    marginVertical: 10,
+                  }}
                 title = "Dead World"
             ></Button>
-            <Button style={styles.listas}
+            <Button
                 onPress={() => navigation.navigate("listaCategoria", {categoria: "School Life"})}
+                type = "outline"
+                buttonStyle = {{
+                    backgroundColor:"white",
+                    marginHorizontal: 20,
+                    borderColor: "white",
+                    borderRadius: 10,
+                    marginVertical: 10,
+                  }}
                 title = "Vida Escolar"
             ></Button>
-            <Button style={styles.listas}
+            <Button
                 onPress={() => navigation.navigate("listaCategoria", {categoria: "Slavery"})}
+                type = "outline"
+                buttonStyle = {{
+                    backgroundColor:"white",
+                    marginHorizontal: 20,
+                    borderColor: "white",
+                    borderRadius: 10,
+                    marginVertical: 10,
+                  }}
                 title = "Esclavitud"
             ></Button>
-            <Button style={styles.listas}
+            <Button
                 onPress={() => navigation.navigate("listaCategoria", {categoria: "Slice of Life"})}
+                type = "outline"
+                buttonStyle = {{
+                    backgroundColor:"white",
+                    marginHorizontal: 20,
+                    borderColor: "white",
+                    borderRadius: 10,
+                    marginVertical: 10,
+                  }}
                 title = "Vida Diaria"
             ></Button>   
-            <Button style={styles.listas}
+            <Button
                 onPress={() => navigation.navigate("listaCategoria", {categoria: "Sports"})}
+                type = "outline"
+                buttonStyle = {{
+                    backgroundColor:"white",
+                    marginHorizontal: 20,
+                    borderColor: "white",
+                    borderRadius: 10,
+                    marginVertical: 10,
+                  }}
                 title = "Deportes"
             ></Button> 
-            <Button style={styles.listas}
+            <Button
                 onPress={() => navigation.navigate("listaCategoria", {categoria: "The Arts"})}
+                type = "outline"
+                buttonStyle = {{
+                    backgroundColor:"white",
+                    marginHorizontal: 20,
+                    borderColor: "white",
+                    borderRadius: 10,
+                    marginVertical: 10,
+                  }}
                 title = "Artes"
             ></Button>                         
         </View>
