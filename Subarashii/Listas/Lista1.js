@@ -1,7 +1,7 @@
 import React, {useState, Component, useEffect} from 'react';
-import { StyleSheet, Text, View, TextInput, Button, Alert, TouchableOpacity, SafeAreaView, ScrollView, TextPropTypes } from 'react-native';
+import { StyleSheet, Text, View, TextInput, Alert, SafeAreaView, ScrollView, TextPropTypes } from 'react-native';
 import AsyncStorage from "@react-native-community/async-storage";
-
+import { Button } from "react-native-elements"
 export default function Lista1({navigation, route}){
     const {id} = route.params
     const [listaP1, setListaP1] = useState() 
@@ -86,28 +86,51 @@ export default function Lista1({navigation, route}){
     return(
     <SafeAreaView style={styles.container}>
     <Text style = {styles.titulo}> {ListaN1} </Text>
-    <Text style = {styles.titulo}> {listaP1} </Text>
     <TextInput 
         style={styles.input}
         placeholder = "Inserte Nombre Lista"
         onChangeText = {(text) => setListaN1(text)}>
     </TextInput>
-    <TouchableOpacity style={styles.listas}>
-        <Text onPress={() => añadir()}>
-        Añadir </Text>
-    </TouchableOpacity>
-    <TouchableOpacity style={styles.listas}>
-        <Text onPress={() => storeData()}>
-        Guardar Anime </Text>
-    </TouchableOpacity>
-    <TouchableOpacity style={styles.listas}>
-        <Text onPress={() => removeData()}>
-        Purgar Lista </Text>
-    </TouchableOpacity>
-    <TouchableOpacity style={styles.listas}>
-        <Text onPress={() => navigation.navigate("Ver Lista", {lista: listaP1})}>
-        Ver Lista </Text>
-    </TouchableOpacity>
+    <Button onPress={() => añadir()}
+        title = "Añadir"
+        type = "outline"
+     buttonStyle = {{
+        backgroundColor:"#dcdcdc",
+        marginHorizontal: 20,
+        borderColor: "white",   
+        borderRadius: 10, 
+        marginVertical: 10,                 
+    }}> </Button>
+    <Button onPress={() => storeData()}
+        title = "Guardar Anime"
+        type = "outline"
+     buttonStyle = {{
+        backgroundColor:"#dcdcdc",
+        marginHorizontal: 20,
+        borderColor: "white",   
+        borderRadius: 10, 
+        marginVertical: 10,                 
+    }}> </Button>
+    <Button onPress={() => removeData()}
+        title = "Purgar Lista"
+        type = "outline"
+     buttonStyle = {{
+        backgroundColor:"#dcdcdc",
+        marginHorizontal: 20,
+        borderColor: "white",   
+        borderRadius: 10,
+        marginVertical: 10,                  
+    }}> </Button>
+    <Button onPress={() => navigation.navigate("Ver Lista", {lista: listaP1})}
+        title = "Ver Lista"
+        type = "outline"
+     buttonStyle = {{
+        backgroundColor:"#dcdcdc",
+        marginHorizontal: 20,
+        borderColor: "white",   
+        borderRadius: 10,
+        marginVertical: 10,                
+    }}> </Button>
     </SafeAreaView>
     )}
 
