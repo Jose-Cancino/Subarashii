@@ -116,7 +116,7 @@ const styles = StyleSheet.create({
     width:210,
     height:300,
     borderWidth:2,
-    borderColor:'#d35647',
+    borderColor:'#694fad',
     resizeMode:'contain',
     alignItems: 'center',
     margin:8,
@@ -163,6 +163,7 @@ const styles = StyleSheet.create({
   },
   sinopsis: {
     //backgroundColor: '#d1bcf5',
+    fontFamily: "serif",
     color: 'black',
     fontSize:15,  
     //padding: 10,
