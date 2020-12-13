@@ -52,7 +52,7 @@ const Item = ({ id, title, imagen, desc, canonico}) => (
         borderColor:'#694fad',
         resizeMode:'contain',
         margin:6,
-        marginHorizontal: 60,
+        alignSelf: "center",
       }}
       />
     </TouchableOpacity>
@@ -62,7 +62,7 @@ const Item = ({ id, title, imagen, desc, canonico}) => (
   const renderItem = ({item}) => (
       <Item 
        id={item.id} 
-       title={item.attributes.slug} 
+       title={item.attributes.canonicalTitle} 
        canonico={item.attributes.canonicalTitle}
        imagen={item.attributes.posterImage.small} 
        desc={item.attributes.synopsis}
@@ -104,22 +104,25 @@ const styles = StyleSheet.create({
   },
   input: {
     height: 40,
-    borderColor: 'gray',
-    borderWidth: 1,
+    borderColor: 'grey',
+    borderWidth: 1, 
+    backgroundColor: "white",
+    marginVertical:10,
+    marginHorizontal: 10,
   },
   item: {
-    backgroundColor: '#cbc2ff',
     padding: 15,
     marginVertical: 10,
     marginHorizontal: 16,
   },  
   boton: {
     color: 'white',
-    backgroundColor: '#694fad',
+    backgroundColor: '#191970',
     padding: 3,
     marginVertical: 10,
     marginHorizontal: 50,
     alignItems: 'center',
+    borderRadius: 10
   },  
   title: {
     marginVertical: 5,
