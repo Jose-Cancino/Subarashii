@@ -61,3 +61,14 @@
 # Se ha logrado la página personalizada para cada anime 
 # se adjunta link de avance: https://www.youtube.com/watch?v=IXULlyv_iz8 
 # ~ Fin de los avisos ~
+# 
+# Avisos: 'Reporte de avance - 75%' | (12-12-2020)
+# Se sube el 75% de avance de la mejor APP de anime del mundo, se adjunta link:
+# https://youtu.be/no3y7kyPGWo
+# Función diferenciadora implementada casi en su totalidad
+# Listas implementadas casi en su totalidad
+# Página para cada anime lista
+# Buscador listo
+# Sección de vistos - viendo - por ver en desarrollo
+# El diseño de la APP esta en proceso de mejora
+# ~ Fin de los avisos ~
