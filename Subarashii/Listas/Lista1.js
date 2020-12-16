@@ -3,19 +3,24 @@ import { StyleSheet, Text, View, TextInput, Alert, SafeAreaView, ScrollView, Tex
 import AsyncStorage from "@react-native-community/async-storage";
 import { Button } from "react-native-elements"
 export default function Lista1({navigation, route}){
-    const {id} = route.params
-    const [listaP1, setListaP1] = useState() 
+    const ide = route.params
+    let id = "0000"
+    if (typeof(Object.values(Object.values(ide)[0])[0]) !== "undefined"){
+        id = (Object.values(Object.values(Object.values(ide)[0])[0])[0])
+    }
+    console.log(id)
+    const [listaP1, setListaP1] = useState("") 
     const [ListaN1, setListaN1] = useState("Lista 1");
-    let flag = true
-    
+
     const añadir = () => {
-        if (typeof listaP1 !== "undefined"){
+    if (id !== "0000"){
+        if (listaP1 !== ""){
         var nueva = listaP1.concat(id +",")
         setListaP1(nueva)
     } else {
         setListaP1(id +",")
     }
-}
+    }}
 
     const storeData = async () => {
         try {
