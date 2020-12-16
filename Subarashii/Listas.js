@@ -18,7 +18,7 @@ import ListaPerso from "./Listas/ListaPerso"
 import { ListItem } from "react-native-elements"
 
 const Listas = ({route, navigation}) => {
-    const { id } = route.params;
+    const  id  = route.params;
     const [listado, setListado] = useState([
         {name: "Lista 1", key: "1",},
         {name: "Lista 2", key: "2",},
@@ -35,7 +35,7 @@ const Listas = ({route, navigation}) => {
         <SafeAreaView>
             { 
                 listado.map((l, i) => (
-                <TouchableOpacity onPress = {() => navigation.navigate(l.name, {id: id})}>
+                <TouchableOpacity onPress = {() => navigation.navigate(l.name, {id: {id}})}>
                     <ListItem key = {i} bottomDivider>
                         <ListItem.Content>
                             <ListItem.Title>{l.name}</ListItem.Title>
