@@ -1,6 +1,6 @@
 import { StatusBar } from 'expo-status-bar';
 import React from 'react';
-import { StyleSheet, Text, View, TouchableOpacity, ScrollView} from 'react-native';
+import { ImageBackground, StyleSheet, Text, View, TouchableOpacity, ScrollView} from 'react-native';
 import { Button } from "react-native-elements"
 import { createStackNavigator } from "@react-navigation/stack";
 
@@ -27,11 +27,12 @@ import Tematica from "./TodasCategorias/Tematica"
 import AnimeRelacionado from "./AnimeRelacionado"
 
 
-
+const image = { uri: "https://archive-media-1.nyafuu.org/vp/image/1494/46/1494462189909.png" };
 
 const RecomendacionTab = ({navigation}) => {
   return(
-    <ScrollView style ={styles.scrollView}>
+    <ScrollView>
+            <ImageBackground source={image} style={styles.image}>
             <Text style={styles.frasesitas}>Los mejores recomendado por los mejores</Text>
             <Button 
                   onPress={() => navigation.navigate("Lista Recomendada")}
@@ -46,7 +47,7 @@ const RecomendacionTab = ({navigation}) => {
                 }}>
             </Button>
             <Text style={styles.frasesitas}>Danos tres animes y te daremos lo que buscas</Text>
-            <Button style={styles.listas}
+            <Button 
                 onPress={() => navigation.navigate("express")}
                 title = "Recomendacion Express"
                 type = "outline"
@@ -60,7 +61,7 @@ const RecomendacionTab = ({navigation}) => {
                 >
             </Button>
             <Text style={styles.frasesitas}>Busca por tus categorias favoritas</Text>
-            <Button style={styles.listas}
+            <Button 
                 onPress={() => navigation.navigate("Categorias")}
                 title = "Categorias"
                 type = "outline"
@@ -74,7 +75,7 @@ const RecomendacionTab = ({navigation}) => {
                 >
             </Button>
             <Text style={styles.frasesitas}> Dame un Anime y disfruta </Text>
-            <Button style={styles.listas}
+            <Button 
                 onPress={() => navigation.navigate("AnimeRelacionado")}
                 title = "Recomendacion por Anime"
                 type = "outline"
@@ -87,6 +88,7 @@ const RecomendacionTab = ({navigation}) => {
                 }}
                 >
             </Button>
+            </ImageBackground>
       </ScrollView>
     );
   }
@@ -132,10 +134,15 @@ const RecomendacionTab = ({navigation}) => {
       marginBottom: 15,
       marginHorizontal: 40,
       justifyContent: 'center',
-      marginVertical: 10,
+      marginVertical: 15,
       fontFamily: "serif",
       fontWeight: "bold",
-    }
-  
+      color: 'black',
+    },
+    image: {
+      flex: 1,
+      resizeMode:"contain",
+      height: 800,       
+    },
   });
 export default Recomendacion;
