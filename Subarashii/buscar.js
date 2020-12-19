@@ -1,7 +1,6 @@
 import { MaterialBottomTabView } from '@react-navigation/material-bottom-tabs';
 import React, { useState, Component, useEffect } from 'react';
 import { StyleSheet,
-   Button,
    Text,
    View,
    Image,
@@ -10,8 +9,10 @@ import { StyleSheet,
    ActivityIndicator,
    SafeAreaView,
    TouchableOpacity,
-   StatusBar 
+   StatusBar,
+   ImageBackground
 } from 'react-native';
+import { Button } from "react-native-elements"
 
 const Busqueda = ({navigation}) => {
   
@@ -59,6 +60,7 @@ const Item = ({ id, title, imagen, desc, canonico}) => (
   </View>
 );
 
+const imagencita = { uri: "https://p4.wallpaperbetter.com/wallpaper/793/973/136/clouds-sunset-sky-portrait-display-wallpaper-preview.jpg" };
   const renderItem = ({item}) => (
       <Item 
        id={item.id} 
@@ -71,26 +73,30 @@ const Item = ({ id, title, imagen, desc, canonico}) => (
 
   return (
     <SafeAreaView>
-      <TextInput
-        style = {styles.input}
+      <ImageBackground source={imagencita} style={styles.imagen}></ImageBackground>
+      <TextInput style = {styles.input}
         onChangeText = {text => setDatos(text)}
         value = {datos}
         placeholder = "   Nombre anime..."
       ></TextInput>
-    <TouchableOpacity  onPress={() => Buscar()}style={styles.boton}>
-        <Text style={styles.boton}>
-        BUSCAR </Text>
-    </TouchableOpacity>
-    
-      {isLoading ? ( 
-        <ActivityIndicator/> 
-      ) : ( 
+      <Button 
+            onPress={() => Buscar()}
+            type = "outline"
+            title = 'BUSCAR'
+            buttonStyle = {{
+              backgroundColor: "white",
+              alignItems: 'center',
+              marginHorizontal: 50,
+              borderColor: "white",
+              borderRadius: 10,
+            }}
+          >
+          </Button>
         <FlatList
           data = {lista} 
           keyExtractor = {({ data }, index) => data}
           renderItem = {renderItem}    
         /> 
-      )}
     </SafeAreaView>
   );
 };
@@ -107,13 +113,17 @@ const styles = StyleSheet.create({
     borderColor: 'grey',
     borderWidth: 1, 
     backgroundColor: "white",
-    marginVertical:10,
-    marginHorizontal: 10,
+    marginBottom: 20,
+    marginVertical: 25,
+    marginHorizontal: 20,
   },
   item: {
     padding: 15,
     marginVertical: 10,
-    marginHorizontal: 16,
+    marginHorizontal: 20,
+    width: 300,
+    backgroundColor: '#D1C7F0',
+    alignSelf: 'center'
   },  
   boton: {
     color: 'white',
@@ -131,5 +141,13 @@ const styles = StyleSheet.create({
     fontSize:13,
     fontWeight: 'bold',
   },  
+  imagen: {
+    flex: 1,
+    resizeMode:"contain",
+    height: 800,       
+  },
+  titulo: {
+    color: 'black',
+  }
 });
 export default Busqueda;
