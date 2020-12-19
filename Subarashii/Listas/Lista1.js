@@ -15,8 +15,16 @@ export default function Lista1({navigation, route}){
     const añadir = () => {
     if (id !== "0000"){
         if (listaP1 !== ""){
-        var nueva = listaP1.concat(id +",")
-        setListaP1(nueva)
+        var listasplit = listaP1.split(",")
+        if (listasplit.includes(id) === false){
+            var nueva = listaP1.concat(id +",")
+            setListaP1(nueva)
+        } else {
+            Alert.alert(
+                "No pudimos agregar tu Anime UnU",
+                "Este Anime ya esta en la lista, prueba con otro :3",
+            ) 
+        }
     } else {
         setListaP1(id +",")
     }
