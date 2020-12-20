@@ -32,10 +32,49 @@ const express = ({navigation}) => {
         fetch(`https://kitsu.io/api/edge/anime/${lista10}/categories`)
         .then((response) => response.json())
         .then((json) => {
-        categori.push(json.data[0].attributes.title);
-        categori.push(json.data[1].attributes.title);
-        categori.push(json.data[2].attributes.title);
-        categori.push(json.data[3].attributes.title); 
+        
+          try {categori.push(json.data[0].attributes.title)}
+          catch(error){
+            console.error(error)
+          }
+          try {categori.push(json.data[1].attributes.title)}
+          catch(error){
+            console.error(error)
+          }
+          try {categori.push(json.data[2].attributes.title)}
+          catch(error){
+            console.error(error)
+          }
+          try {categori.push(json.data[3].attributes.title)}
+          catch(error){
+            console.error(error)
+          }
+          try {categori.push(json.data[4].attributes.title)}
+          catch(error){
+            console.error(error)
+          }
+          try {categori.push(json.data[5].attributes.title)}
+          catch(error){
+            console.error(error)
+          }
+          try {categori.push(json.data[6].attributes.title)}
+          catch(error){
+            console.error(error)
+          }
+          try {categori.push(json.data[7].attributes.title)}
+          catch(error){
+            console.error(error)
+          }
+          try {categori.push(json.data[8].attributes.title)}
+          catch(error){
+            console.error(error)
+          }
+          try {categori.push(json.data[9].attributes.title)}
+          catch(error){
+            console.error(error)
+          }
+        
+        
 
         
         lista_listo.push(tridente);
