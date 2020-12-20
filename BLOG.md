@@ -72,3 +72,7 @@
 # Sección de vistos - viendo - por ver en desarrollo
 # El diseño de la APP esta en proceso de mejora
 # ~ Fin de los avisos ~
+
+## Avisos: 'Se acerca el día del juicio final' | (19-12-2020)
+Ya faltando poco para la entrega final nos hemos juntado con Felipe, quien creíamos muerto. A nivel de APP ya estamos por completar todo, las listas estan siendo modificadas para poder borrar un Anime en específico pero aparte de eso todo bien, al finalizar eso terminaremos la sección de vistos - viendo - por ver. El diseño de la APP esta siendo mejorado y para la presentación final estará al nivel.
+## ~ Fin de los avisos ~
