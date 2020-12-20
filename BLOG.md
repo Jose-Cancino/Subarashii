@@ -17,7 +17,7 @@
  - Existen páginas web como: https://myanimelist.net/ la cual te permite crear listas u otras que son exclusivamente de recomendaciones, nosotros queremos esto pero en versión móvil y a nuestro estilo, una APP que te permita organizar tus animes y que a la vez te recomiende otros en base a tus listas, además de un espacio seguro para navegar (sin spoilers) y buscar directamente un anime en específico, por estas razones creemos que es vital la creación de nuestra APP para poder complementar nuestra experiencia a la hora de ver anime.
  6. ¿Cuál será la característica distintiva ("el corazón")?:
  - La característica distintiva de nuestra APP será el mencionado sistema de recomendaciones, el cual queremos que sea distinto para cada usuario y que este mismo pueda decidir en base a que se le recomiende ("En base a mi top 10", "Aleatorias", "En base a mis listas"), estas recomendaciones podrán ser actualizadas constantemente por el usuario mediante un botón de nuestra APP.
-~ Fin de las notas ~
+### ~ FIN DE LAS NOTAS ~
 
 ## Avisos | (14-11-2020)
  Completa la instalación de React-Native. :3
