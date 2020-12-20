@@ -36,7 +36,7 @@
 3. Búsqueda
 4. Página personalizada para cada anime (Con su info, imagen, etc)
 5. Sección de vistos - Por ver - Viendo
-~ Fin de las notas ~
+### ~ FIN DE LAS NOTAS ~
  
 ## Avisos | (21-11-2020) 
  Se sube la planificación.
