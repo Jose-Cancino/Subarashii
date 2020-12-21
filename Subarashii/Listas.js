@@ -14,7 +14,16 @@ import Lista9 from "./Listas/Lista9"
 import Lista10 from "./Listas/Lista10"
 import pagAnime from "./pagAnime"
 import RecPerso from "./ListasRec/RecPerso"
-import ListaPerso from "./Listas/ListaPerso"
+import ListaPerso1 from "./Listas/ListaPerso1"
+import ListaPerso2 from "./Listas/ListaPerso2"
+import ListaPerso3 from "./Listas/ListaPerso3"
+import ListaPerso4 from "./Listas/ListaPerso4"
+import ListaPerso5 from "./Listas/ListaPerso5"
+import ListaPerso6 from "./Listas/ListaPerso6"
+import ListaPerso7 from "./Listas/ListaPerso7"
+import ListaPerso8 from "./Listas/ListaPerso8"
+import ListaPerso9 from "./Listas/ListaPerso9"
+import ListaPerso10 from "./Listas/ListaPerso10"
 import { ListItem } from "react-native-elements"
 
 const Listas = ({route, navigation}) => {
@@ -66,7 +75,16 @@ function NListas() {
             <Stack.Screen name = "Lista 10" component = {Lista10} />
             <Stack.Screen name= "Anime" component = {pagAnime} />
             <Stack.Screen name= "RecPerso" component = {RecPerso} options = {{title: "Recomendación Personalizada"}}/>
-            <Stack.Screen name = "Ver Lista" component = {ListaPerso} options = {{title: "Tu maravillosa lista"}}/>
+            <Stack.Screen name = "Ver Lista 1" component = {ListaPerso1} options = {{title: "Tu maravillosa lista"}}/>
+            <Stack.Screen name = "Ver Lista 2" component = {ListaPerso2} options = {{title: "Tu maravillosa lista"}}/>
+            <Stack.Screen name = "Ver Lista 3" component = {ListaPerso3} options = {{title: "Tu maravillosa lista"}}/>
+            <Stack.Screen name = "Ver Lista 4" component = {ListaPerso4} options = {{title: "Tu maravillosa lista"}}/>
+            <Stack.Screen name = "Ver Lista 5" component = {ListaPerso5} options = {{title: "Tu maravillosa lista"}}/>
+            <Stack.Screen name = "Ver Lista 6" component = {ListaPerso6} options = {{title: "Tu maravillosa lista"}}/>
+            <Stack.Screen name = "Ver Lista 7" component = {ListaPerso7} options = {{title: "Tu maravillosa lista"}}/>
+            <Stack.Screen name = "Ver Lista 8" component = {ListaPerso8} options = {{title: "Tu maravillosa lista"}}/>
+            <Stack.Screen name = "Ver Lista 9" component = {ListaPerso9} options = {{title: "Tu maravillosa lista"}}/>
+            <Stack.Screen name = "Ver Lista 10" component = {ListaPerso10} options = {{title: "Tu maravillosa lista"}}/>
         </Stack.Navigator>
     )
 }
