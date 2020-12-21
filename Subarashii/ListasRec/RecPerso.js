@@ -15,11 +15,46 @@ const [lista, setLista] = useState([])
       fetch(`https://kitsu.io/api/edge/anime/${lista10}/categories`)
       .then((response) => response.json())
       .then((json) => {
-      categori.push(json.data[0].attributes.title);
-      categori.push(json.data[1].attributes.title);
-      categori.push(json.data[2].attributes.title);
-      categori.push(json.data[3].attributes.title); 
-
+        try {categori.push(json.data[0].attributes.title)}
+        catch(error){
+          console.error(error)
+        }
+        try {categori.push(json.data[1].attributes.title)}
+        catch(error){
+          console.error(error)
+        }
+        try {categori.push(json.data[2].attributes.title)}
+        catch(error){
+          console.error(error)
+        }
+        try {categori.push(json.data[3].attributes.title)}
+        catch(error){
+          console.error(error)
+        }
+        try {categori.push(json.data[4].attributes.title)}
+        catch(error){
+          console.error(error)
+        }
+        try {categori.push(json.data[5].attributes.title)}
+        catch(error){
+          console.error(error)
+        }
+        try {categori.push(json.data[6].attributes.title)}
+        catch(error){
+          console.error(error)
+        }
+        try {categori.push(json.data[7].attributes.title)}
+        catch(error){
+          console.error(error)
+        }
+        try {categori.push(json.data[8].attributes.title)}
+        catch(error){
+          console.error(error)
+        }
+        try {categori.push(json.data[9].attributes.title)}
+        catch(error){
+          console.error(error)
+        }
       
       lista_listo.push(lista10);
       if(lista_listo.length == lista2.length){
@@ -40,7 +75,7 @@ const [lista, setLista] = useState([])
   }
   
   const Buscar = (pop) => {
-      fetch(`https://kitsu.io/api/edge/anime?page[limit]=20&page[offset]=0&filter[categories]=${pop}&sort=-averageRating`)
+      fetch(`https://kitsu.io/api/edge/anime?page[limit]=20&page[offset]=0&filter[categories]=${pop}&sort=-userCount`)
         .then((response) => response.json())
         .then((json) => {
           setLista(json.data);
