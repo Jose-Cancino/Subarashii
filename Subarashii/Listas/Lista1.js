@@ -48,9 +48,21 @@ export default function Lista1({navigation, route}){
             }
         } catch (err) {
             alert(err)
-        }
-    }
+            }
+}
     
+    const borrar = () => {
+        Alert.alert(
+            "¿Desea purgar esta lista?",
+            "Al purgar la lista se borraran todos los Animes que contiene.",
+            [
+              { text: "Cancelar", onPress: () => console.log("Cancel Pressed")},
+              { text: "Borrar", onPress: () => removeData() }
+            ],
+            { cancelable: false }
+          )
+    }
+
     const removeData = async () => {
         try {
             console.log("Purgado")
@@ -124,7 +136,7 @@ export default function Lista1({navigation, route}){
         borderRadius: 10, 
         marginVertical: 10,                 
     }}> </Button>
-    <Button onPress={() => removeData()}
+    <Button onPress={() => borrar()}
         title = "Purgar Lista"
         type = "outline"
      buttonStyle = {{
@@ -134,8 +146,18 @@ export default function Lista1({navigation, route}){
         borderRadius: 10,
         marginVertical: 10,                  
     }}> </Button>
-    <Button onPress={() => navigation.navigate("Ver Lista", {lista: listaP1})}
+    <Button onPress={() => navigation.navigate("Ver Lista 1", {lista: listaP1})}
         title = "Ver Lista"
+        type = "outline"
+     buttonStyle = {{
+        backgroundColor:"#dcdcdc",
+        marginHorizontal: 20,
+        borderColor: "white",   
+        borderRadius: 10,
+        marginVertical: 10,                
+    }}> </Button>
+    <Button onPress={() => save()}
+        title = "Guardar Nombre"
         type = "outline"
      buttonStyle = {{
         backgroundColor:"#dcdcdc",
