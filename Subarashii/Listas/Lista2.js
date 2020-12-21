@@ -70,7 +70,7 @@ export default function Lista2({navigation, route}){
     } catch (err) {
         alert(err)
     } finally {
-        setListaP1("");
+        setListaP2("");
     };
     };
 
