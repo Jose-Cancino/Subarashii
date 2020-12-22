@@ -50,9 +50,9 @@ const Item = ({ id, title, imagen, desc, canonico}) => (
         width:210,
         height:300,
         borderWidth:4,
-        borderColor:'#694fad',
+        borderColor:'white',
         resizeMode:'contain',
-        margin:6,
+        margin: 3,
         alignSelf: "center",
       }}
       />
@@ -113,7 +113,7 @@ const styles = StyleSheet.create({
     borderColor: 'grey',
     borderWidth: 1, 
     backgroundColor: "white",
-    marginBottom: 20,
+    marginBottom: 10,
     marginVertical: 25,
     marginHorizontal: 20,
   },
@@ -122,8 +122,8 @@ const styles = StyleSheet.create({
     marginVertical: 10,
     marginHorizontal: 20,
     width: 300,
-    backgroundColor: '#D1C7F0',
-    alignSelf: 'center'
+    backgroundColor: '#F9D233',
+    alignSelf: 'center',
   },  
   boton: {
     color: 'white',
@@ -140,11 +140,12 @@ const styles = StyleSheet.create({
     textAlign: 'center',
     fontSize:13,
     fontWeight: 'bold',
+    color: 'black',
   },  
   imagen: {
     flex: 1,
     resizeMode:"contain",
-    height: 800,       
+    height: 800,   
   },
   titulo: {
     color: 'black',
