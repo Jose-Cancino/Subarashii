@@ -8,7 +8,9 @@ import AsyncStorage from "@react-native-community/async-storage";
 import Recomendacion from "./Recomendacion"
 import Lista from "./Listas"
 import BusquedaAnime from "./Busqueda"
+import perfil from "./perfil"
 import { NavigationContainer, DefaultTheme } from '@react-navigation/native';
+
 
 const Tab = createMaterialBottomTabNavigator();
 
@@ -27,7 +29,7 @@ export default function App() {
       initialRouteName = "Home"
       activeColor = "white"
       shifting = {true}
-      barStyle = {{backgroundColor:'#191970'}}
+      barStyle = {{backgroundColor:'#23265E'}}
     > 
       <Tab.Screen 
         name="Buscar" component={BusquedaAnime} 
@@ -53,6 +55,15 @@ export default function App() {
         tabBarLabel: "Listas",
         tabBarIcon: ({ color }) => (
           <MaterialCommunityIcons name="format-list-bulleted" color={color} size={26}/>
+        ),
+      }} 
+      />
+      <Tab.Screen
+        name="Perfil" component={perfil} 
+        options={{
+        tabBarLabel: "Perfil",
+        tabBarIcon: ({ color }) => (
+          <MaterialCommunityIcons name="account" color={color} size={26}/>
         ),
       }} 
       />
