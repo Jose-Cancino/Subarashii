@@ -1,6 +1,6 @@
 import { StatusBar } from 'expo-status-bar';
 import React from 'react';
-import { ImageBackground, StyleSheet, Text, View, TouchableOpacity, ScrollView} from 'react-native';
+import { ImageBackground, StyleSheet, SafeAreaView, Text, View, TouchableOpacity, ScrollView} from 'react-native';
 import { Button } from "react-native-elements"
 import { createStackNavigator } from "@react-navigation/stack";
 
@@ -31,8 +31,8 @@ const image = { uri: "https://archive-media-1.nyafuu.org/vp/image/1494/46/149446
 
 const RecomendacionTab = ({navigation}) => {
   return(
-    <ScrollView>
-            <ImageBackground source={image} style={styles.image}>
+    <SafeAreaView>
+            <ImageBackground source={image} style={styles.image}></ImageBackground>
             <Text style={styles.frasesitas}>Los mejores recomendado por los mejores</Text>
             <Button 
                   onPress={() => navigation.navigate("Lista Recomendada")}
@@ -49,7 +49,7 @@ const RecomendacionTab = ({navigation}) => {
             <Text style={styles.frasesitas}>Danos tres animes y te daremos lo que buscas</Text>
             <Button 
                 onPress={() => navigation.navigate("express")}
-                title = "Recomendacion Express"
+                title = "Recomendación Express"
                 type = "outline"
                 buttonStyle = {{
                   backgroundColor:"white",
@@ -63,7 +63,7 @@ const RecomendacionTab = ({navigation}) => {
             <Text style={styles.frasesitas}>Busca por tus categorias favoritas</Text>
             <Button 
                 onPress={() => navigation.navigate("Categorias")}
-                title = "Categorias"
+                title = "Categorías"
                 type = "outline"
                 buttonStyle = {{
                   backgroundColor:"white",
@@ -77,7 +77,7 @@ const RecomendacionTab = ({navigation}) => {
             <Text style={styles.frasesitas}> Dame un Anime y disfruta </Text>
             <Button 
                 onPress={() => navigation.navigate("AnimeRelacionado")}
-                title = "Recomendacion por Anime"
+                title = "Recomendación por Anime"
                 type = "outline"
                 buttonStyle = {{
                   backgroundColor:"white",
@@ -88,8 +88,7 @@ const RecomendacionTab = ({navigation}) => {
                 }}
                 >
             </Button>
-            </ImageBackground>
-      </ScrollView>
+      </SafeAreaView>
     );
   }
   const Stack = createStackNavigator();
@@ -101,32 +100,18 @@ const RecomendacionTab = ({navigation}) => {
         <Stack.Screen name = "express" component = {express} options = {{title: "Express"}}/>
         <Stack.Screen name = "generarVistos" component = {generarVistos} />        
         <Stack.Screen name= "Anime" component = {pagAnime} />
-        <Stack.Screen name= "listaCategoria" component = {listaCategoria} options = {{title: "Categoria"}} />
-        <Stack.Screen name= "Categorias" component = {categorias} />
+        <Stack.Screen name= "listaCategoria" component = {listaCategoria} options = {{title: "Categoría"}} />
+        <Stack.Screen name= "Categorías" component = {categorias} />
         <Stack.Screen name= "AnimeRelacionado" component = {AnimeRelacionado} />
         <Stack.Screen name= "Contenido" component = {Contenido} />
         <Stack.Screen name= "Elementos" component = {Elementos} />
         <Stack.Screen name= "Escenario" component = {Escenario} />
-        <Stack.Screen name= "Publico" component = {Publico} />
-        <Stack.Screen name= "Tematica" component = {Tematica} />
+        <Stack.Screen name= "Público" component = {Publico} />
+        <Stack.Screen name= "Temática" component = {Tematica} />
       </Stack.Navigator>
     )
   }
   const styles = StyleSheet.create({
-    container: {
-      flex: 1,
-      backgroundColor: '#fff',
-      alignItems: 'center',
-      justifyContent: 'center',
-    },
-    listas: {
-      alignItems: "center",
-      borderColor: "white",
-      padding: 10,
-      marginBottom: 15,
-      height: 500,
-      marginHorizontal: 40,
-    },
 
     frasesitas: {
       textAlign:"center",
