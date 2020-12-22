@@ -1,5 +1,5 @@
 import React, {useState, Component} from 'react';
-import { StyleSheet, Text, View, SafeAreaView, Image, Button, TextInput, FlatList, TouchableNativeFeedback, TouchableOpacity } from 'react-native';
+import { ImageBackground, StyleSheet, Text, View, SafeAreaView, Image, Button, TextInput, FlatList, TouchableNativeFeedback, TouchableOpacity } from 'react-native';
 import "react-native-gesture-handler";
 import { createStackNavigator } from "@react-navigation/stack";
 import Lista1, {ListaN1} from "./Listas/Lista1"
@@ -40,11 +40,15 @@ const Listas = ({route, navigation}) => {
         {name: "Lista 9", key: "9",},
         {name: "Lista 10", key: "10",}
     ])
+
+const image = { uri: "https://archive-media-1.nyafuu.org/vp/image/1494/46/1494462189909.png" };
+
     return (
         <SafeAreaView>
             { 
                 listado.map((l, i) => (
                 <TouchableOpacity onPress = {() => navigation.navigate(l.name, {id: {id}})}>
+                    <ImageBackground source={image} style={styles.image}></ImageBackground>
                     <ListItem key = {i} bottomDivider>
                         <ListItem.Content>
                             <ListItem.Title>{l.name}</ListItem.Title>
@@ -104,8 +108,12 @@ const styles = StyleSheet.create({
     marginTop: 24,
     backgroundColor: "pink",
     fontSize: 20
-  }
-
+  },
+  image: {
+    flex: 1,
+    resizeMode:"contain",
+    height: 800,       
+  },
 });
 
 
