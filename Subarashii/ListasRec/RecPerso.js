@@ -92,19 +92,20 @@ const [lista, setLista] = useState([])
         <TouchableOpacity   onPress={() => navigation.navigate("Anime", {
         id: `${id}`
         })}>
-    
+          <View>
           <Image 
           source = {{uri: imagen}}
           style={{
             width:210,
             height:300,
             borderWidth:2,
-            borderColor:'#191970',
+            borderColor:'white',
             resizeMode:'contain',
             margin:8,
             alignSelf:"center"
           }}
           />
+          </View>
         </TouchableOpacity>
       </View>
     );
@@ -161,13 +162,20 @@ const styles = StyleSheet.create({
     textAlign: "center"
   },  
   title: {
-    alignSelf:"center"
+    alignSelf:"center",
+    fontFamily: 'serif',
+    fontSize: 16,
+    fontWeight: 'bold',
+    color: 'white'
   },
   item:{
-    backgroundColor: 'rgba(255, 255, 255, 0.5)',
+    backgroundColor: '#23265E',
+    opacity: 0.9,
     padding: 15,
     marginVertical: 15,
-    marginHorizontal: 16,
+    marginHorizontal: 30,
+    borderColor: 'white',
+    borderWidth: 3
   },
   image: {
     flex: 1,
