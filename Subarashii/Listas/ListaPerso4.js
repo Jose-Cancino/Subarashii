@@ -66,11 +66,14 @@ const ListaPerso4 = ({navigation, route}) => {
           });
           
 
-      return (
+const image = {uri:"https://cdn.discordapp.com/attachments/760834589987045388/790803909294817291/paisaje-de-lago-al-atardecer-6253.png"}
+  return (
+    <SafeAreaView>
+      <ImageBackground source={image} style={styles.image}></ImageBackground>
         <ScrollView style ={styles.scrollView}>
 
             <Button onPress={() => navigation.navigate("RecPerso", {listarec})} 
-            title = "Recomendacion"
+            title = "Recomendación"
             type = "outline"
               buttonStyle = {{
               backgroundColor:"white",
@@ -83,8 +86,8 @@ const ListaPerso4 = ({navigation, route}) => {
             <View >
             {Bloques}
             </View>
-    
         </ScrollView>
+    </SafeAreaView>
       );
     }
     
@@ -97,11 +100,20 @@ const ListaPerso4 = ({navigation, route}) => {
       },
       lista:{
         marginHorizontal: 20,
-        marginBottom: 24,
+        marginTop: 24,
         padding: 30,
-        backgroundColor: "white",
+        borderRadius: 10,
         fontSize: 24,
-        borderRadius:10,
+        backgroundColor: 'rgba(255, 255, 255, 0.5)',
+        color: 'black',
+        borderColor: 'white',
+        borderWidth: 4, 
+        fontStyle: 'italic'
+      },
+      image: {
+        flex: 1,
+        resizeMode:"contain",
+        height: 800     
       },
     });
     export default ListaPerso4;

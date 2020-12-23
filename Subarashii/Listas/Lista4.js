@@ -1,5 +1,5 @@
 import React, {useState, Component, useEffect} from 'react';
-import { StyleSheet, Text, View, TextInput, Alert, SafeAreaView, ScrollView, TextPropTypes } from 'react-native';
+import { StyleSheet, Text, View, TextInput, Alert, SafeAreaView, ScrollView, TextPropTypes, ImageBackground } from 'react-native';
 import AsyncStorage from "@react-native-community/async-storage";
 import { Button } from "react-native-elements"
 export default function Lista4({navigation, route}){
@@ -107,9 +107,10 @@ export default function Lista4({navigation, route}){
         load();
         getData();
     },[]);
-
+const image = {uri: "https://cdn.discordapp.com/attachments/409042100428996621/791378878256906260/274bcfc4a44699b4ff1ea0ea89a2b808.jpg"}
     return(
         <SafeAreaView style={styles.container}>
+        <ImageBackground source={image} style={styles.image}></ImageBackground>
         <Text style = {styles.titulo}> {ListaN4} </Text>
         <TextInput 
             style={styles.input}
@@ -117,81 +118,93 @@ export default function Lista4({navigation, route}){
             onChangeText = {(text) => setListaN4(text)}>
         </TextInput>
         <Button onPress={() => añadir()}
-            title = "Añadir"
-            type = "outline"
-         buttonStyle = {{
-            backgroundColor:"#dcdcdc",
-            marginHorizontal: 20,
-            borderColor: "white",   
-            borderRadius: 10, 
-            marginVertical: 10,                 
-        }}> </Button>
-        <Button onPress={() => storeData()}
-            title = "Guardar Anime"
-            type = "outline"
-         buttonStyle = {{
-            backgroundColor:"#dcdcdc",
-            marginHorizontal: 20,
-            borderColor: "white",   
-            borderRadius: 10, 
-            marginVertical: 10,                 
-        }}> </Button>
-        <Button onPress={() => borrar()}
-            title = "Purgar Lista"
-            type = "outline"
-         buttonStyle = {{
-            backgroundColor:"#dcdcdc",
-            marginHorizontal: 20,
-            borderColor: "white",   
-            borderRadius: 10,
-            marginVertical: 10,                  
-        }}> </Button>
-        <Button onPress={() => navigation.navigate("Ver Lista 4", {lista: listaP4})}
-            title = "Ver Lista"
-            type = "outline"
-         buttonStyle = {{
-            backgroundColor:"#dcdcdc",
-            marginHorizontal: 20,
-            borderColor: "white",   
-            borderRadius: 10,
-            marginVertical: 10,                
-        }}> </Button>
-        <Button onPress={() => save()}
-            title = "Guardar Nombre"
-            type = "outline"
-         buttonStyle = {{
-            backgroundColor:"#dcdcdc",
-            marginHorizontal: 20,
-            borderColor: "white",   
-            borderRadius: 10,
-            marginVertical: 10,                
-        }}> </Button>
-        </SafeAreaView>
-        )}
-    
-    const styles = StyleSheet.create({
-        container: {
-            flex: 1,
-            backgroundColor: '#fff',
-            alignItems: 'center',
-            justifyContent: 'center',
-        },
-        input: {
-            marginBottom: "auto",
-            borderWidth: 1,
-            borderColor: "#777",
-            padding: 8,
-            margin: 10,
-            width: 200,
-            backgroundColor: "white",
-        },
-        listas: {
-            alignItems: "center",
-            backgroundColor: "#DDDDDD",
-            padding: 10,
-            marginBottom: 25,
-        },
-        titulo: {
-            marginTop:"auto"
-        }
-    })
+        title = "Añadir"
+        type = "outline"
+     buttonStyle = {{
+        backgroundColor: 'rgba(255, 255, 255, 0.95)',
+        marginHorizontal: 20,
+        borderColor: "white",   
+        borderRadius: 10, 
+        marginVertical: 10,                 
+    }}> </Button>
+    <Button onPress={() => storeData()}
+        title = "Guardar Anime"
+        type = "outline"
+     buttonStyle = {{
+        backgroundColor:"'rgba(255, 255, 255, 0.95)'",
+        marginHorizontal: 20,
+        borderColor: "white",   
+        borderRadius: 10, 
+        marginVertical: 10,                 
+    }}> </Button>
+
+    <Button onPress={() => navigation.navigate("Ver Lista 4", {lista: listaP4})}
+        title = "Ver Lista"
+        type = "outline"
+     buttonStyle = {{
+        backgroundColor:"'rgba(255, 255, 255, 0.95)'",
+        marginHorizontal: 20,
+        borderColor: "white",   
+        borderRadius: 10,
+        marginVertical: 10,                
+    }}> </Button>
+    <Button onPress={() => save()}
+        title = "Guardar Nombre"
+        type = "outline"
+     buttonStyle = {{
+        backgroundColor:"'rgba(255, 255, 255, 0.95)'",
+        marginHorizontal: 20,
+        borderColor: "white",   
+        borderRadius: 10,
+        marginVertical: 10,                
+    }}> </Button>
+    <Button onPress={() => borrar()}
+        title = "Purgar Lista"
+        type = "outline"
+     buttonStyle = {{
+        backgroundColor:"'rgba(255, 255, 255, 0.95)'",
+        marginHorizontal: 20,
+        borderColor: "white",   
+        borderRadius: 10,
+        marginVertical: 10,                  
+    }}> </Button>
+    </SafeAreaView>
+    )}
+
+const styles = StyleSheet.create({
+    input: {
+        alignItems: "center",
+        alignSelf: "center",
+        marginBottom: "auto",
+        borderWidth: 1,
+        borderColor: "#777",
+        padding: 8,
+        margin: 10,
+        width: 200,
+        backgroundColor: "white",
+    },
+    listas: {
+        alignItems: "center",
+        backgroundColor: "#DDDDDD",
+        padding: 10,
+        marginBottom: 25,
+    },
+    titulo: {
+        marginVertical: 10,
+        fontSize:22,  
+        fontStyle: 'italic',
+        height: "auto",
+        lineHeight: 35,
+        textAlign: 'center', 
+        borderColor: 'white',   
+        borderWidth: 3, 
+        color: 'white',
+        backgroundColor: '#DB4E08',
+        padding: 10,
+      },
+    image: {
+        flex: 1,
+        resizeMode:"contain",
+        height: 800     
+      },
+})
