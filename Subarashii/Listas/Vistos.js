@@ -1,7 +1,9 @@
 import React, {useState, Component, useEffect} from 'react';
-import { StyleSheet, Text, View, TextInput, Alert, SafeAreaView, ScrollView, TextPropTypes } from 'react-native';
+import { StyleSheet, Text, View, TextInput, Alert, SafeAreaView, ScrollView, TextPropTypes, ImageBackground } from 'react-native';
 import AsyncStorage from "@react-native-community/async-storage";
 import { Button } from "react-native-elements"
+
+const imagencita = { uri: "https://i.pinimg.com/564x/a1/23/80/a12380f2997a75447613fbadbca286a5.jpg" };
 
 export default function vistos({navigation, route}){
     const ide = route.params
@@ -22,8 +24,8 @@ export default function vistos({navigation, route}){
             setListaPVistos(nueva)
         } else {
             Alert.alert(
-                "No pudimos agregar tu Anime UnU",
-                "Este Anime ya esta en la lista, prueba con otro :3",
+                "No podemos agregar tu Anime UnU",
+                "Este Anime ya está en la lista, prueba con otro :3",
             ) 
         }
     } else {
@@ -55,7 +57,7 @@ export default function vistos({navigation, route}){
     const borrar = () => {
         Alert.alert(
             "¿Desea purgar esta lista?",
-            "Al purgar la lista se borraran todos los Animes que contiene.",
+            "Al purgar la lista se borrarán todos los Animes que contiene.",
             [
               { text: "Cancelar", onPress: () => console.log("Cancel Pressed")},
               { text: "Borrar", onPress: () => removeData() }
@@ -110,46 +112,51 @@ export default function vistos({navigation, route}){
     },[]);
 
     return(
-        <SafeAreaView style={styles.container}>
+        <SafeAreaView>
+        <ImageBackground source={imagencita} style={styles.imagencita}></ImageBackground>
         <Button onPress={() => añadir()}
             title = "Añadir"
             type = "outline"
          buttonStyle = {{
-            backgroundColor:"#dcdcdc",
+            backgroundColor:'rgba(255, 255, 255, 0.8)',
             marginHorizontal: 20,
-            borderColor: "white",   
+            borderColor: "white",
+            borderWidth: 2,     
             borderRadius: 10, 
-            marginVertical: 10,                 
+            marginVertical: 20,                 
         }}> </Button>
         <Button onPress={() => storeData()}
             title = "Guardar Anime"
             type = "outline"
          buttonStyle = {{
-            backgroundColor:"#dcdcdc",
+            backgroundColor:'rgba(255, 255, 255, 0.8)',
             marginHorizontal: 20,
-            borderColor: "white",   
+            borderColor: "white",
+            borderWidth: 2,     
             borderRadius: 10, 
-            marginVertical: 10,                 
+            marginVertical: 20,                 
         }}> </Button>
         <Button onPress={() => borrar()}
             title = "Purgar Lista"
             type = "outline"
          buttonStyle = {{
-            backgroundColor:"#dcdcdc",
+            backgroundColor:'rgba(255, 255, 255, 0.8)',
             marginHorizontal: 20,
-            borderColor: "white",   
+            borderColor: "white", 
+            borderWidth: 2,    
             borderRadius: 10,
-            marginVertical: 10,                  
+            marginVertical: 20,                  
         }}> </Button>
         <Button onPress={() => navigation.navigate("Ver Lista Vistos", {lista: listaPVistos})}
             title = "Ver Lista"
             type = "outline"
          buttonStyle = {{
-            backgroundColor:"#dcdcdc",
+            backgroundColor:'rgba(255, 255, 255, 0.8)',
             marginHorizontal: 20,
-            borderColor: "white",   
+            borderColor: "white", 
+            borderWidth: 2,  
             borderRadius: 10,
-            marginVertical: 10,                
+            marginVertical: 20,                
         }}> </Button>
         </SafeAreaView>
         )}
@@ -178,5 +185,10 @@ export default function vistos({navigation, route}){
         },
         titulo: {
             marginTop:"auto"
-        }
+        },
+        imagencita: {
+            flex: 1,
+            resizeMode:"contain",
+            height: 800,
+        },
     })
