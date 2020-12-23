@@ -30,34 +30,34 @@ const Listas = ({route, navigation}) => {
     const  id  = route.params;
     const [listado, setListado] = useState([
         {name: "Lista 1", 
-        avatar_url:"https://vignette.wikia.nocookie.net/gurrenlagann/images/8/8c/Kamina_2.png/revision/latest/scale-to-width-down/340?cb=20160106173943&path-prefix=es",
+        avatar_url:"https://cdn.discordapp.com/attachments/409042100428996621/791374658775547944/original.gif",
              key: "1",},
         {name: "Lista 2",
-        avatar_url:"https://i.pinimg.com/originals/aa/09/60/aa096042da83a0d847b3dbacfd62eb1a.jpg", 
+        avatar_url:"https://cdn.discordapp.com/attachments/409042100428996621/791377209939722240/tenor.gif", 
             key: "2",},
         {name: "Lista 3", 
-        avatar_url:"https://vignette.wikia.nocookie.net/maid-dragon/images/6/67/Tohru_2.png/revision/latest?cb=20181123213830&path-prefix=es", 
+        avatar_url:"https://media.tenor.com/images/c719de6c80d5acf540bf417fed7a9210/tenor.gif", 
             key: "3",},
         {name: "Lista 4", 
-        avatar_url:"https://www.latercera.com/resizer/PGw8XCJ5YPzXa5WEAv7WlbUEtYg=/900x600/smart/arc-anglerfish-arc2-prod-copesa.s3.amazonaws.com/public/CMM446BJSZAMTIEAVZIOKCDEMY.jpg", 
+        avatar_url:"https://cdn.discordapp.com/attachments/409042100428996621/791378034883559434/tenor_1.gif", 
             key: "4",},
         {name: "Lista 5", 
-        avatar_url:"https://pbs.twimg.com/profile_images/665186307124142080/oA7gC1Gd_400x400.png", 
+        avatar_url:"https://cdn.discordapp.com/attachments/409042100428996621/791376068614291496/giphy.gif", 
             key: "5",},
         {name: "Lista 6", 
-        avatar_url:"https://static.tumblr.com/017e6d57caac632519ec15cbff6ab12d/deag8zo/xBbot8sc0/tumblr_static_3bbs2g4cju688scsc4ww0wogg.jpg", 
+        avatar_url:"https://cdn.discordapp.com/attachments/409042100428996621/791375041115455488/99c10f79936772fd3e6105a36bb0913d.gif", 
             key: "6",},
         {name: "Lista 7", 
-        avatar_url:"https://i0.wp.com/jellygoods.com/wp-content/uploads/2019/03/Pel%C3%ADcula-de-Konosuba-2019.jpg?fit=1440%2C810&ssl=1", 
+        avatar_url:"https://cdn.discordapp.com/attachments/409042100428996621/791380173274480700/descarga.gif", 
             key: "7",},
         {name: "Lista 8", 
-        avatar_url:"https://www.beahero.gg/wp-content/uploads/2019/10/code-geass-2019.jpg", 
+        avatar_url:"https://cdn.discordapp.com/attachments/409042100428996621/791382474755145778/73.gif", 
             key: "8",},
         {name: "Lista 9", 
-        avatar_url:"https://vignette.wikia.nocookie.net/kill-la-kill/images/f/f5/Ryukoo.jpg/revision/latest?cb=20190818230524&path-prefix=es", 
+        avatar_url:"https://cdn.discordapp.com/attachments/409042100428996621/791374834919014420/tumblr_n3fs0wtXf61sk6x9qo1_400.gif", 
             key: "9",},
         {name: "Lista 10", 
-        avatar_url:"https://i.pinimg.com/originals/39/69/1f/39691f30f78af4924661678743c7483b.png", 
+        avatar_url:"https://cdn.discordapp.com/attachments/409042100428996621/791378381038944326/tenor.gif", 
             key: "10",}
     ])
 
@@ -72,10 +72,9 @@ const Listas = ({route, navigation}) => {
                         start: { x: 1, y: 0 },
                         end: { x: 0.2, y: 0 },
                       }}>
-                    <Avatar rounded size = "medium" source={{uri: l.avatar_url}} />
+                    <Avatar rounded size = "medium" source={{uri: l.avatar_url}}/>
                         <ListItem.Content>
                             <ListItem.Title style={{ color: 'white', fontWeight: 'bold' }}>{l.name}</ListItem.Title>
-                            <ListItem.Subtitle>{l.subtitle}</ListItem.Subtitle>
                         </ListItem.Content>
                   </ListItem> 
                 </TouchableOpacity>     
