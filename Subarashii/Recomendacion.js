@@ -27,13 +27,13 @@ import Tematica from "./TodasCategorias/Tematica"
 import AnimeRelacionado from "./AnimeRelacionado"
 
 
-const image = { uri: "https://archive-media-1.nyafuu.org/vp/image/1494/46/1494462189909.png" };
+const image = {uri:"https://p4.wallpaperbetter.com/wallpaper/793/973/136/clouds-sunset-sky-portrait-display-wallpaper-preview.jpg"};
 
 const RecomendacionTab = ({navigation}) => {
   return(
     <SafeAreaView>
             <ImageBackground source={image} style={styles.image}></ImageBackground>
-            <Text style={styles.frasesitas}>Los mejores recomendado por los mejores</Text>
+            <Text style={styles.frasesitas}>"Los mejores recomendado por los mejores"</Text>
             <Button 
                   onPress={() => navigation.navigate("Lista Recomendada")}
                   title = "Lista Recomendada Programadores"
@@ -46,7 +46,7 @@ const RecomendacionTab = ({navigation}) => {
                   
                 }}>
             </Button>
-            <Text style={styles.frasesitas}>Danos tres animes y te daremos lo que buscas</Text>
+            <Text style={styles.frasesitas}>"Danos tres animes y te daremos lo que buscas"</Text>
             <Button 
                 onPress={() => navigation.navigate("express")}
                 title = "Recomendación Express"
@@ -60,7 +60,7 @@ const RecomendacionTab = ({navigation}) => {
                 }}
                 >
             </Button>
-            <Text style={styles.frasesitas}>Busca por tus categorias favoritas</Text>
+            <Text style={styles.frasesitas}>"Busca por tus categorías favoritas"</Text>
             <Button 
                 onPress={() => navigation.navigate("Categorias")}
                 title = "Categorías"
@@ -74,7 +74,7 @@ const RecomendacionTab = ({navigation}) => {
                 }}
                 >
             </Button>
-            <Text style={styles.frasesitas}> Dame un Anime y disfruta </Text>
+            <Text style={styles.frasesitas}> "Dame un Anime y disfruta" </Text>
             <Button 
                 onPress={() => navigation.navigate("AnimeRelacionado")}
                 title = "Recomendación por Anime"
@@ -101,13 +101,13 @@ const RecomendacionTab = ({navigation}) => {
         <Stack.Screen name = "generarVistos" component = {generarVistos} />        
         <Stack.Screen name= "Anime" component = {pagAnime} />
         <Stack.Screen name= "listaCategoria" component = {listaCategoria} options = {{title: "Categoría"}} />
-        <Stack.Screen name= "Categorías" component = {categorias} />
+        <Stack.Screen name= "Categorias" component = {categorias} />
         <Stack.Screen name= "AnimeRelacionado" component = {AnimeRelacionado} />
         <Stack.Screen name= "Contenido" component = {Contenido} />
         <Stack.Screen name= "Elementos" component = {Elementos} />
         <Stack.Screen name= "Escenario" component = {Escenario} />
-        <Stack.Screen name= "Público" component = {Publico} />
-        <Stack.Screen name= "Temática" component = {Tematica} />
+        <Stack.Screen name= "Publico" component = {Publico}  options = {{title: "Público"}} />
+        <Stack.Screen name= "Tematica" component = {Tematica}  options = {{title: "Temática"}} />
       </Stack.Navigator>
     )
   }
@@ -116,18 +116,19 @@ const RecomendacionTab = ({navigation}) => {
     frasesitas: {
       textAlign:"center",
       alignItems: "center",
-      marginBottom: 15,
+      marginBottom: 10,
       marginHorizontal: 40,
       justifyContent: 'center',
-      marginVertical: 15,
+      marginVertical: 60,
       fontFamily: "serif",
-      fontWeight: "bold",
-      color: 'black',
+      fontStyle: 'italic',
+      //fontWeight: "bold",
+      color: 'white',
     },
     image: {
       flex: 1,
       resizeMode:"contain",
-      height: 800,       
+      height: 800     
     },
   });
 export default Recomendacion;
