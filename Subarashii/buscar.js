@@ -49,7 +49,7 @@ const Item = ({ id, title, imagen, desc, canonico}) => (
       style={{
         width:210,
         height:300,
-        borderWidth:4,
+        borderWidth:2,
         borderColor:'white',
         resizeMode:'contain',
         margin: 3,
@@ -60,7 +60,7 @@ const Item = ({ id, title, imagen, desc, canonico}) => (
   </View>
 );
 
-const imagencita = { uri: "https://p4.wallpaperbetter.com/wallpaper/793/973/136/clouds-sunset-sky-portrait-display-wallpaper-preview.jpg" };
+const imagencita = { uri: "https://i.pinimg.com/originals/8f/64/60/8f64602b2b146a4edbc2e2cbb17a3034.png" };
   const renderItem = ({item}) => (
       <Item 
        id={item.id} 
@@ -80,16 +80,16 @@ const imagencita = { uri: "https://p4.wallpaperbetter.com/wallpaper/793/973/136/
         placeholder = "   Nombre anime..."
       ></TextInput>
       <Button 
-            onPress={() => Buscar()}
-            type = "outline"
-            title = 'BUSCAR'
-            buttonStyle = {{
-              backgroundColor: "white",
-              alignItems: 'center',
-              marginHorizontal: 50,
-              borderColor: "white",
-              borderRadius: 10,
-            }}
+           onPress={() => Buscar()}
+          type = "outline"
+          title = 'BUSCAR'
+          buttonStyle = {{
+            backgroundColor: "white",
+            alignItems: 'center',
+            marginHorizontal: 50,
+            borderColor: "white",
+            borderRadius: 10,
+          }}
           >
           </Button>
         <FlatList
@@ -122,7 +122,9 @@ const styles = StyleSheet.create({
     marginVertical: 10,
     marginHorizontal: 20,
     width: 300,
-    backgroundColor: '#F9D233',
+    backgroundColor: '#F7930D',
+    borderColor: 'white',
+    borderWidth: 3,
     alignSelf: 'center',
   },  
   boton: {
@@ -140,7 +142,7 @@ const styles = StyleSheet.create({
     textAlign: 'center',
     fontSize:13,
     fontWeight: 'bold',
-    color: 'black',
+    color: 'white',
   },  
   imagen: {
     flex: 1,
