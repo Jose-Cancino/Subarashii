@@ -1,5 +1,5 @@
 import React, {useState, Component} from 'react';
-import { ImageBackground, StyleSheet, Text, View, SafeAreaView, Image, Button, TextInput, FlatList, TouchableNativeFeedback, TouchableOpacity } from 'react-native';
+import { ScrollView, StyleSheet, Text, View, SafeAreaView, Image, Button, TextInput, FlatList, TouchableNativeFeedback, TouchableOpacity } from 'react-native';
 import "react-native-gesture-handler";
 import { createStackNavigator } from "@react-navigation/stack";
 import Lista1, {ListaN1} from "./Listas/Lista1"
@@ -24,41 +24,64 @@ import ListaPerso7 from "./Listas/ListaPerso7"
 import ListaPerso8 from "./Listas/ListaPerso8"
 import ListaPerso9 from "./Listas/ListaPerso9"
 import ListaPerso10 from "./Listas/ListaPerso10"
-import { ListItem } from "react-native-elements"
+import { ListItem, Avatar } from "react-native-elements"
 
 const Listas = ({route, navigation}) => {
     const  id  = route.params;
     const [listado, setListado] = useState([
-        {name: "Lista 1", key: "1",},
-        {name: "Lista 2", key: "2",},
-        {name: "Lista 3", key: "3",},
-        {name: "Lista 4", key: "4",},
-        {name: "Lista 5", key: "5",},
-        {name: "Lista 6", key: "6",},
-        {name: "Lista 7", key: "7",},
-        {name: "Lista 8", key: "8",},
-        {name: "Lista 9", key: "9",},
-        {name: "Lista 10", key: "10",}
+        {name: "Lista 1", 
+        avatar_url:"https://vignette.wikia.nocookie.net/gurrenlagann/images/8/8c/Kamina_2.png/revision/latest/scale-to-width-down/340?cb=20160106173943&path-prefix=es",
+             key: "1",},
+        {name: "Lista 2",
+        avatar_url:"https://i.pinimg.com/originals/aa/09/60/aa096042da83a0d847b3dbacfd62eb1a.jpg", 
+            key: "2",},
+        {name: "Lista 3", 
+        avatar_url:"https://vignette.wikia.nocookie.net/maid-dragon/images/6/67/Tohru_2.png/revision/latest?cb=20181123213830&path-prefix=es", 
+            key: "3",},
+        {name: "Lista 4", 
+        avatar_url:"https://www.latercera.com/resizer/PGw8XCJ5YPzXa5WEAv7WlbUEtYg=/900x600/smart/arc-anglerfish-arc2-prod-copesa.s3.amazonaws.com/public/CMM446BJSZAMTIEAVZIOKCDEMY.jpg", 
+            key: "4",},
+        {name: "Lista 5", 
+        avatar_url:"https://pbs.twimg.com/profile_images/665186307124142080/oA7gC1Gd_400x400.png", 
+            key: "5",},
+        {name: "Lista 6", 
+        avatar_url:"https://static.tumblr.com/017e6d57caac632519ec15cbff6ab12d/deag8zo/xBbot8sc0/tumblr_static_3bbs2g4cju688scsc4ww0wogg.jpg", 
+            key: "6",},
+        {name: "Lista 7", 
+        avatar_url:"https://i0.wp.com/jellygoods.com/wp-content/uploads/2019/03/Pel%C3%ADcula-de-Konosuba-2019.jpg?fit=1440%2C810&ssl=1", 
+            key: "7",},
+        {name: "Lista 8", 
+        avatar_url:"https://www.beahero.gg/wp-content/uploads/2019/10/code-geass-2019.jpg", 
+            key: "8",},
+        {name: "Lista 9", 
+        avatar_url:"https://vignette.wikia.nocookie.net/kill-la-kill/images/f/f5/Ryukoo.jpg/revision/latest?cb=20190818230524&path-prefix=es", 
+            key: "9",},
+        {name: "Lista 10", 
+        avatar_url:"https://i.pinimg.com/originals/39/69/1f/39691f30f78af4924661678743c7483b.png", 
+            key: "10",}
     ])
 
-const image = { uri: "https://archive-media-1.nyafuu.org/vp/image/1494/46/1494462189909.png" };
-
     return (
-        <SafeAreaView>
+        <ScrollView>
             { 
                 listado.map((l, i) => (
                 <TouchableOpacity onPress = {() => navigation.navigate(l.name, {id: {id}})}>
-                    <ImageBackground source={image} style={styles.image}></ImageBackground>
-                    <ListItem key = {i} bottomDivider>
+                    <ListItem
+                      linearGradientProps={{
+                        colors: ["#F7FF00", '#FF6400' ],
+                        start: { x: 1, y: 0 },
+                        end: { x: 0.2, y: 0 },
+                      }}>
+                    <Avatar rounded size = "medium" source={{uri: l.avatar_url}} />
                         <ListItem.Content>
-                            <ListItem.Title>{l.name}</ListItem.Title>
+                            <ListItem.Title style={{ color: 'white', fontWeight: 'bold' }}>{l.name}</ListItem.Title>
                             <ListItem.Subtitle>{l.subtitle}</ListItem.Subtitle>
                         </ListItem.Content>
                   </ListItem> 
                 </TouchableOpacity>     
                 ))
             }
-        </SafeAreaView>
+        </ScrollView>
     )
 }
 
