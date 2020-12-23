@@ -5,7 +5,7 @@ import { Button, CheckBox } from "react-native-elements"
 import { listaP1 } from "../Listas/Lista1"
 import { onChange } from 'react-native-reanimated';
 
-const imagen = {uri:"https://i.pinimg.com/564x/92/8e/e3/928ee34365d45844460a126de71184cc.jpg"};
+const imagen = {uri:"https://images-ext-1.discordapp.net/external/s_Qt32IpyWffIah84bcKHxYyJL2ohZb6J2K53V3WEAw/%3F1556205415/https/cdnb.artstation.com/p/assets/images/images/014/197/997/4k/grady-frederick-lake-final-3.jpg?width=470&height=670"};
 const ListaPersoViendo = ({navigation, route}) => {
     var listastring = ""
     const lista = route.params
