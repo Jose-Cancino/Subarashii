@@ -5,7 +5,7 @@ import { Button, CheckBox } from "react-native-elements"
 import { listaP1 } from "../Listas/Lista1"
 import { onChange } from 'react-native-reanimated';
 
-const image = {uri:"https://i.pinimg.com/564x/49/25/3b/49253b45cf031dfcf2264b4173c6e332.jpg"};
+const image = {uri:"https://i.pinimg.com/564x/ca/8b/5d/ca8b5d66d51162712a8bb65194dda06e.jpg"};
 const ListaPersoVer = ({navigation, route}) => {
     var listastring = ""
     const lista = route.params
