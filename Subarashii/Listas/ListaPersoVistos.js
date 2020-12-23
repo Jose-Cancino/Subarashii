@@ -1,9 +1,12 @@
 import React, {useState, Component, useEffect} from 'react';
-import { StyleSheet, Text, View, TextInput, Alert, TouchableOpacity, SafeAreaView, ScrollView, TextPropTypes, TouchableNativeFeedback } from 'react-native';
+import { StyleSheet, ImageBackground, Text, View, TextInput, Alert, TouchableOpacity, SafeAreaView, ScrollView, TextPropTypes, TouchableNativeFeedback } from 'react-native';
 import AsyncStorage from "@react-native-community/async-storage";
 import { Button, CheckBox } from "react-native-elements"
 import { listaP1 } from "../Listas/Lista1"
 import { onChange } from 'react-native-reanimated';
+import { ImageBackgroundBase } from 'react-native';
+
+const imagen = {uri:"https://i.pinimg.com/564x/f9/f7/f1/f9f7f1d205a91524e3411fcb66a98f04.jpg"};
 
 const ListaPersoVistos = ({navigation, route}) => {
     var listastring = ""
@@ -36,8 +39,8 @@ const ListaPersoVistos = ({navigation, route}) => {
           
           function eliminar(){
             Alert.alert(
-              "¿Desea borrar este anime?",
-              "Al borrar este Anime desaparecera de la lista, pero puedes agregarlo nuevamente.",
+              "¿Desea borrar este Anime?",
+              "Al borrar este Anime desaparecerá de la lista, pero puedes agregarlo nuevamente.",
               [
                 { text: "Cancelar", onPress: () => console.log("Cancel Pressed")},
                 { text: "Borrar", onPress: () => eliminarid(id) }
@@ -67,15 +70,17 @@ const ListaPersoVistos = ({navigation, route}) => {
           
 
       return (
+        <SafeAreaView>
+          <ImageBackground source= {imagen} style= {styles.imagen}></ImageBackground>
         <ScrollView style ={styles.scrollView}>
-
             <Button onPress={() => navigation.navigate("RecPerso", {listarec})} 
-            title = "Recomendacion"
+            title = "Recomendación"
             type = "outline"
               buttonStyle = {{
-              backgroundColor:"white",
+              backgroundColor:'rgba(255, 255, 255, 0.5)',
               marginHorizontal: 20,
               borderColor: "white",
+              borderWidth: 2,
               borderRadius: 10,
               marginVertical: 10,
               }}>
@@ -83,8 +88,8 @@ const ListaPersoVistos = ({navigation, route}) => {
             <View >
             {Bloques}
             </View>
-    
         </ScrollView>
+        </SafeAreaView>
       );
     }
     
@@ -102,6 +107,11 @@ const ListaPersoVistos = ({navigation, route}) => {
         backgroundColor: "white",
         fontSize: 24,
         borderRadius: 10,
+      },
+      imagen: {
+        flex: 1,
+        resizeMode:"contain",
+        height: 800     
       },
     });
     export default ListaPersoVistos;
