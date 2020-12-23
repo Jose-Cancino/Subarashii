@@ -1,8 +1,9 @@
 import React, {useState, Component, useEffect} from 'react';
-import { StyleSheet, Text, View, TextInput, Alert, SafeAreaView, ScrollView, TextPropTypes } from 'react-native';
+import { ImageBackground, StyleSheet, Text, View, TextInput, Alert, SafeAreaView, ScrollView, TextPropTypes } from 'react-native';
 import AsyncStorage from "@react-native-community/async-storage";
 import { Button } from "react-native-elements"
 
+const image = {uri:"https://i.pinimg.com/564x/ca/c7/9e/cac79e74ff119a4303edcf4effdb1c5d.jpg"};
 export default function Ver({navigation, route}){
     const ide = route.params
     let id = "0000"
@@ -110,12 +111,14 @@ export default function Ver({navigation, route}){
     },[]);
 
     return(
-        <SafeAreaView style={styles.container}>
+        <SafeAreaView>
+            <ImageBackground source={image} style={styles.image}></ImageBackground>
         <Button onPress={() => añadir()}
             title = "Añadir"
             type = "outline"
          buttonStyle = {{
-            backgroundColor:"#dcdcdc",
+            backgroundColor:'rgba(255, 255, 255, 0.8)',
+            borderWidth: 2,
             marginHorizontal: 20,
             borderColor: "white",   
             borderRadius: 10, 
@@ -125,7 +128,8 @@ export default function Ver({navigation, route}){
             title = "Guardar Anime"
             type = "outline"
          buttonStyle = {{
-            backgroundColor:"#dcdcdc",
+            backgroundColor:'rgba(255, 255, 255, 0.8)',
+            borderWidth: 2,
             marginHorizontal: 20,
             borderColor: "white",   
             borderRadius: 10, 
@@ -135,7 +139,8 @@ export default function Ver({navigation, route}){
             title = "Purgar Lista"
             type = "outline"
          buttonStyle = {{
-            backgroundColor:"#dcdcdc",
+            backgroundColor:'rgba(255, 255, 255, 0.8)',
+            borderWidth: 2,
             marginHorizontal: 20,
             borderColor: "white",   
             borderRadius: 10,
@@ -145,7 +150,8 @@ export default function Ver({navigation, route}){
             title = "Ver Lista"
             type = "outline"
          buttonStyle = {{
-            backgroundColor:"#dcdcdc",
+            backgroundColor:'rgba(255, 255, 255, 0.8)',
+            borderWidth: 2,
             marginHorizontal: 20,
             borderColor: "white",   
             borderRadius: 10,
@@ -178,5 +184,10 @@ export default function Ver({navigation, route}){
         },
         titulo: {
             marginTop:"auto"
-        }
+        },
+        image: {
+            flex: 1,
+            resizeMode:"contain",
+            height: 800     
+        },
     })
