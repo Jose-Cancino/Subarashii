@@ -29,6 +29,7 @@ const categorias = ({navigation}) => {
                     backgroundColor: 'white',
                     marginHorizontal: 20,
                     borderColor: "white",
+                    borderWidth: 2,
                     borderRadius: 10,
                     marginVertical: 15,
                   }}
@@ -42,6 +43,7 @@ const categorias = ({navigation}) => {
                     backgroundColor:"white",
                     marginHorizontal: 20,
                     borderColor: "white",
+                    borderWidth: 2,
                     borderRadius: 10,
                     marginVertical: 15,
                   }}
@@ -54,6 +56,7 @@ const categorias = ({navigation}) => {
                     backgroundColor:"white",
                     marginHorizontal: 20,
                     borderColor: "white",
+                    borderWidth: 2,
                     borderRadius: 10,
                     marginVertical: 15,
                   }}
@@ -66,6 +69,7 @@ const categorias = ({navigation}) => {
                     backgroundColor:"white",
                     marginHorizontal: 20,
                     borderColor: "white",
+                    borderWidth: 2,
                     borderRadius: 10,
                     marginVertical: 15,
                   }}
@@ -78,6 +82,7 @@ const categorias = ({navigation}) => {
                     backgroundColor:"white",
                     marginHorizontal: 20,
                     borderColor: "white",
+                    borderWidth: 2,
                     borderRadius: 10,
                     marginVertical: 15,
                   }}
