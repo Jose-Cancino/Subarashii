@@ -12,7 +12,7 @@ import ListaPersoVer from "./Listas/ListaPersoPorver"
 import pagAnime from "./pagAnime"
 import RecPerso from "./ListasRec/RecPerso"
 
-const image = {uri:"https://media.discordapp.net/attachments/760834589987045388/791410745971048498/1565186782114819670.png?width=535&height=669"};
+const image = {uri:"https://cdn.discordapp.com/attachments/760834589987045388/791410745971048498/1565186782114819670.png"};
 const Perfil = ({route, navigation}) => {
     const id = route.params;
     const [nombre, setNombre] = useState("")
