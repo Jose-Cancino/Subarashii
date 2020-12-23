@@ -1,5 +1,5 @@
 import React, {useState, Component, useEffect} from 'react';
-import { StyleSheet, Text, View, TextInput, Alert, TouchableOpacity, SafeAreaView, ScrollView, TextPropTypes, TouchableNativeFeedback } from 'react-native';
+import { StyleSheet, Text, View, TextInput, Alert, TouchableOpacity, SafeAreaView, ScrollView, TextPropTypes, ImageBackground } from 'react-native';
 import AsyncStorage from "@react-native-community/async-storage";
 import { Button, CheckBox } from "react-native-elements"
 import { listaP1 } from "../Listas/Lista1"
@@ -65,12 +65,13 @@ const ListaPerso1 = ({navigation, route}) => {
             );
           });
           
-
+const image = {uri:"https://cdn.discordapp.com/attachments/760834589987045388/790803909294817291/paisaje-de-lago-al-atardecer-6253.png"}
       return (
+        <SafeAreaView>
+        <ImageBackground source={image} style={styles.image}></ImageBackground>
         <ScrollView style ={styles.scrollView}>
-
             <Button onPress={() => navigation.navigate("RecPerso", {listarec})} 
-            title = "Recomendacion"
+            title = "Recomendación"
             type = "outline"
               buttonStyle = {{
               backgroundColor:"white",
@@ -85,6 +86,7 @@ const ListaPerso1 = ({navigation, route}) => {
             </View>
     
         </ScrollView>
+        </SafeAreaView>
       );
     }
     
@@ -96,12 +98,21 @@ const ListaPerso1 = ({navigation, route}) => {
         justifyContent: 'center',
       },
       lista:{
-        marginHorizontal: 20,
-        marginBottom: 24,
-        padding: 30,
-        backgroundColor: "white",
-        fontSize: 24,
-        borderRadius:10,
+          marginHorizontal: 20,
+          marginTop: 24,
+          padding: 30,
+          borderRadius: 10,
+          fontSize: 24,
+          backgroundColor: 'rgba(255, 255, 255, 0.5)',
+          color: 'black',
+          borderColor: 'white',
+          borderWidth: 4, 
+          fontStyle: 'italic'
+      },
+      image: {
+        flex: 1,
+        resizeMode:"contain",
+        height: 800     
       },
     });
     export default ListaPerso1;
