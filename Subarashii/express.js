@@ -1,5 +1,6 @@
 import React, { useState } from 'react';
 import { StyleSheet,
+    ImageBackground,
     Button,
     Text,
     View,
@@ -12,7 +13,7 @@ import { StyleSheet,
     TouchableOpacity,
     StatusBar 
  } from 'react-native';
-
+const image = {uri:"https://allegra.flowersetcfresno.com/pic/4454228_full-fondos-de-pantalla-atardecer-iphone-un-atardecer-3-ideas-de-fondos-de-pantalla-fondo-de-pantalla.png"};
 const express = ({navigation}) => {
     const [isLoading, setLoading] = useState(true)
     const [anime1, setAnime1] = useState("")
@@ -139,10 +140,12 @@ const express = ({navigation}) => {
 
 
 return(
+  <SafeAreaView>
+  <ImageBackground source={image} style={styles.image}></ImageBackground>    
     <ScrollView style ={styles.scrollView}>
      
     <View style={styles.item}>
-        <Text style={styles.frasesita}>Agrega 3 IDs para obtener recomendación.</Text>
+        <Text style={styles.frasesita}>"Agrega 3 IDs para obtener recomendación."</Text>
       <TextInput
         style = {styles.input}
         onChangeText = {text => setAnime1(text)}
@@ -165,7 +168,7 @@ return(
         <Text style={styles.boton}>
         RECOMENDAR </Text>
       </TouchableOpacity>
-      <Text style={styles.frasesita}> Cuando veas la recomendación, presiona el botón. </Text>
+      <Text style={styles.frasesita}> "Cuando veas la recomendación, presiona el botón👇." </Text>
       <TouchableOpacity  onPress={() => Buscar(resultados)}style={styles.boton}>
         <Text style={styles.boton}>
         {resultados} </Text>
@@ -183,7 +186,7 @@ return(
       
       </View>
       </ScrollView>
-
+      </SafeAreaView>
 )
 
 }
@@ -197,31 +200,40 @@ const styles = StyleSheet.create({
     },
     input: {
       height: 40,
-      borderColor: 'grey',
+      borderColor: 'black',
       borderWidth: 1, 
       backgroundColor: "white"
   
     },
     boton: {
-        color: 'black',
-        backgroundColor: 'white',
+        backgroundColor: '#23265E',
+        color: 'white',
         padding: 3,
         marginVertical: 10,
         marginHorizontal: 50,
         alignItems: 'center',
-        borderRadius: 10,
+        borderRadius: 15,
+
     },
     item: {
         padding: 15,
         marginVertical: 10,
         marginHorizontal: 16,
+
       },
     frasesita: {
-      color: "black", 
+      color: "white", 
       textAlign: "center", 
       marginBottom: 10,
-      fontSize: 15
+      fontSize: 15,
+      fontStyle: 'italic',
+      fontWeight: 'bold'
     },    
+    image: {
+      flex: 1,
+      resizeMode:"contain",
+      height: 800     
+    },
     title:{
       alignSelf:"center",
     }
