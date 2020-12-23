@@ -1,5 +1,5 @@
 import React, {useState, Component, useEffect} from 'react';
-import { StyleSheet, Text, View, TextInput, Alert, TouchableOpacity, SafeAreaView, ScrollView, TextPropTypes, TouchableNativeFeedback } from 'react-native';
+import { StyleSheet, Text, View, TextInput, Alert, TouchableOpacity, SafeAreaView, ScrollView, TextPropTypes, ImageBackground } from 'react-native';
 import AsyncStorage from "@react-native-community/async-storage";
 import { Button, CheckBox } from "react-native-elements"
 import { listaP1 } from "../Listas/Lista1"
