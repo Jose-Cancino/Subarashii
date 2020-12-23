@@ -8,20 +8,24 @@ import { StyleSheet,
     ActivityIndicator,
     SafeAreaView,
     ScrollView,
+    ImageBackground,
     TouchableOpacity,
     StatusBar 
  } from 'react-native';
  import { Button } from "react-native-elements"
+ const image = {uri:"https://i.pinimg.com/originals/b9/5a/e2/b95ae24cb746833f65045626b179a161.jpg"};
  const Publico = ({navigation}) => {
     return(
-
+      <SafeAreaView>
+        <ImageBackground source={image} style={styles.image}></ImageBackground>
         <ScrollView style ={styles.scrollView}>
         <View>
             <Button
                 onPress={() => navigation.navigate("listaCategoria", {categoria: "Josei"})}
                 type = "outline"
                 buttonStyle = {{
-                    backgroundColor:"white",
+                    backgroundColor: 'rgba(255, 255, 255, 0.9)',
+                    borderWidth: 2,
                     marginHorizontal: 20,
                     borderColor: "white",
                     borderRadius: 10,
@@ -33,7 +37,8 @@ import { StyleSheet,
                 onPress={() => navigation.navigate("listaCategoria", {categoria: "Kids"})}
                 type = "outline"
                 buttonStyle = {{
-                    backgroundColor:"white",
+                    backgroundColor: 'rgba(255, 255, 255, 0.9)',
+                    borderWidth: 2,
                     marginHorizontal: 20,
                     borderColor: "white",
                     borderRadius: 10,
@@ -45,7 +50,8 @@ import { StyleSheet,
                 onPress={() => navigation.navigate("listaCategoria", {categoria: "Seinen"})}
                 type = "outline"
                 buttonStyle = {{
-                    backgroundColor:"white",
+                    backgroundColor: 'rgba(255, 255, 255, 0.9)',
+                    borderWidth: 2,
                     marginHorizontal: 20,
                     borderColor: "white",
                     borderRadius: 10,
@@ -57,7 +63,8 @@ import { StyleSheet,
                 onPress={() => navigation.navigate("listaCategoria", {categoria: "Shoujo"})}
                 type = "outline"
                 buttonStyle = {{
-                    backgroundColor:"white",
+                    backgroundColor: 'rgba(255, 255, 255, 0.9)',
+                    borderWidth: 2,
                     marginHorizontal: 20,
                     borderColor: "white",
                     borderRadius: 10,
@@ -69,7 +76,8 @@ import { StyleSheet,
                 onPress={() => navigation.navigate("listaCategoria", {categoria: "Shounen"})}
                 type = "outline"
                 buttonStyle = {{
-                    backgroundColor:"white",
+                    backgroundColor: 'rgba(255, 255, 255, 0.9)',
+                    borderWidth: 2,
                     marginHorizontal: 20,
                     borderColor: "white",
                     borderRadius: 10,
@@ -79,6 +87,7 @@ import { StyleSheet,
             ></Button>
         </View>
         </ScrollView>
+      </SafeAreaView>
     )
 
 
@@ -95,7 +104,12 @@ import { StyleSheet,
       backgroundColor: "#DDDDDD",
       padding: 10,
       marginBottom: 15,
-    }
+    },
+    image: {
+      flex: 1,
+      resizeMode:"contain",
+      height: 800     
+    },
   
   });
  export default Publico;
