@@ -4,7 +4,7 @@ import AsyncStorage from "@react-native-community/async-storage";
 import { Button } from "react-native-elements"
 import { ImageBackgroundBase } from 'react-native';
 
-const image = {uri:"https://media.discordapp.net/attachments/760834589987045388/791388140795068431/a9fc1f7efe25a88c5f15a9b7d1a43bfd.png?width=377&height=669"};
+const image = {uri:"https://media.discordapp.net/attachments/760834589987045388/791405863465779220/joe-marlo-quitos-landscape-01-a.png?width=1019&height=670"};
 export default function Viendo({navigation, route}){
     const ide = route.params
     let id = "0000"
@@ -118,7 +118,7 @@ export default function Viendo({navigation, route}){
             title = "Añadir"
             type = "outline"
          buttonStyle = {{
-            backgroundColor:'rgba(255, 255, 255, 0.7)',
+            backgroundColor:'rgba(255, 255, 255, 0.9)',
             marginHorizontal: 20,
             borderColor: "white",   
             borderWidth: 2, 
@@ -129,7 +129,7 @@ export default function Viendo({navigation, route}){
             title = "Guardar Anime"
             type = "outline"
          buttonStyle = {{
-            backgroundColor:'rgba(255, 255, 255, 0.7)',
+            backgroundColor:'rgba(255, 255, 255, 0.9)',
             marginHorizontal: 20,
             borderColor: "white",
             borderWidth: 2,    
@@ -140,7 +140,7 @@ export default function Viendo({navigation, route}){
             title = "Purgar Lista"
             type = "outline"
          buttonStyle = {{
-            backgroundColor:'rgba(255, 255, 255, 0.7)',
+            backgroundColor:'rgba(255, 255, 255, 0.9)',
             borderWidth: 2, 
             marginHorizontal: 20,
             borderColor: "white", 
@@ -152,7 +152,7 @@ export default function Viendo({navigation, route}){
             title = "Ver Lista"
             type = "outline"
          buttonStyle = {{
-            backgroundColor:'rgba(255, 255, 255, 0.7)',
+            backgroundColor:'rgba(255, 255, 255, 0.9)',
             marginHorizontal: 20,
             borderColor: "white", 
             borderWidth: 2,   
