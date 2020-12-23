@@ -122,7 +122,7 @@ export default function Ver({navigation, route}){
             marginHorizontal: 20,
             borderColor: "white",   
             borderRadius: 10, 
-            marginVertical: 10,                 
+            marginVertical: 20,                 
         }}> </Button>
         <Button onPress={() => storeData()}
             title = "Guardar Anime"
@@ -133,7 +133,7 @@ export default function Ver({navigation, route}){
             marginHorizontal: 20,
             borderColor: "white",   
             borderRadius: 10, 
-            marginVertical: 10,                 
+            marginVertical: 20,                 
         }}> </Button>
         <Button onPress={() => borrar()}
             title = "Purgar Lista"
@@ -144,7 +144,7 @@ export default function Ver({navigation, route}){
             marginHorizontal: 20,
             borderColor: "white",   
             borderRadius: 10,
-            marginVertical: 10,                  
+            marginVertical: 20,                  
         }}> </Button>
         <Button onPress={() => navigation.navigate("Ver Lista Ver", {lista: listaPVer})}
             title = "Ver Lista"
@@ -155,7 +155,7 @@ export default function Ver({navigation, route}){
             marginHorizontal: 20,
             borderColor: "white",   
             borderRadius: 10,
-            marginVertical: 10,                
+            marginVertical: 20,                
         }}> </Button>
         </SafeAreaView>
         )}
