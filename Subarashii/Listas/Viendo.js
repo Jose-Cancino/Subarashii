@@ -4,7 +4,7 @@ import AsyncStorage from "@react-native-community/async-storage";
 import { Button } from "react-native-elements"
 import { ImageBackgroundBase } from 'react-native';
 
-const image = {uri:"https://media.discordapp.net/attachments/760834589987045388/791405863465779220/joe-marlo-quitos-landscape-01-a.png?width=1019&height=670"};
+const image = {uri:"https://cdn.discordapp.com/attachments/760834589987045388/791405863465779220/joe-marlo-quitos-landscape-01-a.png"};
 export default function Viendo({navigation, route}){
     const ide = route.params
     let id = "0000"
