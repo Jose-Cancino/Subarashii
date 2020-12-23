@@ -8,9 +8,12 @@ import { StyleSheet,
    ActivityIndicator,
    SafeAreaView,
    TouchableOpacity,
+   ImageBackground,
    StatusBar 
 } from 'react-native';
 import { Button } from "react-native-elements"
+
+const imagencita = {uri:"https://mfiles.alphacoders.com/779/thumb-1920-779524.jpg"};
 const listaCategoria = ({navigation, route}) => {
 
     const [isLoading, setLoading] = useState(true)
@@ -37,14 +40,14 @@ const listaCategoria = ({navigation, route}) => {
       <TouchableOpacity onPress={() => navigation.navigate("Anime", {
       id: `${id}`
       })}>
-  
+      
         <Image 
         source = {{uri: imagen}}
         style={{
           width:210,
           height:300,
-          borderWidth:4,
-          borderColor:'#191970',
+          borderWidth:2,
+          borderColor:'black',
           resizeMode:'contain',
           margin:6,
           marginHorizontal: 60,
@@ -66,6 +69,7 @@ const listaCategoria = ({navigation, route}) => {
   
     return (
       <SafeAreaView>
+        <ImageBackground source={imagencita} style={styles.imagencita}></ImageBackground>
             <Button
                 type = "outline"
                 buttonStyle = {{
@@ -74,6 +78,7 @@ const listaCategoria = ({navigation, route}) => {
                   borderRadius: 10,
                   alignItems: "center",
                   marginVertical: 10,
+                  marginHorizontal: 20
              }}
                 onPress={() => buscar()}
                 title = {route.params.categoria}
@@ -106,7 +111,11 @@ const listaCategoria = ({navigation, route}) => {
     item: {
       padding: 15,
       marginVertical: 10,
-      marginHorizontal: 16,
+      marginHorizontal: 30,
+      backgroundColor: 'rgba(255, 253, 158, 0.8)',
+      borderWidth: 3,
+      borderColor: 'black',
+      alignItems: 'center',
     },  
     boton: {
       color: 'white',
@@ -122,12 +131,19 @@ const listaCategoria = ({navigation, route}) => {
       textAlign: 'center',
       fontSize:13,
       fontWeight: 'bold',
+      color: 'black',
+      fontSize: 15
     },  
     listas: {
       alignItems: "center",
       backgroundColor: "#DDDDDD",
       padding: 10,
       marginBottom: 15,
+    },
+    imagencita: {
+      flex: 1,
+      resizeMode:"contain",
+      height: 800     
     },
   });
 
