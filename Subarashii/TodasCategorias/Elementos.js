@@ -4,6 +4,7 @@ import { StyleSheet,
     View,
     Image,
     TextInput,
+    ImageBackground,
     FlatList,
     ActivityIndicator,
     SafeAreaView,
@@ -13,27 +14,32 @@ import { StyleSheet,
  } from 'react-native';
  import { Button } from "react-native-elements"
 
+ const image = {uri:"https://wallpapercave.com/wp/wp6824265.jpg"};
  const Elementos = ({navigation}) => {
     return(
+      <SafeAreaView>
+        <ImageBackground source={image} style={styles.image}></ImageBackground>
         <ScrollView style ={styles.scrollView}>
         <View>
             <Button 
                 onPress={() => navigation.navigate("listaCategoria", {categoria: "Action"})}
                 type = "outline"
                 buttonStyle = {{
-                    backgroundColor:"white",
+                    backgroundColor: 'rgba(255, 255, 255, 0.9)',
+                    borderWidth: 2,
                     marginHorizontal: 20,
                     borderColor: "white",
                     borderRadius: 10,
                     marginVertical: 10,
                   }}
-                title = "Accion"
+                title = "Acción"
             ></Button>
             <Button 
                 onPress={() => navigation.navigate("listaCategoria", {categoria: "Adventure"})}
                 type = "outline"
                 buttonStyle = {{
-                    backgroundColor:"white",
+                    backgroundColor: 'rgba(255, 255, 255, 0.9)',
+                    borderWidth: 2,
                     marginHorizontal: 20,
                     borderColor: "white",
                     borderRadius: 10,
@@ -45,7 +51,8 @@ import { StyleSheet,
                 onPress={() => navigation.navigate("listaCategoria", {categoria: "Angst"})}
                 type = "outline"
                 buttonStyle = {{
-                    backgroundColor:"white",
+                    backgroundColor: 'rgba(255, 255, 255, 0.9)',
+                    borderWidth: 2,
                     marginHorizontal: 20,
                     borderColor: "white",
                     borderRadius: 10,
@@ -57,7 +64,8 @@ import { StyleSheet,
                 onPress={() => navigation.navigate("listaCategoria", {categoria: "Anime Influenced"})}
                 type = "outline"
                 buttonStyle = {{
-                    backgroundColor:"white",
+                    backgroundColor: 'rgba(255, 255, 255, 0.9)',
+                    borderWidth: 2,
                     marginHorizontal: 20,
                     borderColor: "white",
                     borderRadius: 10,
@@ -69,7 +77,8 @@ import { StyleSheet,
                 onPress={() => navigation.navigate("listaCategoria", {categoria: "Anthropomorphism"})}
                 type = "outline"
                 buttonStyle = {{
-                    backgroundColor:"white",
+                    backgroundColor: 'rgba(255, 255, 255, 0.9)',
+                    borderWidth: 2,
                     marginHorizontal: 20,
                     borderColor: "white",
                     borderRadius: 10,
@@ -81,7 +90,8 @@ import { StyleSheet,
                 onPress={() => navigation.navigate("listaCategoria", {categoria: "Comedy"})}
                 type = "outline"
                 buttonStyle = {{
-                    backgroundColor:"white",
+                    backgroundColor: 'rgba(255, 255, 255, 0.9)',
+                    borderWidth: 2,
                     marginHorizontal: 20,
                     borderColor: "white",
                     borderRadius: 10,
@@ -93,7 +103,8 @@ import { StyleSheet,
                 onPress={() => navigation.navigate("listaCategoria", {categoria: "Detective"})}
                 type = "outline"
                 buttonStyle = {{
-                    backgroundColor:"white",
+                    backgroundColor: 'rgba(255, 255, 255, 0.9)',
+                    borderWidth: 2,
                     marginHorizontal: 20,
                     borderColor: "white",
                     borderRadius: 10,
@@ -105,7 +116,8 @@ import { StyleSheet,
                 onPress={() => navigation.navigate("listaCategoria", {categoria: "Drama"})}
                 type = "outline"
                 buttonStyle = {{
-                    backgroundColor:"white",
+                    backgroundColor: 'rgba(255, 255, 255, 0.9)',
+                    borderWidth: 2,
                     marginHorizontal: 20,
                     borderColor: "white",
                     borderRadius: 10,
@@ -117,7 +129,8 @@ import { StyleSheet,
                 onPress={() => navigation.navigate("listaCategoria", {categoria: "Ecchi"})}
                 type = "outline"
                 buttonStyle = {{
-                    backgroundColor:"white",
+                    backgroundColor: 'rgba(255, 255, 255, 0.9)',
+                    borderWidth: 2,
                     marginHorizontal: 20,
                     borderColor: "white",
                     borderRadius: 10,
@@ -129,7 +142,8 @@ import { StyleSheet,
                 onPress={() => navigation.navigate("listaCategoria", {categoria: "Fantasy"})}
                 type = "outline"
                 buttonStyle = {{
-                    backgroundColor:"white",
+                    backgroundColor: 'rgba(255, 255, 255, 0.9)',
+                    borderWidth: 2,
                     marginHorizontal: 20,
                     borderColor: "white",
                     borderRadius: 10,
@@ -141,7 +155,8 @@ import { StyleSheet,
                 onPress={() => navigation.navigate("listaCategoria", {categoria: "Ghost"})}
                 type = "outline"
                 buttonStyle = {{
-                    backgroundColor:"white",
+                    backgroundColor: 'rgba(255, 255, 255, 0.9)',
+                    borderWidth: 2,
                     marginHorizontal: 20,
                     borderColor: "white",
                     borderRadius: 10,
@@ -153,7 +168,8 @@ import { StyleSheet,
                 onPress={() => navigation.navigate("listaCategoria", {categoria: "Harem"})}
                 type = "outline"
                 buttonStyle = {{
-                    backgroundColor:"white",
+                    backgroundColor: 'rgba(255, 255, 255, 0.9)',
+                    borderWidth: 2,
                     marginHorizontal: 20,
                     borderColor: "white",
                     borderRadius: 10,
@@ -165,7 +181,8 @@ import { StyleSheet,
                 onPress={() => navigation.navigate("listaCategoria", {categoria: "Henshin"})}
                 type = "outline"
                 buttonStyle = {{
-                    backgroundColor:"white",
+                    backgroundColor: 'rgba(255, 255, 255, 0.9)',
+                    borderWidth: 2,
                     marginHorizontal: 20,
                     borderColor: "white",
                     borderRadius: 10,
@@ -177,7 +194,8 @@ import { StyleSheet,
                 onPress={() => navigation.navigate("listaCategoria", {categoria: "Horror"})}
                 type = "outline"
                 buttonStyle = {{
-                    backgroundColor:"white",
+                    backgroundColor: 'rgba(255, 255, 255, 0.9)',
+                    borderWidth: 2,
                     marginHorizontal: 20,
                     borderColor: "white",
                     borderRadius: 10,
@@ -189,19 +207,21 @@ import { StyleSheet,
                 onPress={() => navigation.navigate("listaCategoria", {categoria: "Magic Girl"})}
                 type = "outline"
                 buttonStyle = {{
-                    backgroundColor:"white",
+                    backgroundColor: 'rgba(255, 255, 255, 0.9)',
+                    borderWidth: 2,
                     marginHorizontal: 20,
                     borderColor: "white",
                     borderRadius: 10,
                     marginVertical: 10,
                   }}
-                title = "Chicas Magicas"
+                title = "Chicas Mágicas"
             ></Button>   
             <Button 
                 onPress={() => navigation.navigate("listaCategoria", {categoria: "Mystery"})}
                 type = "outline"
                 buttonStyle = {{
-                    backgroundColor:"white",
+                    backgroundColor: 'rgba(255, 255, 255, 0.9)',
+                    borderWidth: 2,
                     marginHorizontal: 20,
                     borderColor: "white",
                     borderRadius: 10,
@@ -213,7 +233,8 @@ import { StyleSheet,
                 onPress={() => navigation.navigate("listaCategoria", {categoria: "Parasite"})}
                 type = "outline"
                 buttonStyle = {{
-                    backgroundColor:"white",
+                    backgroundColor: 'rgba(255, 255, 255, 0.9)',
+                    borderWidth: 2,
                     marginHorizontal: 20,
                     borderColor: "white",
                     borderRadius: 10,
@@ -225,7 +246,8 @@ import { StyleSheet,
                 onPress={() => navigation.navigate("listaCategoria", {categoria: "psychological"})}
                 type = "outline"
                 buttonStyle = {{
-                    backgroundColor:"white",
+                    backgroundColor: 'rgba(255, 255, 255, 0.9)',
+                    borderWidth: 2,
                     marginHorizontal: 20,
                     borderColor: "white",
                     borderRadius: 10,
@@ -237,7 +259,8 @@ import { StyleSheet,
                 onPress={() => navigation.navigate("listaCategoria", {categoria: "Romance"})}
                 type = "outline"
                 buttonStyle = {{
-                    backgroundColor:"white",
+                    backgroundColor: 'rgba(255, 255, 255, 0.9)',
+                    borderWidth: 2,
                     marginHorizontal: 20,
                     borderColor: "white",
                     borderRadius: 10,
@@ -249,7 +272,8 @@ import { StyleSheet,
                 onPress={() => navigation.navigate("listaCategoria", {categoria: "Science fiction"})}
                 type = "outline"
                 buttonStyle = {{
-                    backgroundColor:"white",
+                    backgroundColor: 'rgba(255, 255, 255, 0.9)',
+                    borderWidth: 2,
                     marginHorizontal: 20,
                     borderColor: "white",
                     borderRadius: 10,
@@ -261,7 +285,8 @@ import { StyleSheet,
                 onPress={() => navigation.navigate("listaCategoria", {categoria: "Super power"})}
                 type = "outline"
                 buttonStyle = {{
-                    backgroundColor:"white",
+                    backgroundColor: 'rgba(255, 255, 255, 0.9)',
+                    borderWidth: 2,
                     marginHorizontal: 20,
                     borderColor: "white",
                     borderRadius: 10,
@@ -273,7 +298,8 @@ import { StyleSheet,
                 onPress={() => navigation.navigate("listaCategoria", {categoria: "Supernatural"})}
                 type = "outline"
                 buttonStyle = {{
-                    backgroundColor:"white",
+                    backgroundColor: 'rgba(255, 255, 255, 0.9)',
+                    borderWidth: 2,
                     marginHorizontal: 20,
                     borderColor: "white",
                     borderRadius: 10,
@@ -285,7 +311,8 @@ import { StyleSheet,
                 onPress={() => navigation.navigate("listaCategoria", {categoria: "Thriller"})}
                 type = "outline"
                 buttonStyle = {{
-                    backgroundColor:"white",
+                    backgroundColor: 'rgba(255, 255, 255, 0.9)',
+                    borderWidth: 2,
                     marginHorizontal: 20,
                     borderColor: "white",
                     borderRadius: 10,
@@ -297,7 +324,8 @@ import { StyleSheet,
                 onPress={() => navigation.navigate("listaCategoria", {categoria: "Vampire"})}
                 type = "outline"
                 buttonStyle = {{
-                    backgroundColor:"white",
+                    backgroundColor: 'rgba(255, 255, 255, 0.9)',
+                    borderWidth: 2,
                     marginHorizontal: 20,
                     borderColor: "white",
                     borderRadius: 10,
@@ -309,7 +337,8 @@ import { StyleSheet,
                 onPress={() => navigation.navigate("listaCategoria", {categoria: "Virtual Reality"})}
                 type = "outline"
                 buttonStyle = {{
-                    backgroundColor:"white",
+                    backgroundColor: 'rgba(255, 255, 255, 0.9)',
+                    borderWidth: 2,
                     marginHorizontal: 20,
                     borderColor: "white",
                     borderRadius: 10,
@@ -321,7 +350,8 @@ import { StyleSheet,
                 onPress={() => navigation.navigate("listaCategoria", {categoria: "Zombie"})}
                 type = "outline"
                 buttonStyle = {{
-                    backgroundColor:"white",
+                    backgroundColor: 'rgba(255, 255, 255, 0.9)',
+                    borderWidth: 2,
                     marginHorizontal: 20,
                     borderColor: "white",
                     borderRadius: 10,
@@ -331,6 +361,7 @@ import { StyleSheet,
             ></Button>
         </View>
         </ScrollView>
+      </SafeAreaView>
     )
 
 
@@ -347,7 +378,11 @@ import { StyleSheet,
       backgroundColor: "#DDDDDD",
       padding: 10,
       marginBottom: 15,
-    }
-  
+    },
+    image: {
+      flex: 1,
+      resizeMode:"contain",
+      height: 800     
+    },
   });
  export default Elementos;
