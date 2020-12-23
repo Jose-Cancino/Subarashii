@@ -92,7 +92,6 @@ const [lista, setLista] = useState([])
         <TouchableOpacity   onPress={() => navigation.navigate("Anime", {
         id: `${id}`
         })}>
-          <View>
           <Image 
           source = {{uri: imagen}}
           style={{
@@ -105,7 +104,6 @@ const [lista, setLista] = useState([])
             alignSelf:"center"
           }}
           />
-          </View>
         </TouchableOpacity>
       </View>
     );
