@@ -1,10 +1,11 @@
 import React, {useState, Component, useEffect} from 'react';
-import { StyleSheet, Text, View, TextInput, Alert, TouchableOpacity, SafeAreaView, ScrollView, TextPropTypes, TouchableNativeFeedback } from 'react-native';
+import { StyleSheet, ImageBackground,Text, View, TextInput, Alert, TouchableOpacity, SafeAreaView, ScrollView, TextPropTypes, TouchableNativeFeedback } from 'react-native';
 import AsyncStorage from "@react-native-community/async-storage";
 import { Button, CheckBox } from "react-native-elements"
 import { listaP1 } from "../Listas/Lista1"
 import { onChange } from 'react-native-reanimated';
 
+const imagen = {uri:"https://i.pinimg.com/564x/92/8e/e3/928ee34365d45844460a126de71184cc.jpg"};
 const ListaPersoViendo = ({navigation, route}) => {
     var listastring = ""
     const lista = route.params
@@ -67,15 +68,18 @@ const ListaPersoViendo = ({navigation, route}) => {
           
 
       return (
+        <SafeAreaView>
+        <ImageBackground source= {imagen} style= {styles.imagen}></ImageBackground>
         <ScrollView style ={styles.scrollView}>
 
             <Button onPress={() => navigation.navigate("RecPerso", {listarec})} 
-            title = "Recomendacion"
+            title = "Recomendación"
             type = "outline"
               buttonStyle = {{
-              backgroundColor:"white",
+              backgroundColor:'rgba(255, 255, 255, 0.8)',
               marginHorizontal: 20,
               borderColor: "white",
+              borderWidth: 2,
               borderRadius: 10,
               marginVertical: 10,
               }}>
@@ -85,6 +89,7 @@ const ListaPersoViendo = ({navigation, route}) => {
             </View>
     
         </ScrollView>
+        </SafeAreaView>
       );
     }
     
@@ -102,6 +107,11 @@ const ListaPersoViendo = ({navigation, route}) => {
         backgroundColor: "white",
         fontSize: 24,
         borderRadius: 10,
+      },
+      imagen: {
+        flex: 1,
+        resizeMode:"contain",
+        height: 800     
       },
     });
     export default ListaPersoViendo;
