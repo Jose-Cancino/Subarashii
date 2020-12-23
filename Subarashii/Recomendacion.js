@@ -46,7 +46,7 @@ const RecomendacionTab = ({navigation}) => {
                   
                 }}>
             </Button>
-            <Text style={styles.frasesitas}>"Danos tres animes y te daremos lo que buscas"</Text>
+            <Text style={styles.frasesitas}>"Danos tres Animes y te daremos lo que buscas"</Text>
             <Button 
                 onPress={() => navigation.navigate("express")}
                 title = "Recomendación Express"
