@@ -3,7 +3,7 @@ import { ImageBackground, StyleSheet, Text, View, TextInput, Alert, SafeAreaView
 import AsyncStorage from "@react-native-community/async-storage";
 import { Button } from "react-native-elements"
 
-const image = {uri:"https://i.pinimg.com/564x/ca/c7/9e/cac79e74ff119a4303edcf4effdb1c5d.jpg"};
+const image = {uri:"https://cdn.discordapp.com/attachments/760834589987045388/791405735610941520/hinh-anh-hy-vong-troi-day-manh-me-nhat.png"};
 export default function Ver({navigation, route}){
     const ide = route.params
     let id = "0000"
