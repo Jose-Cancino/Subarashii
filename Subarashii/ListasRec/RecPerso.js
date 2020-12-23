@@ -1,5 +1,6 @@
 import React, { useState } from "react";
-import { StyleSheet, Text, View, ScrollView, TouchableOpacity, ActivityIndicator, FlatList, Image,} from 'react-native';
+import { SafeAreaView } from "react-native";
+import { StyleSheet, Text, View, ScrollView, TouchableOpacity, ActivityIndicator, FlatList, Image, ImageBackground} from 'react-native';
 
 
 const RecPerso = ({navigation, route}) => {
@@ -98,7 +99,7 @@ const [lista, setLista] = useState([])
             width:210,
             height:300,
             borderWidth:2,
-            borderColor:'#694fad',
+            borderColor:'#191970',
             resizeMode:'contain',
             margin:8,
             alignSelf:"center"
@@ -115,8 +116,10 @@ const [lista, setLista] = useState([])
        imagen={item.attributes.posterImage.small} 
        />
   );
-
+const image = {uri: "https://cdn.discordapp.com/attachments/760834589987045388/791391987022430239/4e2d0847a98a758d49e1266c0975194e.png"}
   return(
+  <SafeAreaView>
+  <ImageBackground source={image} style={styles.image}></ImageBackground>
   <ScrollView style ={styles.scrollView}>
       <View >
           <TouchableOpacity  onPress = {() => Buscar(resultados)}>
@@ -134,6 +137,7 @@ const [lista, setLista] = useState([])
     )}
       </View>
   </ScrollView>
+  </SafeAreaView>
   );
 
 
@@ -160,7 +164,15 @@ const styles = StyleSheet.create({
     alignSelf:"center"
   },
   item:{
-    marginVertical: 10,
-  }
+    backgroundColor: 'rgba(255, 255, 255, 0.5)',
+    padding: 15,
+    marginVertical: 15,
+    marginHorizontal: 16,
+  },
+  image: {
+    flex: 1,
+    resizeMode:"contain",
+    height: 800     
+  }, 
 });
 export default RecPerso;  
