@@ -1,5 +1,6 @@
 import React, { useState } from 'react';
 import { StyleSheet,
+   ImageBackground,
     Text,
     View,
     Image,
@@ -12,6 +13,8 @@ import { StyleSheet,
     StatusBar 
  } from 'react-native';
  import { Button } from "react-native-elements"
+
+const image = {uri:"https://i.pinimg.com/564x/c5/bd/af/c5bdafa8a9dd6cd92450bd0786c61f52.jpg"};
 const AnimeRelacionado = ({navigation}) => {
     const [isLoading, setLoading] = useState(true)
     const [anime1, setAnime1] = useState("")
@@ -130,6 +133,8 @@ const AnimeRelacionado = ({navigation}) => {
 
 
 return(
+  <SafeAreaView>
+  <ImageBackground source={image} style={styles.image}></ImageBackground>
     <ScrollView style ={styles.scrollView}>
      
     <View style={styles.item}>
@@ -169,7 +174,7 @@ return(
       
       </View>
       </ScrollView>
-
+    </SafeAreaView>
 )
 
 }
@@ -198,7 +203,7 @@ const styles = StyleSheet.create({
       alignItems:"center"
     },
     item: {
-        backgroundColor: '#DAEEFF',
+        backgroundColor: 'rgba(255, 255, 255, 0.5)',
         padding: 15,
         marginVertical: 15,
         marginHorizontal: 16,
@@ -207,8 +212,13 @@ const styles = StyleSheet.create({
       color: "black", 
       textAlign: "center", 
       marginBottom: 10,
-      fontSize: 20
+      fontSize: 20,
     },  
+    image: {
+      flex: 1,
+      resizeMode:"contain",
+      height: 800     
+    }, 
     title: {
       alignSelf:"center"
     } 
