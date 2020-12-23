@@ -1,8 +1,10 @@
 import React, {useState, Component, useEffect} from 'react';
-import { StyleSheet, Text, View, TextInput, Alert, SafeAreaView, ScrollView, TextPropTypes } from 'react-native';
+import { StyleSheet, ImageBackground, Text, View, TextInput, Alert, SafeAreaView, ScrollView, TextPropTypes } from 'react-native';
 import AsyncStorage from "@react-native-community/async-storage";
 import { Button } from "react-native-elements"
+import { ImageBackgroundBase } from 'react-native';
 
+const image = {uri:"https://media.discordapp.net/attachments/760834589987045388/791388140795068431/a9fc1f7efe25a88c5f15a9b7d1a43bfd.png?width=377&height=669"};
 export default function Viendo({navigation, route}){
     const ide = route.params
     let id = "0000"
@@ -22,7 +24,7 @@ export default function Viendo({navigation, route}){
             setListaPViendo(nueva)
         } else {
             Alert.alert(
-                "No pudimos agregar tu Anime UnU",
+                "No podemos agregar tu Anime UnU",
                 "Este Anime ya esta en la lista, prueba con otro :3",
             ) 
         }
@@ -55,7 +57,7 @@ export default function Viendo({navigation, route}){
     const borrar = () => {
         Alert.alert(
             "¿Desea purgar esta lista?",
-            "Al purgar la lista se borraran todos los Animes que contiene.",
+            "Al purgar la lista se borrarán todos los Animes que contiene.",
             [
               { text: "Cancelar", onPress: () => console.log("Cancel Pressed")},
               { text: "Borrar", onPress: () => removeData() }
@@ -110,14 +112,16 @@ export default function Viendo({navigation, route}){
     },[]);
 
     return(
-        <SafeAreaView style={styles.container}>
+        <SafeAreaView>
+         <ImageBackground source={image} style={styles.image}></ImageBackground>
         <Button onPress={() => añadir()}
             title = "Añadir"
             type = "outline"
          buttonStyle = {{
-            backgroundColor:"#dcdcdc",
+            backgroundColor:'rgba(255, 255, 255, 0.7)',
             marginHorizontal: 20,
             borderColor: "white",   
+            borderWidth: 2, 
             borderRadius: 10, 
             marginVertical: 10,                 
         }}> </Button>
@@ -125,9 +129,10 @@ export default function Viendo({navigation, route}){
             title = "Guardar Anime"
             type = "outline"
          buttonStyle = {{
-            backgroundColor:"#dcdcdc",
+            backgroundColor:'rgba(255, 255, 255, 0.7)',
             marginHorizontal: 20,
-            borderColor: "white",   
+            borderColor: "white",
+            borderWidth: 2,    
             borderRadius: 10, 
             marginVertical: 10,                 
         }}> </Button>
@@ -135,9 +140,11 @@ export default function Viendo({navigation, route}){
             title = "Purgar Lista"
             type = "outline"
          buttonStyle = {{
-            backgroundColor:"#dcdcdc",
+            backgroundColor:'rgba(255, 255, 255, 0.7)',
+            borderWidth: 2, 
             marginHorizontal: 20,
-            borderColor: "white",   
+            borderColor: "white", 
+              
             borderRadius: 10,
             marginVertical: 10,                  
         }}> </Button>
@@ -145,9 +152,10 @@ export default function Viendo({navigation, route}){
             title = "Ver Lista"
             type = "outline"
          buttonStyle = {{
-            backgroundColor:"#dcdcdc",
+            backgroundColor:'rgba(255, 255, 255, 0.7)',
             marginHorizontal: 20,
-            borderColor: "white",   
+            borderColor: "white", 
+            borderWidth: 2,   
             borderRadius: 10,
             marginVertical: 10,                
         }}> </Button>
@@ -178,5 +186,10 @@ export default function Viendo({navigation, route}){
         },
         titulo: {
             marginTop:"auto"
-        }
+        },
+        image: {
+            flex: 1,
+            resizeMode:"contain",
+            height: 800     
+        },
     })
