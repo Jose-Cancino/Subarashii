@@ -68,10 +68,13 @@ useEffect(() => {
 return(
     <SafeAreaView>
     <ImageBackground source={image} style={styles.image}></ImageBackground>
+    <ScrollView style ={styles.scrollView}>
+      <View >
+    <Text style= {styles.nombre}>{nombre} </Text>
     <Avatar
         containerStyle ={{
             alignSelf: "center",
-            marginTop: 50,
+            //marginTop: 0,
             borderWidth: 3,
             borderColor: 'white'
         }}
@@ -81,7 +84,6 @@ return(
         uri:
             `${imagen}`,
         }}/>
-    <Text> {nombre} </Text>
     <TextInput 
         style={styles.input}
         placeholder = "Inserte URL Imagen"
@@ -93,9 +95,10 @@ return(
         placeholder = "Inserte Nombre"
         onChangeText = {(text) => setCasinombre(text)}>
     </TextInput>
-
+    </View>
+     </ScrollView>
     <Button onPress={() => {storeData(); setImagen(casimagen)}}
-        title = "Añadir"
+        title = "Añadir Imagen"
         type = "outline"
      buttonStyle = {{
         backgroundColor:"'rgba(255, 255, 255, 0.8)'",
@@ -115,7 +118,7 @@ return(
         marginVertical: 10,                 
     }}> </Button>
     <Button onPress={() => navigation.navigate("Vistos", {id: {id}})}
-        title = "Vistos"
+        title = "Vistos 👁️"
         type = "outline"
      buttonStyle = {{
         backgroundColor:"'rgba(255, 255, 255, 0.8)'",
@@ -125,7 +128,7 @@ return(
         marginVertical: 10,                 
     }}> </Button>
     <Button onPress={() => navigation.navigate("Viendo", {id: {id}})}
-        title = "Viendo"
+        title = "Viendo 🎬"
         type = "outline"
      buttonStyle = {{
         backgroundColor:"'rgba(255, 255, 255, 0.8)'",
@@ -135,7 +138,7 @@ return(
         marginVertical: 10,                 
     }}> </Button>
     <Button onPress={() => navigation.navigate("Por ver", {id: {id}})}
-        title = "Por ver"
+        title = "Por ver 📼"
         type = "outline"
      buttonStyle = {{
         backgroundColor:"'rgba(255, 255, 255, 0.8)'",
@@ -159,7 +162,7 @@ function perfil() {
     <Stack.Screen name = "Vistos" component = {vistos} />
     <Stack.Screen name = "Viendo" component = {viendo} />
     <Stack.Screen name = "Por ver" component = {porver} />
-    <Stack.Screen name = "Ver Lista Vistos" component = {ListaPersoVistos} options = {{title: "Los que ya vi"}}/>
+    <Stack.Screen name = "Ver Lista Vistos" component = {ListaPersoVistos} options = {{title: "Los que ya ví"}}/>
     <Stack.Screen name = "Ver Lista Viendo" component = {ListaPersoViendo} options = {{title: "Los que estoy viendo"}}/>
     <Stack.Screen name = "Ver Lista Ver" component = {ListaPersoVer} options = {{title: "Los que quiero ver"}}/>
     <Stack.Screen name= "Anime" component = {pagAnime} />
@@ -195,6 +198,14 @@ const styles = StyleSheet.create({
         resizeMode:"contain",
         height: 800     
       },
+    nombre: {
+        textAlign: 'center',
+        marginVertical: 30,
+        color: 'white',
+        fontWeight: 'bold',
+        fontStyle: 'italic',
+        fontSize: 30
+    }
 })
 
 export default perfil;
