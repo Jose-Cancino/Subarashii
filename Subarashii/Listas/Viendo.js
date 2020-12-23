@@ -123,7 +123,7 @@ export default function Viendo({navigation, route}){
             borderColor: "white",   
             borderWidth: 2, 
             borderRadius: 10, 
-            marginVertical: 10,                 
+            marginVertical: 20,                 
         }}> </Button>
         <Button onPress={() => storeData()}
             title = "Guardar Anime"
@@ -134,7 +134,7 @@ export default function Viendo({navigation, route}){
             borderColor: "white",
             borderWidth: 2,    
             borderRadius: 10, 
-            marginVertical: 10,                 
+            marginVertical: 20,                 
         }}> </Button>
         <Button onPress={() => borrar()}
             title = "Purgar Lista"
@@ -146,7 +146,7 @@ export default function Viendo({navigation, route}){
             borderColor: "white", 
               
             borderRadius: 10,
-            marginVertical: 10,                  
+            marginVertical: 20,                  
         }}> </Button>
         <Button onPress={() => navigation.navigate("Ver Lista Viendo", {lista: listaPViendo})}
             title = "Ver Lista"
@@ -157,7 +157,7 @@ export default function Viendo({navigation, route}){
             borderColor: "white", 
             borderWidth: 2,   
             borderRadius: 10,
-            marginVertical: 10,                
+            marginVertical: 20,                
         }}> </Button>
         </SafeAreaView>
         )}
