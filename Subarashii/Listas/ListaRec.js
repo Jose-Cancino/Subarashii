@@ -2,14 +2,16 @@ import { StatusBar } from 'expo-status-bar';
 import React, { useState, useEffect } from 'react';
 import { 
   StyleSheet, 
+  ImageBackground,
   Text, 
+  SafeAreaView,
   View, 
   TouchableNativeFeedback,
   TouchableOpacity,
   ScrollView
 } from 'react-native';
 
-
+const image = {uri:"https://i.pinimg.com/originals/13/1d/b2/131db26ddf93fdb1733bba75a5dcea87.png"};
 const ListaRec = ({navigation}) => {
 
 const listarec = [
@@ -41,13 +43,14 @@ const listarec = [
       });
 
   return (
+  <SafeAreaView>
+    <ImageBackground source={image} style={styles.image}></ImageBackground>
     <ScrollView style ={styles.scrollView}>
-
         <View >
         {Bloques}
         </View>
-
     </ScrollView>
+  </SafeAreaView>
   );
 }
 
@@ -63,8 +66,17 @@ const styles = StyleSheet.create({
     marginTop: 24,
     padding: 30,
     borderRadius: 10,
-    backgroundColor: "white",
     fontSize: 24,
+    backgroundColor: 'rgba(255, 255, 255, 0.5)',
+    color: 'black',
+    borderColor: 'white',
+    borderWidth: 4, 
+    fontStyle: 'italic'
+  },
+  image: {
+    flex: 1,
+    resizeMode:"contain",
+    height: 800     
   },
 });
 export default ListaRec;
