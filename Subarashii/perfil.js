@@ -12,7 +12,7 @@ import ListaPersoVer from "./Listas/ListaPersoPorver"
 import pagAnime from "./pagAnime"
 import RecPerso from "./ListasRec/RecPerso"
 
-const image = {uri:"https://i.pinimg.com/originals/72/42/12/7242120be58db412e64993dd41e4fa2e.jpg"};
+const image = {uri:"https://media.discordapp.net/attachments/760834589987045388/791410745971048498/1565186782114819670.png?width=535&height=669"};
 const Perfil = ({route, navigation}) => {
     const id = route.params;
     const [nombre, setNombre] = useState("")
@@ -74,7 +74,7 @@ return(
     <Avatar
         containerStyle ={{
             alignSelf: "center",
-            //marginTop: 0,
+            marginTop: 20,
             borderWidth: 3,
             borderColor: 'white'
         }}
@@ -101,7 +101,7 @@ return(
         title = "Añadir Imagen"
         type = "outline"
      buttonStyle = {{
-        backgroundColor:"'rgba(255, 255, 255, 0.8)'",
+        backgroundColor:"'rgba(255, 255, 255, 0.9)'",
         marginHorizontal: 20,
         borderColor: "white",   
         borderRadius: 10, 
@@ -111,37 +111,37 @@ return(
         title = "Guardar nombre"
         type = "outline"
      buttonStyle = {{
-        backgroundColor:"'rgba(255, 255, 255, 0.8)'",
+        backgroundColor:"'rgba(255, 255, 255, 0.9)'",
         marginHorizontal: 20,
         borderColor: "white",   
         borderRadius: 10, 
         marginVertical: 10,                 
     }}> </Button>
     <Button onPress={() => navigation.navigate("Vistos", {id: {id}})}
-        title = "Vistos 👁️"
+        title = "Vistos "
         type = "outline"
      buttonStyle = {{
-        backgroundColor:"'rgba(255, 255, 255, 0.8)'",
+        backgroundColor:"'rgba(255, 255, 255, 0.9)'",
         marginHorizontal: 20,
         borderColor: "white",   
         borderRadius: 10, 
         marginVertical: 10,                 
     }}> </Button>
     <Button onPress={() => navigation.navigate("Viendo", {id: {id}})}
-        title = "Viendo 🎬"
+        title = "Viendo "
         type = "outline"
      buttonStyle = {{
-        backgroundColor:"'rgba(255, 255, 255, 0.8)'",
+        backgroundColor:"'rgba(255, 255, 255, 0.9)'",
         marginHorizontal: 20,
         borderColor: "white",   
         borderRadius: 10, 
         marginVertical: 10,                 
     }}> </Button>
     <Button onPress={() => navigation.navigate("Por ver", {id: {id}})}
-        title = "Por ver 📼"
+        title = "Por ver "
         type = "outline"
      buttonStyle = {{
-        backgroundColor:"'rgba(255, 255, 255, 0.8)'",
+        backgroundColor:"'rgba(255, 255, 255, 0.9)'",
         marginHorizontal: 20,
         borderColor: "white",   
         borderRadius: 10, 
