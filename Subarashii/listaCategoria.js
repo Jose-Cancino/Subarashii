@@ -47,7 +47,7 @@ const listaCategoria = ({navigation, route}) => {
           width:210,
           height:300,
           borderWidth:2,
-          borderColor:'black',
+          borderColor:'white',
           resizeMode:'contain',
           margin:6,
           marginHorizontal: 60,
@@ -114,7 +114,7 @@ const listaCategoria = ({navigation, route}) => {
       marginHorizontal: 30,
       backgroundColor: 'rgba(255, 253, 158, 0.8)',
       borderWidth: 3,
-      borderColor: 'black',
+      borderColor: 'white',
       alignItems: 'center',
     },  
     boton: {
