@@ -1,10 +1,11 @@
 import React, {useState, Component, useEffect} from 'react';
-import { StyleSheet, Text, View, TextInput, Alert, TouchableOpacity, SafeAreaView, ScrollView, TextPropTypes, TouchableNativeFeedback } from 'react-native';
+import { ImageBackground, StyleSheet, Text, View, TextInput, Alert, TouchableOpacity, SafeAreaView, ScrollView, TextPropTypes, TouchableNativeFeedback } from 'react-native';
 import AsyncStorage from "@react-native-community/async-storage";
 import { Button, CheckBox } from "react-native-elements"
 import { listaP1 } from "../Listas/Lista1"
 import { onChange } from 'react-native-reanimated';
 
+const image = {uri:"https://i.pinimg.com/564x/49/25/3b/49253b45cf031dfcf2264b4173c6e332.jpg"};
 const ListaPersoVer = ({navigation, route}) => {
     var listastring = ""
     const lista = route.params
@@ -67,13 +68,16 @@ const ListaPersoVer = ({navigation, route}) => {
           
 
       return (
+        <SafeAreaView>
+        <ImageBackground source= {image} style= {styles.image}></ImageBackground>
         <ScrollView style ={styles.scrollView}>
 
             <Button onPress={() => navigation.navigate("RecPerso", {listarec})} 
-            title = "Recomendacion"
+            title = "Recomendación"
             type = "outline"
               buttonStyle = {{
-              backgroundColor:"white",
+              backgroundColor:'rgba(255, 255, 255, 0.8)',
+              borderWidth: 2,
               marginHorizontal: 20,
               borderColor: "white",
               borderRadius: 10,
@@ -85,6 +89,7 @@ const ListaPersoVer = ({navigation, route}) => {
             </View>
     
         </ScrollView>
+        </SafeAreaView>
       );
     }
     
@@ -102,6 +107,11 @@ const ListaPersoVer = ({navigation, route}) => {
         backgroundColor: "white",
         fontSize: 24,
         borderRadius: 10,
+      },
+      image: {
+        flex: 1,
+        resizeMode:"contain",
+        height: 800     
       },
     });
     export default ListaPersoVer;
