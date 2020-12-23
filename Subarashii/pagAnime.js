@@ -132,13 +132,15 @@ const styles = StyleSheet.create({
     marginVertical: 20,
     fontSize:22,  
     fontStyle: 'italic',
-    height: 40,
+    height: "auto",
     lineHeight: 35,
-    textAlign: 'center', 
+    textAlign: 'center',
+    alignItems: "center", 
     borderColor: 'white',   
     borderWidth: 3, 
     color: 'white',
-    backgroundColor: '#DB4E08'
+    backgroundColor: '#DB4E08',
+    padding: 10,
   },
   subtitle: {
     fontSize:20, 
