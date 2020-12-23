@@ -10,7 +10,8 @@ import {
   ScrollView,
   Linking,
   TouchableOpacity,
-  FlatList
+  FlatList,
+  ImageBackground,
  } from 'react-native';
 
 const pagAnime = ({navigation, route}) => {
@@ -53,6 +54,7 @@ const pagAnime = ({navigation, route}) => {
     </View>
   );
 
+  const imagencita = { uri: "https://png.pngtree.com/thumb_back/fw800/background/20190222/ourmid/pngtree-orange-ink-background-gradient-color-fruit-background-poster-image_49305.jpg" };
   const renderItem = ({item}) => (
     <Item 
      categoria = {item.attributes.title} 
@@ -61,10 +63,8 @@ const pagAnime = ({navigation, route}) => {
    
   return (
     <SafeAreaView style={styles.container}>
+      <ImageBackground source={imagencita} style={styles.imagencita}>
       <ScrollView style ={styles.scrollView}>
-      {isLoading ? (
-      <ActivityIndicator/> 
-      ):( 
       <View >
         
       <Text style= {styles.title}> {title} </Text> 
@@ -83,7 +83,7 @@ const pagAnime = ({navigation, route}) => {
       <Text style={styles.subtitle}>
         CATEGORÍAS
       </Text>
-      <FlatList
+      <FlatList style={styles.flat}
           data = {lista} 
           keyExtractor = {({ data }, index) => data}
           renderItem = {renderItem}    
@@ -93,14 +93,21 @@ const pagAnime = ({navigation, route}) => {
           Ver Trailer
         </Text>
     </TouchableOpacity>
+    <View style= {{flex:1, flexDirection: 'row'}}>
     <TouchableOpacity onPress={() => navigation.navigate("Listas", {screen: "Listas", params: {id}})}>
       <Text style = {styles.añadir}>
-        Añadir
+        Añadir a lista
       </Text>
     </TouchableOpacity>
+    <TouchableOpacity onPress={() => navigation.navigate("Perfil", {screen: "Perfil", params: {id}})}>
+      <Text style = {styles.añadir}>
+        Añadir a perfil
+      </Text>
+    </TouchableOpacity>
+    </View>
       </View>
-      )}
       </ScrollView>
+      </ImageBackground>
     </SafeAreaView>
   );
 }
@@ -108,38 +115,45 @@ const pagAnime = ({navigation, route}) => {
 const styles = StyleSheet.create({
   container: {
     flex: 1,
-    backgroundColor: '#fff',
     alignItems: 'center',
     justifyContent: 'center',
   },
   imagen:{
     width:210,
     height:300,
-    borderWidth:2,
-    borderColor:'#694fad',
+    borderWidth: 3,
+    borderColor:'white',
     resizeMode:'contain',
     alignItems: 'center',
     margin:8,
     marginHorizontal: 80,
   },
   title: {
-    fontSize:20,
-    backgroundColor: '#fff',  
+    marginVertical: 20,
+    fontSize:22,  
+    fontStyle: 'italic',
     height: 40,
     lineHeight: 35,
-    textAlign: 'center',      
+    textAlign: 'center', 
+    borderColor: 'white',   
+    borderWidth: 3, 
+    color: 'white',
+    backgroundColor: '#DB4E08'
   },
   subtitle: {
     fontSize:20, 
-    color: 'black',
+    color: 'white',
     height: 40,
     lineHeight: 35,
     marginVertical: 10,
+    marginHorizontal: 30,
     textAlign: "center",  
     textDecorationLine: 'underline',
+    fontStyle: 'italic',
+    fontWeight: 'bold'
+
   },
   scrollView: {
-    backgroundColor: 'white',
     marginHorizontal: 20,
   },
   yutu: {
@@ -151,36 +165,48 @@ const styles = StyleSheet.create({
     textDecorationLine: "underline"       
   },
   añadir: {
-    backgroundColor: '#d1bcf5',
-    color: 'black',
-    fontSize:20,  
-    lineHeight: 35,   
-    padding: 7,
+    backgroundColor: '#23265E',
+    color: 'white',
+    fontSize:18,  
+    lineHeight: 20,   
+    padding: 10,
     marginVertical: 10,
-    marginHorizontal: 0,
+    marginHorizontal: 20,
     alignItems: 'center',
     textAlign: 'center',
+    borderRadius: 10, 
+    borderColor: 'white',
+    borderWidth: 3
   },
   sinopsis: {
-    //backgroundColor: '#d1bcf5',
     fontFamily: "serif",
-    color: 'black',
+    color: 'white',
     fontSize:15,  
-    //padding: 10,
+    padding: 10,
     marginVertical: 10,
     marginHorizontal: 10,
     alignItems: 'center',
     textAlign: 'justify',
   },  
   rating: {
-    //backgroundColor: '#d1bcf5',
-    color: '#dbb107',
-    fontSize:18,  
+    color: '#AE051F',
+    fontSize: 18,  
     marginVertical: 10,
     marginHorizontal: 10,
     alignItems: 'center',
     textAlign: 'justify',
   },  
+  imagencita: {
+    flex: 1,
+    resizeMode:"contain",
+    height: 800,
+  },
+  flat: {
+    backgroundColor: '#F0B838',
+    padding: 20,
+    borderColor: 'white',
+    borderWidth: 2,
+  }
 });
 
-export default pagAnime;
+export default pagAnime; 
