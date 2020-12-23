@@ -32,6 +32,15 @@ export default function App() {
       barStyle = {{backgroundColor:'#23265E'}}
     > 
       <Tab.Screen 
+        name="Inicio" component={Recomendacion} 
+        options={{
+        tabBarLabel: "Inicio",
+        tabBarIcon: ({ color }) => (
+          <MaterialCommunityIcons name="home" color={color} size={26}/>
+        ),
+      }} 
+      />
+      <Tab.Screen 
         name="Buscar" component={BusquedaAnime} 
         options={{
         tabBarLabel: "Buscar",
@@ -40,12 +49,12 @@ export default function App() {
         ),
       }}
       />
-      <Tab.Screen 
-        name="Home" component={Recomendacion} 
+      <Tab.Screen
+        name="Perfil" component={perfil} 
         options={{
-        tabBarLabel: "Home",
+        tabBarLabel: "Perfil",
         tabBarIcon: ({ color }) => (
-          <MaterialCommunityIcons name="home" color={color} size={26}/>
+          <MaterialCommunityIcons name="account" color={color} size={26}/>
         ),
       }} 
       />
@@ -55,15 +64,6 @@ export default function App() {
         tabBarLabel: "Listas",
         tabBarIcon: ({ color }) => (
           <MaterialCommunityIcons name="format-list-bulleted" color={color} size={26}/>
-        ),
-      }} 
-      />
-      <Tab.Screen
-        name="Perfil" component={perfil} 
-        options={{
-        tabBarLabel: "Perfil",
-        tabBarIcon: ({ color }) => (
-          <MaterialCommunityIcons name="account" color={color} size={26}/>
         ),
       }} 
       />
