@@ -95,7 +95,7 @@ const RecomendacionTab = ({navigation}) => {
   function Recomendacion (){
   return (
     <Stack.Navigator >
-        <Stack.Screen name = "Home" component = {RecomendacionTab} />
+        <Stack.Screen name = "Home" component = {RecomendacionTab} options = {{title: "Inicio"}}/>
         <Stack.Screen name = "Lista Recomendada" component = {ListaRec} />
         <Stack.Screen name = "express" component = {express} options = {{title: "Express"}}/>
         <Stack.Screen name = "generarVistos" component = {generarVistos} />        
