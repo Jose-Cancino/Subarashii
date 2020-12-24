@@ -114,7 +114,7 @@ const express = ({navigation}) => {
               width:210,
               height:300,
               borderWidth:2,
-              borderColor:'#191970',
+              borderColor:'white',
               resizeMode:'contain',
               margin:8,
               alignSelf: "center"
@@ -236,12 +236,14 @@ const styles = StyleSheet.create({
     },
     title:{
       alignSelf:"center",
+      color: 'white'
     },
     flat: {
     backgroundColor: '#F0B838',
     padding: 20,
     borderColor: 'white',
-    borderWidth: 2,
+    borderWidth: 3,
+    marginVertical: 10,
     },
   });
 
