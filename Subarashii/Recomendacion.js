@@ -98,11 +98,11 @@ const RecomendacionTab = ({navigation}) => {
         <Stack.Screen name = "Home" component = {RecomendacionTab} options = {{title: "Inicio"}}/>
         <Stack.Screen name = "Lista Recomendada" component = {ListaRec} />
         <Stack.Screen name = "express" component = {express} options = {{title: "Express"}}/>
-        <Stack.Screen name = "generarVistos" component = {generarVistos} />        
+        <Stack.Screen name = "generarVistos" component = {generarVistos} options = {{title: "Generar Vistos"}} />        
         <Stack.Screen name= "Anime" component = {pagAnime} />
         <Stack.Screen name= "listaCategoria" component = {listaCategoria} options = {{title: "Categoría"}} />
         <Stack.Screen name= "Categorias" component = {categorias} />
-        <Stack.Screen name= "AnimeRelacionado" component = {AnimeRelacionado} options = {{title: "Anime Relacionado"}} />
+        <Stack.Screen name= "AnimeRelacionado" component = {AnimeRelacionado} options = {{title:"Anime Relacionado"}} />
         <Stack.Screen name= "Contenido" component = {Contenido} />
         <Stack.Screen name= "Elementos" component = {Elementos} />
         <Stack.Screen name= "Escenario" component = {Escenario} />
