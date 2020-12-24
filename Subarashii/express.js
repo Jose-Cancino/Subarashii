@@ -177,7 +177,7 @@ return(
       {isLoading ? ( 
         <ActivityIndicator/> 
       ) : ( 
-        <FlatList
+        <FlatList style = {styles.flat}
           data = {lista} 
           keyExtractor = {({ data }, index) => data}
           renderItem = {renderItem}    
@@ -236,7 +236,13 @@ const styles = StyleSheet.create({
     },
     title:{
       alignSelf:"center",
-    }
+    },
+    flat: {
+    backgroundColor: '#F0B838',
+    padding: 20,
+    borderColor: 'white',
+    borderWidth: 2,
+    },
   });
 
 export default express;
