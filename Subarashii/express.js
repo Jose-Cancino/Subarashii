@@ -170,7 +170,7 @@ return(
       </TouchableOpacity>
       <Text style={styles.frasesita}> "Cuando veas la recomendación, presiona el botón👇." </Text>
       <TouchableOpacity  onPress={() => Buscar(resultados)}style={styles.boton}>
-        <Text style={styles.boton}>
+        <Text style={styles.lol}>
         {resultados} </Text>
       </TouchableOpacity>
       
@@ -245,6 +245,9 @@ const styles = StyleSheet.create({
     borderWidth: 3,
     marginVertical: 10,
     },
+    lol: {
+      marginVertical: 20
+    }
   });
 
 export default express;
