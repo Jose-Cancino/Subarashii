@@ -53,3 +53,7 @@ Se sube el 75% de avance de la mejor APP de anime del mundo, se adjunta link: ht
 ## Avisos: 'Se acerca el día del juicio final' | (19-12-2020)
 Ya faltando poco para la entrega final nos hemos juntado con Felipe, quien creíamos muerto. A nivel de APP ya estamos por completar todo, las listas estan siendo modificadas para poder borrar un Anime en específico pero aparte de eso todo bien, al finalizar eso terminaremos la sección de vistos - viendo - por ver. El diseño de la APP esta siendo mejorado y para la presentación final estará al nivel. Se corrigen faltas ortográficas y diseño del Blog.
 ### ~ Fin de los avisos ~
+
+## Avisos: '...y el día llego.' | (23-12-2020)
+A pesar de las dificultades hemos terminado nuestra APP, cumpliendo con todo lo propuesto y dentro de los plazos, solo nos queda esperar lo mejor. Fue un gusto, adiós.
+### ~ Fin de los avisos ~
